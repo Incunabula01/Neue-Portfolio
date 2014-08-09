@@ -22,24 +22,44 @@ FONT FACE (IN YOUR FACE)
 
 /*  To embed your own fonts, use this syntax
   and place your fonts inside the
-  library/fonts folder. For more information
+  ../fonts folder. For more information
   on embedding fonts, go to:
   http://www.fontsquirrel.com/
   Be sure to remove the comment brackets.
 */
 
-/*  @font-face {
-      font-family: 'Font Name';
-      src: url('library/fonts/font-name.eot');
-      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
+@font-face {
+      font-family: 'Ostrich Black';
+      src: url('../fonts/ostrich-black-webfont.eot');
+      src: url('../fonts/ostrich-black-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/ostrich-black-webfont.woff') format('woff'),
+             url('../fonts/ostrich-black-webfont.ttf') format('truetype'),
+             url('../fonts/ostrich-black-webfont.svg#ostrich-black-webfont') format('svg');
       font-weight: normal;
       font-style: normal;
   }
-*/
 
+@font-face {
+      font-family: 'Ostrich Light';
+      src: url('../fonts/ostrich-light-webfont.eot');
+      src: url('../fonts/ostrich-light-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/ostrich-light-webfont.woff') format('woff'),
+             url('../fonts/ostrich-light-webfont.ttf') format('truetype'),
+             url('../fonts/ostrich-light-webfont.svg#ostrich-light-webfont') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+@font-face {
+      font-family: 'Ostrich Regular';
+      src: url('../fonts/ostrich-regular-webfont.eot');
+      src: url('../fonts/ostrich-regular-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/ostrich-regular-webfont.woff') format('woff'),
+             url('../fonts/ostrich-regular-webfont.ttf') format('truetype'),
+             url('../fonts/ostrich-regular-webfont.svg#ostrich-regular-webfont') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
 
 /*
 The following is based of Typebase:
@@ -52,12 +72,9 @@ I've edited it a bit, but it's a nice starting point.
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
-/*
- i imported this one in the functions file so bones would look sweet.
- don't forget to remove it for your site.
-*/
-$lato:              'Lato', $sans-serif;
-
+$logo-font:         "Ostrich Light", Verdana, sans-serif;
+$header-font:       "Ostrich Black", Verdana, sans-serif;
+$sub-header-font:   "Ostrich Regular", Verdana, sans-serif;
 /*
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography

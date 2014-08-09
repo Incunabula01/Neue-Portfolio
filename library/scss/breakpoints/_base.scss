@@ -16,7 +16,7 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: $lato;
+	font-family: $header-font;
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
@@ -108,24 +108,22 @@ H1, H2, H3, H4, H5 STYLES
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
+	-webkit-text-rendering: optimizelegibility;
+	-moz-text-rendering: optimizelegibility;
 	font-weight: 500;
-	/*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
-
-	/* removing text decoration from all headline links */
 	a {
 		text-decoration: none;
 	}
 }
 
 h1, .h1 {
+	font-family: $header-font;
 	font-size: 2.5em;
 	line-height: 1.333em;
 }
 
 h2, .h2 {
+	font-family: $sub-header-font;
 	font-size: 1.75em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
@@ -152,17 +150,26 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
+	background: url('../images/foreground-banner.png') 50% 0 $black no-repeat;
+	background-size: cover;
 }
 
 	#logo {
-		margin: 0.75em 0;
+		margin: 0.25em 0;
+		text-align: center;
+		font-family: $logo-font;
+		font-size: 8em;
+		line-height: 0.75em;
 
 		a {
 			color: $white;
 		}
 	}
-
+	.subheader {
+		@include top-border( 0.1em, $white);
+		text-align: center;
+		color: $white;
+	}
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -177,22 +184,15 @@ and more scalable.
 
 .nav {
 	border-bottom: 0;
-	margin: 0;
 
 	li {
+		margin: 0 auto;
 
 		a {
 			display: block;
 			color: $white;
 			text-decoration: none;
 			padding: 0.75em;
-
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
 			&:hover, &:focus {
 
 			}
@@ -202,13 +202,6 @@ and more scalable.
 
 		&:last-child {}
 
-		/*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
 		ul.sub-menu,
 		ul.children {
 

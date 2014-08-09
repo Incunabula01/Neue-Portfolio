@@ -70,4 +70,10 @@ probably best not to use it. I mean, were you going to anyway? */
 	box-sizing:         $type;
 }
 
+@mixin top-border($size, $color){
+	-webkit-border-top: $size solid $color;
+	-moz-border-top: $size solid $color;
+	-o-border-top: $size solid $color;
+	border-top: $size solid $color; 
+}
 
