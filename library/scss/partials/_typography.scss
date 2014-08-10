@@ -51,15 +51,37 @@ FONT FACE (IN YOUR FACE)
   }
 
 @font-face {
-      font-family: 'Ostrich Regular';
-      src: url('../fonts/ostrich-regular-webfont.eot');
-      src: url('../fonts/ostrich-regular-webfont.eot?#iefix') format('embedded-opentype'),
-             url('../fonts/ostrich-regular-webfont.woff') format('woff'),
-             url('../fonts/ostrich-regular-webfont.ttf') format('truetype'),
-             url('../fonts/ostrich-regular-webfont.svg#ostrich-regular-webfont') format('svg');
+      font-family: 'Alegreya Regular';
+      src: url('../fonts/alegreya-regular-webfont.eot');
+      src: url('../fonts/alegreya-regular-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/alegreya-regular-webfont.woff') format('woff'),
+             url('../fonts/alegreya-regular-webfont.ttf') format('truetype'),
+             url('../fonts/alegreya-regular-webfont.svg#alegreya-regular-webfont') format('svg');
       font-weight: normal;
       font-style: normal;
   }
+
+@font-face {
+      font-family: 'Alegreya Black';
+      src: url('../fonts/alegreya-black-webfont.eot');
+      src: url('../fonts/alegreya-black-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/alegreya-black-webfont.woff') format('woff'),
+             url('../fonts/alegreya-black-webfont.ttf') format('truetype'),
+             url('../fonts/alegreya-black-webfont.svg#alegreya-black-webfont') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+ @font-face {
+      font-family: 'Alegreya Italic';
+      src: url('../fonts/alegreya-italic-webfont.eot');
+      src: url('../fonts/alegreya-italic-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/alegreya-italic-webfont.woff') format('woff'),
+             url('../fonts/alegreya-italic-webfont.ttf') format('truetype'),
+             url('../fonts/alegreya-italic-webfont.svg#alegreya-italic-webfont') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  } 
 
 /*
 The following is based of Typebase:
@@ -70,11 +92,13 @@ I've edited it a bit, but it's a nice starting point.
 
 // font stacks
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$serif:             "Alegreya Regular", Georgia, Times, serif;
+$serif-bold:        "Alegreya Black", Georgia, Times, serif;
 
 $logo-font:         "Ostrich Light", Verdana, sans-serif;
 $header-font:       "Ostrich Black", Verdana, sans-serif;
-$sub-header-font:   "Ostrich Regular", Verdana, sans-serif;
+$sub-header-font:   "Alegreya Italic", Georgia, serif;
+
 /*
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
@@ -99,4 +123,7 @@ p {
        -o-font-feature-settings: "liga", "dlig";
           font-feature-settings: "liga", "dlig";
 }
+
+/* Font Awesome Fonts */
+
 

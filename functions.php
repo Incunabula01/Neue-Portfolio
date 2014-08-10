@@ -60,6 +60,14 @@ function bones_ahoy() {
 // let's get this party started
 add_action( 'after_setup_theme', 'bones_ahoy' );
 
+/* Font Awesome Icons */
+
+/*function font_awesome_fonts() {
+  wp_enqueue_style( 'font-awesome, get_template_directory_uri() . ‘library/css/font-awesome.min.css' );
+}
+
+add_action('wp_enqueue_style','font_awesome_fonts'); */
+
 
 /************* OEMBED SIZE OPTIONS *************/
 
@@ -160,13 +168,6 @@ function bones_comments( $comment, $args, $depth ) {
     <article  class="cf">
       <header class="comment-author vcard">
         <?php
-        /*
-          this is the new responsive optimized comment image. It used the new HTML5 data-attribute to display comment gravatars on larger screens only. What this means is that on larger posts, mobile sites don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd like to change it back, just replace it with the regular wordpress gravatar call:
-          echo get_avatar($comment,$size='32',$default='<path_to_url>' );
-        */
-        ?>
-        <?php // custom gravatar call ?>
-        <?php
           // create variable
           $bgauthemail = get_comment_author_email();
         ?>
@@ -189,22 +190,4 @@ function bones_comments( $comment, $args, $depth ) {
   <?php // </li> is added by WordPress automatically ?>
 <?php
 } // don't remove this bracket!
-
-
-/*
-This is a modification of a function found in the
-twentythirteen theme where we can declare some
-external fonts. If you're using Google Fonts, you
-can replace these fonts, change it in your scss files
-and be up and running in seconds.
-*/
-function bones_fonts() {
-  wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
-  wp_enqueue_style( 'googleFonts');
-}
-
-add_action('wp_print_styles', 'bones_fonts');
-
-
-
 /* DON'T DELETE THIS CLOSING TAG */ ?>

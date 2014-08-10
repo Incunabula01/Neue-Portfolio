@@ -106,12 +106,9 @@ function loadGravatars() {
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
-
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  loadGravatars();
-
+  $('#mobile-menu').find('.mobile-nav-icon').bind(
+    'click focus', function(){
+      $(this).parent().toggleClass('expanded')
+    })
 
 }); /* end of as page load scripts */

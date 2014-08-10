@@ -16,7 +16,7 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: $header-font;
+	font-family: $serif;
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
@@ -150,15 +150,38 @@ HEADER STYLES
 *********************/
 
 .header {
-	background: url('../images/foreground-banner.png') 50% 0 $black no-repeat;
+	//@include css-gradient($from: $orange, $to: $blue);
+	background: url('../images/foreground-banner.png') 50% 0 no-repeat $orange fixed;
 	background-size: cover;
 }
+	
+	#main-logo {
+		opacity: 1;
+		margin: 5px auto 0 auto;
+		display: block;
+		background: url('../images/JWDesign_Logo.png') 0 0 no-repeat $black;
+		opacity: 1;
+		@include transparent-black(1.0);
+		height: 150px;
+		width: 150px;
+		border-radius: 75px;
+		@include hide-text;
+			&:hover {
+				@include transparent-black(0.5);
+				@include transition(all 0.5s ease-in-out);
+			}
+			&:active {
+				opacity: 0.6;
+				@include transparent-black(0.8);
+			}
+	}
 
-	#logo {
+	#logo-text {
 		margin: 0.25em 0;
 		text-align: center;
 		font-family: $logo-font;
-		font-size: 8em;
+		color: $blue;
+		font-size: 7em;
 		line-height: 0.75em;
 
 		a {
@@ -181,26 +204,47 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
+#mobile-menu {
+	display: block;
+	@include transparent-white(0.8);
+	margin-bottom: -0.40em;
+	border-bottom: 0.1em solid $white;
+	.h1{
+		font-size: 1.8em;
+		text-decoration: none;
+		padding: 0.25em;
+	}
+	.mobile-nav-icon {
+		float: right;
+		padding: 0.50em;
+		cursor: pointer;
+	}
+}
 
 .nav {
+	clear: right;
+	@include transparent-white(0.5);
 	border-bottom: 0;
-
+		
 	li {
 		margin: 0 auto;
-
+		font-size: 1.5em;
+		border-bottom: 0.1em solid $white;
 		a {
 			display: block;
-			color: $white;
 			text-decoration: none;
-			padding: 0.75em;
+			padding: 0.75em 0.5em;
+			color: $blue;
 			&:hover, &:focus {
-
+				@include transparent-black(0.8);
 			}
 		}
 
 		&:first-child {}
 
-		&:last-child {}
+		&:last-child {
+			border-bottom: 0 none;
+		}
 
 		ul.sub-menu,
 		ul.children {
@@ -232,7 +276,9 @@ and more scalable.
 	li.current_page_item,
 	li.current_page_ancestor {
 
-		a {}
+		a {
+			font-family: $serif-bold;
+		}
 
 	}  /* end current highlighters */
 

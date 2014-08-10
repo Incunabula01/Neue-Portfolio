@@ -80,9 +80,23 @@ FONT FACE (IN YOUR FACE)
   font-style: normal;
 }
 @font-face {
-  font-family: 'Ostrich Regular';
-  src: url("../fonts/ostrich-regular-webfont.eot");
-  src: url("../fonts/ostrich-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ostrich-regular-webfont.woff") format("woff"), url("../fonts/ostrich-regular-webfont.ttf") format("truetype"), url("../fonts/ostrich-regular-webfont.svg#ostrich-regular-webfont") format("svg");
+  font-family: 'Alegreya Regular';
+  src: url("../fonts/alegreya-regular-webfont.eot");
+  src: url("../fonts/alegreya-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/alegreya-regular-webfont.woff") format("woff"), url("../fonts/alegreya-regular-webfont.ttf") format("truetype"), url("../fonts/alegreya-regular-webfont.svg#alegreya-regular-webfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Alegreya Black';
+  src: url("../fonts/alegreya-black-webfont.eot");
+  src: url("../fonts/alegreya-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/alegreya-black-webfont.woff") format("woff"), url("../fonts/alegreya-black-webfont.ttf") format("truetype"), url("../fonts/alegreya-black-webfont.svg#alegreya-black-webfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Alegreya Italic';
+  src: url("../fonts/alegreya-italic-webfont.eot");
+  src: url("../fonts/alegreya-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/alegreya-italic-webfont.woff") format("woff"), url("../fonts/alegreya-italic-webfont.ttf") format("truetype"), url("../fonts/alegreya-italic-webfont.svg#alegreya-italic-webfont") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -113,6 +127,7 @@ p {
   font-feature-settings: "liga", "dlig";
 }
 
+/* Font Awesome Fonts */
 /******************************************************************
 Site Name:
 Author:
@@ -155,6 +170,8 @@ BOX SIZING
 /* @include box-sizing(border-box); */
 /* NOTE: value of "padding-box" is only supported in Gecko. So
 probably best not to use it. I mean, were you going to anyway? */
+/* Color Transparency */
+/* Hide alt text */
 /******************************************************************
 Site Name:
 Author:

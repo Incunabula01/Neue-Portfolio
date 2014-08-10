@@ -34,7 +34,7 @@ USAGE: @include transition(all 0.2s ease-in-out);
 
 @mixin transition($transition...) {
   // defining prefixes so we can use them in mixins below
-  $prefixes:      ("-webkit-", "" );
+  $prefixes:      ("-webkit-", "-moz-","-o-" );
   @each $prefix in $prefixes {
     #{$prefix}transition: $transition;
   }
@@ -77,3 +77,18 @@ probably best not to use it. I mean, were you going to anyway? */
 	border-top: $size solid $color; 
 }
 
+/* Color Transparency */
+@mixin transparent-black($opacity){
+	background-color: rgba(5,38,54,$opacity);
+}
+
+@mixin transparent-white($opacity){
+	background-color: rgba(255,255,255,$opacity);
+}
+
+/* Hide alt text */
+@mixin hide-text{
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}
