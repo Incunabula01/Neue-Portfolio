@@ -31,17 +31,59 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	background: url('../images/foreground-banner.png') 50% 0 no-repeat $light-orange fixed;
+	background-size: cover;
+	max-height: 500px;
+}
 
-	#logo {}
+	#main-logo {
+		opacity: 1;
+		margin: 5px auto 0 auto;
+		display: block;
+		background: url('../images/JWDesign_Logo.png') 0 0 no-repeat $black;
+		opacity: 1;
+		@include transparent-black(1.0);
+		height: 150px;
+		width: 150px;
+		border-radius: 75px;
+		float: none;
+	}
+
+	#logo-text {
+		margin: 0.25em 0;
+		text-align: center;
+		font-family: $logo-font;
+		color: $blue;
+		font-size: 7em;
+		line-height: 0.75em;
+		float: none;
+
+		a {
+			color: $white;
+		}
+	}
+	.subheader {
+		display: block;
+		@include top-border( 0.1em, $white);
+		text-align: center;
+		color: $white;
+	}
 
 /*********************
 NAVIGATION STYLES
 *********************/
+.menu-toggle {
+	display: none;
+}
 
-.nav {
+.nav-menu {
 	border: 0;
 	margin: 0 auto;
+	display: block;
+	position: absolute;
+	z-index: 0;
+
 	ul {
 		background:$black;
 		margin-top:0;
@@ -58,8 +100,8 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				color: $white;
-				text-decoration: underline;
+				@include transparent-black(0.5);
+				@include transition(all 0.5s ease-in-out);
 			}
 		}
 

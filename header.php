@@ -47,17 +47,15 @@
 
 					<h3 class="subheader"><?php bloginfo('description'); ?></h3>
 
-					<div id="mobile-menu">
-						<a class="h1" href="#main-logo" rel="nofollow">Menu</a>
-						<i class="mobile-nav-icon fa fa-bars fa-lg"></i>
-					</div>
+					<nav id="site navigation" class="nav" role="navigation">
 
-					<nav class="primary-nav" role="navigation">
+						<button class="menu-toggle"><i class="fa fa-bars fa-lg"></i></button>
+
 						<?php wp_nav_menu(array(
     					'container' => false,                           // remove nav container
     					'container_class' => 'menu cf',                 // class of container (should you choose to use it)
     					'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-    					'menu_class' => 'nav top-nav cf',               // adding custom nav class
+    					'menu_class' => 'nav-menu cf',               // adding custom nav class
     					'theme_location' => 'main-nav',                 // where it's located in the theme
     					'before' => '',                                 // before the menu
         				'after' => '',                                  // after the menu

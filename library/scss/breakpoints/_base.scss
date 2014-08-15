@@ -150,21 +150,20 @@ HEADER STYLES
 *********************/
 
 .header {
-	//@include css-gradient($from: $orange, $to: $blue);
-	background: url('../images/foreground-banner.png') 50% 0 no-repeat $orange fixed;
-	background-size: cover;
+	background: none;
+	@include css-gradient($from: $light-orange, $to: $cyan);
+	max-height: 55px;
 }
 	
 	#main-logo {
 		opacity: 1;
-		margin: 5px auto 0 auto;
+		margin: 2px;
 		display: block;
 		background: url('../images/JWDesign_Logo.png') 0 0 no-repeat $black;
-		opacity: 1;
-		@include transparent-black(1.0);
-		height: 150px;
-		width: 150px;
-		border-radius: 75px;
+		height: 45px;
+		width: 45px;
+		border-radius: 22.5px;
+		float: left;
 		@include hide-text;
 			&:hover {
 				@include transparent-black(0.5);
@@ -177,11 +176,12 @@ HEADER STYLES
 	}
 
 	#logo-text {
-		margin: 0.25em 0;
+		margin: 0.5em;
+		float: left;
 		text-align: center;
 		font-family: $logo-font;
 		color: $blue;
-		font-size: 7em;
+		font-size: 2em;
 		line-height: 0.75em;
 
 		a {
@@ -189,9 +189,7 @@ HEADER STYLES
 		}
 	}
 	.subheader {
-		@include top-border( 0.1em, $white);
-		text-align: center;
-		color: $white;
+		display: none;
 	}
 /*********************
 NAVIGATION STYLES
@@ -204,36 +202,47 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-#mobile-menu {
-	display: block;
-	@include transparent-white(0.8);
-	margin-bottom: -0.40em;
-	border-bottom: 0.1em solid $white;
-	.h1{
-		font-size: 1.8em;
-		text-decoration: none;
-		padding: 0.25em;
-	}
-	.mobile-nav-icon {
-		float: right;
-		padding: 0.50em;
-		cursor: pointer;
+.menu-toggle {
+	top: 0.5em;
+	right: 0.5em;
+	height: 40px;
+	width: 40px;
+	border: 0 none;
+	@include transparent-white(0.5);
+	padding: 0.50em;
+	position: absolute;
+	z-index: 1;
+	float: right;
+	margin-bottom: 5px;
+	&:hover, &:active{
+		@include transparent-black(0.8);
+		color: $link-hover;
 	}
 }
 
-.nav {
-	clear: right;
+.menu-toggle,
+.nav.toggled .nav-menu {
+	display: block;
+}
+
+
+.nav-menu {
+	clear: both;
 	@include transparent-white(0.5);
 	border-bottom: 0;
-		
+	display: none;
+	position: absolute;
+	z-index: 9999;
+
 	li {
 		margin: 0 auto;
 		font-size: 1.5em;
 		border-bottom: 0.1em solid $white;
 		a {
+			text-align: center;
 			display: block;
 			text-decoration: none;
-			padding: 0.75em 0.5em;
+			padding: 0.5em 0.5em;
 			color: $blue;
 			&:hover, &:focus {
 				@include transparent-black(0.8);

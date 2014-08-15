@@ -80,6 +80,13 @@ FONT FACE (IN YOUR FACE)
   font-style: normal;
 }
 @font-face {
+  font-family: 'Ostrich Regular';
+  src: url("../fonts/ostrich-regular-webfont.eot");
+  src: url("../fonts/ostrich-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ostrich-regular-webfont.woff") format("woff"), url("../fonts/ostrich-regular-webfont.ttf") format("truetype"), url("../fonts/ostrich-regular-webfont.svg#ostrich-light-webfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Alegreya Regular';
   src: url("../fonts/alegreya-regular-webfont.eot");
   src: url("../fonts/alegreya-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/alegreya-regular-webfont.woff") format("woff"), url("../fonts/alegreya-regular-webfont.ttf") format("truetype"), url("../fonts/alegreya-regular-webfont.svg#alegreya-regular-webfont") format("svg");
@@ -134,44 +141,23 @@ Author:
 
 Stylesheet: Mixins Stylesheet
 
-This is where you can take advantage of Sass' great features: Mixins.
-I won't go in-depth on how they work exactly,
-there are a few articles below that will help do that. What I will
-tell you is that this will help speed up simple changes like
-changing a color or adding CSS3 techniques gradients.
-
-A WORD OF WARNING: It's very easy to overdo it here. Be careful and
-remember less is more.
-
-Helpful:
-http://sachagreif.com/useful-sass-mixins/
-http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
-http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
-
 ******************************************************************/
 /*********************
 TRANSITION
 *********************/
-/*
-I totally rewrote this to be cleaner and easier to use.
-You'll need to be using Sass 3.2+ for these to work.
-Thanks to @anthonyshort for the inspiration on these.
-USAGE: @include transition(all 0.2s ease-in-out);
-*/
 /*********************
 CSS3 GRADIENTS
-Be careful with these since they can
-really slow down your CSS. Don't overdo it.
 *********************/
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
 /*********************
 BOX SIZING
 *********************/
-/* @include box-sizing(border-box); */
-/* NOTE: value of "padding-box" is only supported in Gecko. So
-probably best not to use it. I mean, were you going to anyway? */
-/* Color Transparency */
-/* Hide alt text */
+/*********************
+COLOR TRANSPARENCY
+*********************/
+/*********************
+MISC HELPERS
+*********************/
 /******************************************************************
 Site Name:
 Author:
@@ -292,21 +278,70 @@ LAYOUT & GRID STYLES
 /*********************
 HEADER STYLES
 *********************/
+.header {
+  background: url("../images/foreground-banner.png") 50% 0 no-repeat #fcccae fixed;
+  background-size: cover;
+  max-height: 500px;
+}
+
+#main-logo {
+  opacity: 1;
+  margin: 5px auto 0 auto;
+  display: block;
+  background: url("../images/JWDesign_Logo.png") 0 0 no-repeat #323944;
+  opacity: 1;
+  background-color: #052636;
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
+  float: none;
+}
+
+#logo-text {
+  margin: 0.25em 0;
+  text-align: center;
+  font-family: "Ostrich Regular", Verdana, sans-serif;
+  color: #052636;
+  font-size: 7em;
+  line-height: 0.75em;
+  float: none;
+}
+#logo-text a {
+  color: white;
+}
+
+.subheader {
+  display: block;
+  -webkit-border-top: 0.1em solid white;
+  -moz-border-top: 0.1em solid white;
+  -o-border-top: 0.1em solid white;
+  border-top: 0.1em solid white;
+  text-align: center;
+  color: white;
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
-.nav {
+.menu-toggle {
+  display: none;
+}
+
+.nav-menu {
   border: 0;
   margin: 0 auto;
+  display: block;
+  position: absolute;
+  z-index: 0;
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */
 }
-.nav ul {
+.nav-menu ul {
   background: #323944;
   margin-top: 0;
 }
-.nav li {
+.nav-menu li {
   float: left;
   position: relative;
   /*
@@ -314,19 +349,21 @@ NAVIGATION STYLES
   */
   /* showing sub-menus */
 }
-.nav li a {
+.nav-menu li a {
   border-bottom: 0;
   /*
   you can use hover styles here even though this size
   has the possibility of being a mobile device.
   */
 }
-.nav li a:hover, .nav li a:focus {
-  color: white;
-  text-decoration: underline;
+.nav-menu li a:hover, .nav-menu li a:focus {
+  background-color: rgba(5, 38, 54, 0.5);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
-.nav li ul.sub-menu,
-.nav li ul.children {
+.nav-menu li ul.sub-menu,
+.nav-menu li ul.children {
   margin-top: 0;
   border: 1px solid #ccc;
   border-top: 0;
@@ -335,32 +372,32 @@ NAVIGATION STYLES
   z-index: 8999;
   /* highlight sub-menu current page */
 }
-.nav li ul.sub-menu li,
-.nav li ul.children li {
+.nav-menu li ul.sub-menu li,
+.nav-menu li ul.children li {
   /*
   if you need to go deeper, go nuts
   just remember deeper menus suck
   for usability. k, bai.
   */
 }
-.nav li ul.sub-menu li a,
-.nav li ul.children li a {
+.nav-menu li ul.sub-menu li a,
+.nav-menu li ul.children li a {
   padding-left: 10px;
   border-right: 0;
   display: block;
   width: 180px;
   border-bottom: 1px solid #ccc;
 }
-.nav li ul.sub-menu li:last-child a,
-.nav li ul.children li:last-child a {
+.nav-menu li ul.sub-menu li:last-child a,
+.nav-menu li ul.children li:last-child a {
   border-bottom: 0;
 }
-.nav li ul.sub-menu li ul,
-.nav li ul.children li ul {
+.nav-menu li ul.sub-menu li ul,
+.nav-menu li ul.children li ul {
   top: 0;
   left: 100%;
 }
-.nav li:hover > ul {
+.nav-menu li:hover > ul {
   top: auto;
   visibility: visible;
 }

@@ -60,14 +60,21 @@ function bones_ahoy() {
 // let's get this party started
 add_action( 'after_setup_theme', 'bones_ahoy' );
 
-/* Font Awesome Icons */
+/* Font Awesome Icons 
 
-/*function font_awesome_fonts() {
-  wp_enqueue_style( 'font-awesome, get_template_directory_uri() . ‘library/css/font-awesome.min.css' );
+function font_awesome_fonts() {
+  wp_enqueue_style( 'font_awesome', get_template_directory_uri() . ‘/library/css/font-awesome.min.css');
 }
 
-add_action('wp_enqueue_style','font_awesome_fonts'); */
+add_action('wp_enqueue_style','font_awesome_fonts');
 
+/*---Mobile Nav Script--*/
+
+function mobile_nav() {
+
+wp_enqueue_script( 'navigation', get_template_directory_uri() . '/library/js/navigation.js', array(), '20120206', true );
+}
+add_action( 'wp_enqueue_scripts', 'mobile_nav' );
 
 /************* OEMBED SIZE OPTIONS *************/
 
