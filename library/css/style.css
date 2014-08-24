@@ -1635,11 +1635,58 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/*canvas {
-	width: 100% !important;
-	max-width: 768px;
-	height: auto !important;
-}*/
+#skill-chart {
+  min-width: 320px;
+  height: auto;
+}
+#skill-chart li {
+  background-color: #4ec5e9;
+  margin: 5px 2px;
+  text-decoration: none;
+  list-style: none;
+}
+#skill-chart li h2 {
+  font-family: "Ostrich Black", Verdana, sans-serif;
+  color: white;
+  padding: 0.2em;
+}
+#skill-chart .chart-bar-1 {
+  background-color: #21b6e3;
+  width: 70%;
+  height: 40px;
+}
+#skill-chart .chart-bar-2 {
+  background-color: #1482a3;
+  width: 15%;
+  height: 40px;
+}
+#skill-chart .chart-bar-3 {
+  background-color: #11708d;
+  width: 50%;
+  height: 40px;
+}
+
+#chart-range {
+  min-width: 320px;
+  -webkit-border-top: 0.2em solid #4ec5e9;
+  -moz-border-top: 0.2em solid #4ec5e9;
+  -o-border-top: 0.2em solid #4ec5e9;
+  border-top: 0.2em solid #4ec5e9;
+}
+#chart-range li {
+  min-width: 320px;
+  height: 45px;
+  padding-left: 5px;
+  display: inline;
+  font-family: "Alegreya Black", Georgia, Times, serif;
+  color: #7bd4ef;
+  font-size: 0.5em;
+  margin-right: 10%;
+}
+#chart-range li:before, #chart-range li:after {
+  content: "  |  ";
+}
+
 #content {
   margin-top: 1.5em;
   width: 100%;
@@ -2277,6 +2324,10 @@ you can add resource intensive styles.
   }
 
   /* end .nav */
+  #chart-range li {
+    margin-right: 13em;
+  }
+
   /*********************
   SIDEBARS & ASIDES
   *********************/

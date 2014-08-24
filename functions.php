@@ -191,7 +191,7 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
-/*********** JS Charts ************************/
+/*********** JS Charts ************************
 
 function charts_js() {
 wp_register_script('chart_js', get_template_directory_uri() . '/library/js/ChartNew.js', 'jQuery','1.1', true);
@@ -200,7 +200,7 @@ wp_enqueue_script('chart_js');
 wp_enqueue_script('skillChart_js');
 }
 
-add_action( 'wp_enqueue_scripts', 'charts_js' );
+add_action( 'wp_enqueue_scripts', 'charts_js' ); */
 
 /************* Sticky Navs *********************/
 

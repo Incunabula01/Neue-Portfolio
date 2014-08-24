@@ -24,7 +24,39 @@
 								<section class="entry-content cf" itemprop="articleBody">
 
 									<h1 class="page-title"> Skills </h1>
-									<canvas id="skillChart"></canvas>
+									<div ppclass="m-all t-all d-all">
+										<ul id="skill-chart">
+											<li class="chart-bar-1">
+												<h2>HTML5</h2>
+											</li>
+											<li class="chart-bar-1">
+												<h2>CSS3/Sass</h2>
+											</li>
+											<li class="chart-bar-2">
+												<h2>jQuery</h2>
+											</li>
+											<li class="chart-bar-3">
+												<h2>WordPress</h2>
+											</li>
+											<li class="chart-bar-3">
+												<h2>UI/UX</h2>
+											</li>
+										</ul>
+										<ul id="chart-range">
+											<li>
+												Beginner
+											</li>
+											<li>
+												Intermediate
+											</li>
+											<li>
+												Skilled
+											</li>
+											<li>
+												Advanced
+											</li>
+										</ul>
+									</div>
 									<?php
 										// the content (pretty self explanatory huh)
 										the_content();

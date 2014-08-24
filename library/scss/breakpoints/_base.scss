@@ -316,12 +316,54 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+#skill-chart{
+	min-width: 320px;
+	height: auto;
+	li{
+		background-color: $cyan;
+		margin: 5px 2px;
+		text-decoration: none;
+		list-style: none;
+		h2{
+			font-family: $header-font;
+			color: $white;
+			padding: 0.2em;
+		}
+	}
+	.chart-bar-1{
+		background-color: darken($cyan,10%);
+		width: 70%;
+		height: 40px;
+	}
+	.chart-bar-2{
+		background-color: darken($cyan,25%);
+		width: 15%;
+		height: 40px;
+	}
+	.chart-bar-3{
+		background-color: darken($cyan,30%);
+		width: 50%;
+		height: 40px;
+	}
+}
+#chart-range{
+	min-width: 320px;
+	@include top-border(0.2em,$cyan);
+	li{
+		min-width: 320px;
+		height: 45px;
+		padding-left: 5px;
+		display: inline;
+		font-family: $serif-bold;
+		color: lighten($cyan,10%);
+		font-size: 0.5em;
+		margin-right: 10%;
+		&:before, &:after{
+			content: "  |  ";
+		}
+	}
+}
 
-/*canvas {
-	width: 100% !important;
-	max-width: 768px;
-	height: auto !important;
-}*/
 
 #content {
 	margin-top: 1.5em;

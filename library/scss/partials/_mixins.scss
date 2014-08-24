@@ -51,6 +51,12 @@ BOX SIZING
 	-o-border-top: $size solid $color;
 	border-top: $size solid $color; 
 }
+@mixin left-border($size, $color){
+	-webkit-border-left: $size solid $color;
+	-moz-border-left: $size solid $color;
+	-o-border-left: $size solid $color;
+	border-left: $size solid $color; 
+}
 
 /*********************
 COLOR TRANSPARENCY
