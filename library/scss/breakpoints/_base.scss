@@ -21,7 +21,7 @@ body {
 	line-height: 1.5;
 	color: $text-color;
 	background-color: $gray;
-  -webkit-font-smoothing: antialiased;
+  	-webkit-font-smoothing: antialiased;
 }
 
 /********************
@@ -30,7 +30,9 @@ style a page via class
 ********************/
 
 .rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {}                          /* home page */
+.home {
+	height: 100%;
+	}                          /* home page */
 .blog {}                          /* blog template page */
 .archive {}                       /* archive page */
 .date {}                          /* date archive page */
@@ -70,7 +72,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 96%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -150,19 +152,18 @@ HEADER STYLES
 *********************/
 
 .header {
-	background: none;
-	@include css-gradient($from: $light-orange, $to: $cyan);
-	max-height: 55px;
+	background: $light-orange;
+	min-height: 55px;
 }
 	
 	#main-logo {
 		opacity: 1;
 		margin: 2px;
 		display: block;
-		background: url('../images/JWDesign_Logo.png') 0 0 no-repeat $black;
-		height: 45px;
-		width: 45px;
-		border-radius: 22.5px;
+		background: url('../images/JWDesign_Logo_Mobile.png') 50% 0 no-repeat $black;
+		height: 43px;
+		width: 43px;
+		border-radius: 21.5px;
 		float: left;
 		@include hide-text;
 			&:hover {
@@ -195,13 +196,6 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
 .menu-toggle {
 	top: 0.5em;
 	right: 0.5em;
@@ -218,6 +212,11 @@ and more scalable.
 		@include transparent-black(0.8);
 		color: $link-hover;
 	}
+	&:focus{
+		@include transparent-black(0.8);
+		color: $link-hover;
+		box-shadow: 0 none;
+	}
 }
 
 .menu-toggle,
@@ -225,14 +224,12 @@ and more scalable.
 	display: block;
 }
 
-
 .nav-menu {
 	clear: both;
-	@include transparent-white(0.5);
+	background-color: lighten($cyan, 10%);
 	border-bottom: 0;
 	display: none;
-	position: absolute;
-	z-index: 9999;
+	width: 100%;
 
 	li {
 		margin: 0 auto;
@@ -242,14 +239,21 @@ and more scalable.
 			text-align: center;
 			display: block;
 			text-decoration: none;
-			padding: 0.5em 0.5em;
+			padding: 0.2em 0.5em;
 			color: $blue;
 			&:hover, &:focus {
-				@include transparent-black(0.8);
+				color: $link-hover;
+				@include transition(all 0.2s ease-in);
+				background-color: darken($cyan, 40%);
+			}
+			&:before {
+				font-family: FontAwesome;
+				font-size: 1em;
 			}
 		}
 
-		&:first-child {}
+		&:first-child {
+		}
 
 		&:last-child {
 			border-bottom: 0 none;
@@ -293,29 +297,51 @@ and more scalable.
 
 } /* end .nav */
 
+/*****Nav Icons*****/
+
+#menu-item-22{
+	a:before{
+		padding: 0.2em;
+		content: "\f0b1"; //briefcase icon
+	}
+}
+
+#menu-item-23{
+	a:before{
+		padding: 0.2em;
+		content: "\f0e0"; //envelope icon
+	}
+}
 
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 
+/*canvas {
+	width: 100% !important;
+	max-width: 768px;
+	height: auto !important;
+}*/
+
 #content {
 	margin-top: 1.5em;
+	width: 100%;
 }
 
 		.hentry {
-			background-color: $white;
-			border-radius: 3px;
+			background-color: $light-gray;
 			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
+			border-bottom: 1px solid $border-color;
 
 			header {
-				border-bottom: 1px solid $light-gray;
+				background-color: $white;
+				border-bottom: 1px solid $gray;
 				padding: 1.5em;
 			}
 
 			footer {
 				padding: 1.5em;
-				border-top: 1px solid $light-gray;
+				border-top: 1px solid $gray;
 
 				p {
 					margin: 0;

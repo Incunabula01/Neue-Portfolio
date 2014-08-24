@@ -86,10 +86,16 @@ var timeToWaitForLast = 100;
 
 
 /*
- * Put all your regular jQuery in here.
+ * Put all your regular jQuery in here. */
 
 jQuery(document).ready(function($) {
 
-}); */
+	/* Mobile Nav Menu */
+	$('.menu-toggle').on( 'click',function(){
+		$('.nav-menu').slideToggle(500, 'easeInOutQuad');
+		$(this).toggleClass('toggled');
+	});
+}); 
+
 
 /* end of as page load scripts */

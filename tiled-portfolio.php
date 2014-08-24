@@ -1,15 +1,14 @@
 <?php
-
- Template Name: Tiled Portfolio
+ /*  Template Name: Tiled Portfolio  */
 ?>
 
 <?php get_header(); ?>
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap cf">
+				<div id="main" class="m-all t-all d-all cf" role="main">
 
-						<div id="main" class="m-all t-all d-all cf" role="main">
+					<div id="inner-content" class="wrap cf">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -23,6 +22,9 @@
 								</header>
 
 								<section class="entry-content cf" itemprop="articleBody">
+
+									<h1 class="page-title"> Skills </h1>
+									<canvas id="skillChart"></canvas>
 									<?php
 										// the content (pretty self explanatory huh)
 										the_content();

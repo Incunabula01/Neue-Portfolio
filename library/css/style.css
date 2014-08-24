@@ -1385,6 +1385,10 @@ WORDPRESS BODY CLASSES
 style a page via class
 ********************/
 /* for sites that are read right to left (i.e. hebrew) */
+.home {
+  height: 100%;
+}
+
 /* home page */
 /* blog template page */
 /* archive page */
@@ -1423,7 +1427,7 @@ style a page via class
 LAYOUT & GRID STYLES
 *********************/
 .wrap {
-  width: 96%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -1494,24 +1498,18 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .header {
-  background: none;
-  background-color: #4ec5e9;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fcccae), to(#4ec5e9));
-  background-image: -webkit-linear-gradient(top, #fcccae, #4ec5e9);
-  background-image: -moz-linear-gradient(top, #fcccae, #4ec5e9);
-  background-image: -o-linear-gradient(top, #fcccae, #4ec5e9);
-  background-image: linear-gradient(to bottom, #fcccae, #4ec5e9);
-  max-height: 55px;
+  background: #fcccae;
+  min-height: 55px;
 }
 
 #main-logo {
   opacity: 1;
   margin: 2px;
   display: block;
-  background: url("../images/JWDesign_Logo.png") 0 0 no-repeat #323944;
-  height: 45px;
-  width: 45px;
-  border-radius: 22.5px;
+  background: url("../images/JWDesign_Logo_Mobile.png") 50% 0 no-repeat #323944;
+  height: 43px;
+  width: 43px;
+  border-radius: 21.5px;
   float: left;
   font: 0/0 a;
   text-shadow: none;
@@ -1548,13 +1546,6 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
 .menu-toggle {
   top: 0.5em;
   right: 0.5em;
@@ -1572,6 +1563,11 @@ and more scalable.
   background-color: rgba(5, 38, 54, 0.8);
   color: #f98e4b;
 }
+.menu-toggle:focus {
+  background-color: rgba(5, 38, 54, 0.8);
+  color: #f98e4b;
+  box-shadow: 0 none;
+}
 
 .menu-toggle,
 .nav.toggled .nav-menu {
@@ -1580,11 +1576,10 @@ and more scalable.
 
 .nav-menu {
   clear: both;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #7bd4ef;
   border-bottom: 0;
   display: none;
-  position: absolute;
-  z-index: 9999;
+  width: 100%;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
@@ -1598,11 +1593,19 @@ and more scalable.
   text-align: center;
   display: block;
   text-decoration: none;
-  padding: 0.5em 0.5em;
+  padding: 0.2em 0.5em;
   color: #052636;
 }
 .nav-menu li a:hover, .nav-menu li a:focus {
-  background-color: rgba(5, 38, 54, 0.8);
+  color: #f98e4b;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  background-color: #0c4c5f;
+}
+.nav-menu li a:before {
+  font-family: FontAwesome;
+  font-size: 1em;
 }
 .nav-menu li:last-child {
   border-bottom: 0 none;
@@ -1618,26 +1621,43 @@ and more scalable.
 }
 
 /* end .nav */
+/*****Nav Icons*****/
+#menu-item-22 a:before {
+  padding: 0.2em;
+  content: "\f0b1";
+}
+
+#menu-item-23 a:before {
+  padding: 0.2em;
+  content: "\f0e0";
+}
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+/*canvas {
+	width: 100% !important;
+	max-width: 768px;
+	height: auto !important;
+}*/
 #content {
   margin-top: 1.5em;
+  width: 100%;
 }
 
 .hentry {
-  background-color: white;
-  border-radius: 3px;
+  background-color: #f8f9fa;
   margin-bottom: 1.5em;
-  border: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
 }
 .hentry header {
-  border-bottom: 1px solid #f8f9fa;
+  background-color: white;
+  border-bottom: 1px solid #eaedf2;
   padding: 1.5em;
 }
 .hentry footer {
   padding: 1.5em;
-  border-top: 1px solid #f8f9fa;
+  border-top: 1px solid #eaedf2;
 }
 .hentry footer p {
   margin: 0;
@@ -2130,13 +2150,6 @@ you can add resource intensive styles.
   Author:
   
   Stylesheet: Tablet & Small Desktop Stylesheet
-  
-  Here's where you can start getting into the good stuff.
-  This size will work on iPads, other tablets, and desktops.
-  So you can start working with more styles, background images,
-  and other resources. You'll also notice the grid starts to
-  come into play. Have fun!
-  
   ******************************************************************/
   /*********************
   GENERAL STYLES
@@ -2204,8 +2217,8 @@ you can add resource intensive styles.
     border: 0;
     margin: 0 auto;
     display: block;
-    position: absolute;
-    z-index: 0;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.8);
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
@@ -2224,16 +2237,12 @@ you can add resource intensive styles.
   }
   .nav-menu li a {
     border-bottom: 0;
-    /*
-    you can use hover styles here even though this size
-    has the possibility of being a mobile device.
-    */
   }
   .nav-menu li a:hover, .nav-menu li a:focus {
-    background-color: rgba(5, 38, 54, 0.5);
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
+    background-color: rgba(5, 38, 54, 0.7);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
   }
   .nav-menu li ul.sub-menu,
   .nav-menu li ul.children {
@@ -2244,14 +2253,6 @@ you can add resource intensive styles.
     visibility: hidden;
     z-index: 8999;
     /* highlight sub-menu current page */
-  }
-  .nav-menu li ul.sub-menu li,
-  .nav-menu li ul.children li {
-    /*
-    if you need to go deeper, go nuts
-    just remember deeper menus suck
-    for usability. k, bai.
-    */
   }
   .nav-menu li ul.sub-menu li a,
   .nav-menu li ul.children li a {

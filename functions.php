@@ -2,10 +2,6 @@
 /*
 Author: Eddie Machado
 URL: htp://themble.com/bones/
-
-This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images,
-sidebars, comments, ect.
 */
 
 // LOAD BONES CORE (if you remove this, the theme will break)
@@ -60,21 +56,16 @@ function bones_ahoy() {
 // let's get this party started
 add_action( 'after_setup_theme', 'bones_ahoy' );
 
-/* Font Awesome Icons 
+/* Font Awesome Icons */
 
-function font_awesome_fonts() {
-  wp_enqueue_style( 'font_awesome', get_template_directory_uri() . ‘/library/css/font-awesome.min.css');
+function enqueue_font_awesome() {
+ 
+wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
+ 
 }
 
-add_action('wp_enqueue_style','font_awesome_fonts');
+add_action( 'wp_enqueue_scripts', 'enqueue_font_awesome' );
 
-/*---Mobile Nav Script--*/
-
-function mobile_nav() {
-
-wp_enqueue_script( 'navigation', get_template_directory_uri() . '/library/js/navigation.js', array(), '20120206', true );
-}
-add_action( 'wp_enqueue_scripts', 'mobile_nav' );
 
 /************* OEMBED SIZE OPTIONS *************/
 
@@ -87,6 +78,7 @@ if ( ! isset( $content_width ) ) {
 // Thumbnail sizes
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'portfolio-post', 800, 150,true);
 
 /*
 to add more sizes, simply copy a line from above
@@ -114,6 +106,7 @@ function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'bones-thumb-600' => __('600px by 150px'),
         'bones-thumb-300' => __('300px by 100px'),
+        'portfolio-post' => __('800px by 150px'),
     ) );
 }
 
@@ -197,4 +190,48 @@ function bones_comments( $comment, $args, $depth ) {
   <?php // </li> is added by WordPress automatically ?>
 <?php
 } // don't remove this bracket!
+
+/*********** JS Charts ************************/
+
+function charts_js() {
+wp_register_script('chart_js', get_template_directory_uri() . '/library/js/ChartNew.js', 'jQuery','1.1', true);
+wp_register_script('skillChart_js' , get_template_directory_uri() . '/library/js/skillChart.js' , 'jQuery' , '1.1' , true);
+wp_enqueue_script('chart_js');
+wp_enqueue_script('skillChart_js');
+}
+
+add_action( 'wp_enqueue_scripts', 'charts_js' );
+
+/************* Sticky Navs *********************/
+
+function wayPoints_js() {
+wp_register_script('jqueryWayPoints_js', get_template_directory_uri() . '/library/js//waypoints.min.js', 'jQuery' , '1.1', true);
+wp_register_script('stickyWayPoints_js', get_template_directory_uri() . '/library/js//waypoints-sticky.min.js', 'jQuery' , '1.1', true);
+wp_enqueue_script('jqueryWayPoints_js');
+wp_enqueue_script('stickyWayPoints_js');
+}
+
+add_action( 'wp_enqueue_scripts', 'wayPoints_js' );
+
+
+/************* Masonry Gallery *********************/
+
+/*function imageLoaded_js() {
+wp_register_script('imageLoaded_js', get_stylesheet_directory_uri() . '/library/js//imagesloaded.pkgd.min.js', 'jQuery','1.1', true);
+wp_enqueue_script('imageLoaded_js');
+}
+
+add_action( 'wp_enqueue_scripts', 'imageLoaded_js' );
+
+if (! function_exists('slug_scripts_masonry') ) :
+if ( ! is_admin() ) :
+
+function slug_scripts_masonry() {
+    wp_enqueue_script('masonry');
+    wp_enqueue_style('masonry’, get_template_directory_uri().'/css/’);
+}
+add_action( 'wp_enqueue_scripts', 'slug_scripts_masonry' );
+endif; //! is_admin()
+endif; //! slug_scripts_masonry exists 
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
