@@ -15,6 +15,8 @@
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="Iam a web designer who does websites">
+		<meta name="keywords" content="web design,ui-ux,print design,responsive,word press,javascript,jquery,sass,css3,html5,front end developer,apps,ios,android">
 
 		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
 		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">

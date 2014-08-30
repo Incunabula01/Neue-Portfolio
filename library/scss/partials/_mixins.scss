@@ -79,3 +79,28 @@ MISC HELPERS
     text-shadow: none;
     color: transparent;
 }
+
+/********************
+BUTTONS
+********************/
+
+@mixin button-style($color,$size){
+  @extend %btn; 
+  background-color: $color;
+  font-size: $size;
+  &:hover,
+  &:focus {
+    background-color: darken($color, 4%);
+  } 
+
+  &:active {
+    background-color: darken($color, 8%);
+  } 
+}
+
+@mixin button-shadow($top, $left, $blur, $color, $inset) {
+	-o-box-shadow:$top $left $blur $color $inset;
+	-webkit-box-shadow:$top $left $blur $color $inset;
+	-moz-box-shadow:$top $left $blur $color $inset;
+	box-shadow:$top $left $blur $color $inset;
+}

@@ -333,21 +333,24 @@ POSTS & CONTENT STYLES
 	.chart-bar-1{
 		background-color: darken($cyan,10%);
 		width: 70%;
+		min-width: 200px;
 		height: 40px;
 	}
 	.chart-bar-2{
 		background-color: darken($cyan,25%);
-		width: 15%;
+		width: 25%;
+		min-width: 20px;
 		height: 40px;
 	}
 	.chart-bar-3{
 		background-color: darken($cyan,30%);
 		width: 50%;
+		min-width: 150px;
 		height: 40px;
 	}
 }
 #chart-range{
-	min-width: 320px;
+	width: 100%;
 	@include top-border(0.2em,$cyan);
 	li{
 		min-width: 320px;
@@ -364,10 +367,10 @@ POSTS & CONTENT STYLES
 	}
 }
 
-
 #content {
 	margin-top: 1.5em;
 	width: 100%;
+	height: auto;
 }
 
 		.hentry {
@@ -396,6 +399,7 @@ POSTS & CONTENT STYLES
 		.page-title,
 		.entry-title {
 			margin: 0;
+			text-align: center;
 		}
 
 		.single-title {}
@@ -428,6 +432,7 @@ POSTS & CONTENT STYLES
 		/* entry content */
 		.entry-content {
 			padding: 1.5em 1.5em 0;
+			width: 100%;
 
 			p {
 				margin: 0 0 1.5em;
@@ -575,7 +580,7 @@ POSTS & CONTENT STYLES
 
 		/* image gallery styles */
 		.gallery {
-
+			display: block;
 			dl {
 
 				a {}
@@ -603,6 +608,29 @@ POSTS & CONTENT STYLES
 		margin: 0;
 	}
 
+/*********************
+MISC STYLES
+*********************/
+
+#respond {
+	min-height: 400px;
+	margin: 1em 0;
+}
+
+#filters{
+	width: 100%;
+	.cyan-btn{
+		@include button-style($cyan,1em);
+		width: 100%;
+		padding: 0.5em;
+		margin: 0.5em 0;
+		@include button-shadow(0px,-3px,0px,$blue,inset);
+		&:active{
+			top: 3px;
+			@include button-shadow(0px,0px,0px,$blue,inset);
+		}
+	}
+}
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -976,29 +1004,39 @@ FOOTER STYLES
 *********************/
 
 .footer {
-	clear: both;
+	min-height: 300px;
 	background-color: $black;
 	color: $light-gray;
+	padding: 5% 0;
 }
 
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-	.footer-links {
-
-		ul {
-
-			li {}
-
+		.footer-links {
+			ul{
+				text-align: center;
+				li {
+					width: 60px;
+					height: 60px;
+					margin-left: 0.5em;
+					display: inline-block;
+					background-color: $cyan;
+					padding: 1em;
+					&:first-child{
+						margin-left: 0;
+					}
+					&:hover, &:active{
+						@include transition(all 0.6s ease-in);
+						background-color: darken($cyan, 25%);
+					}
+					a{
+						color: $white;
+						text-decoration: none;
+					}
+				}
+			}
 		}
 
-	} /* end .footer-links */
 
-
-	.copyright {}
+	.copyright {
+		color: $link-color;
+		text-align: center;
+	}

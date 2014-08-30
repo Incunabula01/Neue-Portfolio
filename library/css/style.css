@@ -540,7 +540,7 @@ FONT FACE (IN YOUR FACE)
   font-family: 'Ostrich Black';
   src: url("../fonts/ostrich-black-webfont.eot");
   src: url("../fonts/ostrich-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ostrich-black-webfont.woff") format("woff"), url("../fonts/ostrich-black-webfont.ttf") format("truetype"), url("../fonts/ostrich-black-webfont.svg#ostrich-black-webfont") format("svg");
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
 }
 @font-face {
@@ -674,6 +674,9 @@ COLOR TRANSPARENCY
 /*********************
 MISC HELPERS
 *********************/
+/********************
+BUTTONS
+********************/
 /******************************************************************
 Site Name:
 Author:
@@ -1013,10 +1016,10 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.blue-btn, .comment-reply-link, #submit {
+.blue-btn, .comment-reply-link, #submit, #filters .cyan-btn {
   display: inline-block;
   position: relative;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Alegreya Regular", Georgia, Times, serif;
   text-decoration: none;
   color: white;
   font-size: 0.9em;
@@ -1031,19 +1034,14 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   -moz-transition: background-color 0.14s ease-in-out;
   -o-transition: background-color 0.14s ease-in-out;
 }
-.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
+.blue-btn:hover, .comment-reply-link:hover, #submit:hover, #filters .cyan-btn:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, #filters .cyan-btn:focus {
   color: white;
   text-decoration: none;
 }
-.blue-btn:active, .comment-reply-link:active, #submit:active {
+.blue-btn:active, .comment-reply-link:active, #submit:active, #filters .cyan-btn:active {
   top: 1px;
 }
 
-/*
-An example button.
-You can use this example if you want. Just replace all the variables
-and it will create a button dependant on those variables.
-*/
 .blue-btn, .comment-reply-link, #submit {
   background-color: #052636;
 }
@@ -1653,21 +1651,24 @@ POSTS & CONTENT STYLES
 #skill-chart .chart-bar-1 {
   background-color: #21b6e3;
   width: 70%;
+  min-width: 200px;
   height: 40px;
 }
 #skill-chart .chart-bar-2 {
   background-color: #1482a3;
-  width: 15%;
+  width: 25%;
+  min-width: 20px;
   height: 40px;
 }
 #skill-chart .chart-bar-3 {
   background-color: #11708d;
   width: 50%;
+  min-width: 150px;
   height: 40px;
 }
 
 #chart-range {
-  min-width: 320px;
+  width: 100%;
   -webkit-border-top: 0.2em solid #4ec5e9;
   -moz-border-top: 0.2em solid #4ec5e9;
   -o-border-top: 0.2em solid #4ec5e9;
@@ -1690,6 +1691,7 @@ POSTS & CONTENT STYLES
 #content {
   margin-top: 1.5em;
   width: 100%;
+  height: auto;
 }
 
 .hentry {
@@ -1715,6 +1717,7 @@ POSTS & CONTENT STYLES
 .page-title,
 .entry-title {
   margin: 0;
+  text-align: center;
 }
 
 /* want to style individual post classes? Booya! */
@@ -1736,6 +1739,7 @@ POSTS & CONTENT STYLES
 /* entry content */
 .entry-content {
   padding: 1.5em 1.5em 0;
+  width: 100%;
   /*
   image alignment on a screen this size may be
   a bit difficult. It's set to start aligning
@@ -1834,10 +1838,50 @@ POSTS & CONTENT STYLES
 
 /* end .wp-caption */
 /* image gallery styles */
+.gallery {
+  display: block;
+}
+
 /* end .gallery */
 /* gallery caption styles */
 .tags {
   margin: 0;
+}
+
+/*********************
+MISC STYLES
+*********************/
+#respond {
+  min-height: 400px;
+  margin: 1em 0;
+}
+
+#filters {
+  width: 100%;
+}
+#filters .cyan-btn {
+  background-color: #4ec5e9;
+  font-size: 1em;
+  width: 100%;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  -o-box-shadow: 0px -3px 0px #052636 inset;
+  -webkit-box-shadow: 0px -3px 0px #052636 inset;
+  -moz-box-shadow: 0px -3px 0px #052636 inset;
+  box-shadow: 0px -3px 0px #052636 inset;
+}
+#filters .cyan-btn:hover, #filters .cyan-btn:focus {
+  background-color: #3cbfe7;
+}
+#filters .cyan-btn:active {
+  background-color: #2ab9e4;
+}
+#filters .cyan-btn:active {
+  top: 3px;
+  -o-box-shadow: 0px 0px 0px #052636 inset;
+  -webkit-box-shadow: 0px 0px 0px #052636 inset;
+  -moz-box-shadow: 0px 0px 0px #052636 inset;
+  box-shadow: 0px 0px 0px #052636 inset;
 }
 
 /******************************************************************
@@ -2082,21 +2126,42 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 .footer {
-  clear: both;
+  min-height: 300px;
   background-color: #323944;
   color: #f8f9fa;
+  padding: 5% 0;
 }
 
-/*
-if you checked out the link above:
-http://www.alistapart.com/articles/organizing-mobile/
-you'll want to style the footer nav
-a bit more in-depth. Remember to keep
-it simple because you'll have to
-override these styles for the desktop
-view.
-*/
-/* end .footer-links */
+.footer-links ul {
+  text-align: center;
+}
+.footer-links ul li {
+  width: 60px;
+  height: 60px;
+  margin-left: 0.5em;
+  display: inline-block;
+  background-color: #4ec5e9;
+  padding: 1em;
+}
+.footer-links ul li:first-child {
+  margin-left: 0;
+}
+.footer-links ul li:hover, .footer-links ul li:active {
+  -webkit-transition: all 0.6s ease-in;
+  -moz-transition: all 0.6s ease-in;
+  -o-transition: all 0.6s ease-in;
+  background-color: #1482a3;
+}
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.copyright {
+  color: #fbad7c;
+  text-align: center;
+}
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -2328,6 +2393,21 @@ you can add resource intensive styles.
     margin-right: 13em;
   }
 
+  .single-title,
+  .page-title,
+  .entry-title {
+    margin: 0;
+    text-align: left;
+  }
+
+  #filters {
+    width: 100%;
+  }
+  #filters .cyan-btn {
+    width: 120px;
+    display: inline;
+  }
+
   /*********************
   SIDEBARS & ASIDES
   *********************/
@@ -2372,12 +2452,8 @@ you can add resource intensive styles.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  .footer-links ul li {
-    /*
-    be careful with the depth of your menus.
-    it's very rare to have multi-depth menus in
-    the footer.
-    */
+  .footer-links ul {
+    text-align: right;
   }
 
   /* end .footer-links */

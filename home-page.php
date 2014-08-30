@@ -1,5 +1,5 @@
 <?php
- /*  Template Name: Tiled Portfolio  */
+ /*  Template Name: Home Page  */
 ?>
 
 <?php get_header(); ?>
@@ -24,6 +24,7 @@
 								<section class="entry-content cf" itemprop="articleBody">
 
 									<h1 class="page-title"> Superpowers </h1>
+									
 									<div class="m-all t-all d-all">
 										<ul id="skill-chart">
 											<li class="chart-bar-1">
@@ -58,38 +59,32 @@
 										</ul>
 										<?php the_content(); ?>
 									</div>
+
 									<h1 class="page-title"> Work </h1>
-									<div id="container">
-										<div class="item ui-ux" data-category="ui-ux">
-											<button class="name">UI UX</button>
-										</div>
-										<div class="item web" data-category="web">
-											<button class="name">Web</button>
-										</div>
-										<div class="item print" data-category="print">
-											<button class="name">Print</button>
-										</div>
-									<?php
- 										$args = array(
-    										'numberposts' => -1,
-    										'orderby' => 'menu_order',
-    										'order'=> 'ASC',
-    										'post_mime_type' => 'image', 
-    										'post_parent' => $post->ID, 
-    										'post_status' => null,
-    										'post_type' => 'attachment'	
+
+									<div id="filters" class="button-group">
+										<button class="show-all cyan-btn is-checked" data-filter="*">Show All</button>
+										<button class="ui-ux cyan-btn" data-filter="ui-ux">UI UX</button>
+										<button class="web cyan-btn" data-filer="web">Web</button>	
+										<button class="print cyan-btn" data-filter="print">Print</button>
+										<button class="identity cyan-btn" data-filter="identity">Identity</button>
+									</div>
+									
+									<div id="gallery-container">
+										<?php
+											$media_query = new WP_Query(
+											    array(
+											        'post_type' => 'attachment',
+											        'post_status' => 'inherit',
+											        'posts_per_page' => -1,
+											    )
 											);
- 
-										$images = get_children( $args );
-									?>
-									<?php if($images){ ?>
-											<div id="gallery">
-    											<?php foreach($images as $image){ ?>
-    												<img src="<?php echo $image->guid; ?>" class="item" alt="<?php echo $image->post_title; ?>" title="<?php echo $image->post_title; ?>" data-category=" <?php wp_get_post_categories( $post_id ); ?> " />
-    									<?php    } ?>
-											</div>
-									<?php } ?>
-								</div>
+											$list = array();
+											foreach ($media_query->posts as $post) {
+											    $list[] = wp_get_attachment_url($post->ID);
+											}
+										?>
+									</div>
 								</section>
 
 
