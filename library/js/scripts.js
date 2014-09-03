@@ -91,34 +91,35 @@ var timeToWaitForLast = 100;
 jQuery(document).ready(function($) {
 
 	/* Mobile Nav Menu */
-	$('.menu-toggle').on( 'click',function(){
+	$('.menu-toggle').click( function(){
 		$('.nav-menu').slideToggle(500);
 		$(this).toggleClass('toggled');
 	});
 
 	/* Init Isotope Gallery */
-	var $container = $('#gallery').isotope({
-		layoutMode: 'masonry',
-		itemSelector: '.item',
-		transitionDuration: '0.6s'
-	});
+	var $container = $('#gallery-container');
 
 	$container.imagesLoaded( function(){
-		$container.isotope('layout');
-			$('#filters').on('click', 'button', function(){
-				var filterValue = $(this).attr('data-filter');
-				$container.isotope({
-					filter: filterValue
-				});
+		$container.isotope({
+			layoutMode: 'masonry',
+			itemSelector: '.item'
+		});
+
+		$('#filters').on('click', 'button', function(){
+			var filterValue = $(this).attr('data-filter');
+			$container.isotope({
+				filter: filterValue
 			});
-			$('.button-group').each( function (i, buttonGroup){
-				var $buttonGroup = $( buttonGroup);
-				$buttonGroup.on('click', 'button', function(){
-					$buttonGroup.find('.is-checked').removeClass('is-checked');
-					$(this).addClass('is-checked');
-				})
-			})
-	});  */
+		});
+
+		$('.button-group').each( function (i, buttonGroup){
+			var $buttonGroup = $(buttonGroup);
+			$buttonGroup.on('click', 'button', function(){
+				$buttonGroup.find('.current').removeClass('current');
+				$(this).addClass('current');
+			});
+		});
+	});  
 
 }); 
 

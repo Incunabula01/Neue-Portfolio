@@ -4,9 +4,9 @@
 
 <?php get_header(); ?>
 
-			<div id="content">
+	<div id="main" class=" m-all t-all d-all cf" role="main">
 
-				<div id="main" class="m-all t-all d-all cf" role="main">
+			<div id="content">
 
 					<div id="inner-content" class="wrap cf">
 
@@ -23,9 +23,15 @@
 
 								<section class="entry-content cf" itemprop="articleBody">
 
+									<div class="m-all t-2of3 d-5of7 cf">
+
+										<?php the_content(); ?>
+
+									</div>
+
 									<h1 class="page-title"> Superpowers </h1>
 									
-									<div class="m-all t-all d-all">
+									<div class="m-all t-1of3 d-2of7 last-col cf">
 										<ul id="skill-chart">
 											<li class="chart-bar-1">
 												<h2>HTML5</h2>
@@ -57,36 +63,43 @@
 												Advanced
 											</li>
 										</ul>
-										<?php the_content(); ?>
 									</div>
+
+								<div class="cf">
 
 									<h1 class="page-title"> Work </h1>
 
 									<div id="filters" class="button-group">
-										<button class="show-all cyan-btn is-checked" data-filter="*">Show All</button>
-										<button class="ui-ux cyan-btn" data-filter="ui-ux">UI UX</button>
-										<button class="web cyan-btn" data-filer="web">Web</button>	
-										<button class="print cyan-btn" data-filter="print">Print</button>
-										<button class="identity cyan-btn" data-filter="identity">Identity</button>
+										<button class="cyan-btn current" data-filter="*">Show All</button>
+										<button class="cyan-btn" data-filter=".UI-UX">UI UX</button>
+										<button class="cyan-btn" data-filer=".Web">Web</button>	
+										<button class="cyan-btn" data-filter=".Print">Print</button>
+										<button class="cyan-btn" data-filter=".Identity">Identity</button>
 									</div>
 									
 									<div id="gallery-container">
 										<?php
-											$media_query = new WP_Query(
-											    array(
-											        'post_type' => 'attachment',
-											        'post_status' => 'inherit',
-											        'posts_per_page' => -1,
-											    )
-											);
-											$list = array();
-											foreach ($media_query->posts as $post) {
-											    $list[] = wp_get_attachment_url($post->ID);
-											}
+										global $post;
+										$tmp_post = $post;
+										$args = array( 'numberposts' => 5 );
+										$myposts = get_posts( $args );
+										foreach( $myposts as $post ) :	setup_postdata($post); 
+											$post_thumbnail_id = get_post_thumbnail_id();
+											$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'medium' );
 										?>
-									</div>
-								</section>
 
+										<div class="item <?php $category = get_the_category(); echo $category[0]->cat_name; ?>">
+											<a href="<?php echo get_permalink($post_id); ?>" >
+												<img src="<?php echo $featured_src[0]; ?>"/>
+											</a>
+										</div>
+
+										<?php endforeach; ?>
+										<?php $post = $tmp_post; ?>
+									</div>
+
+								</div>
+								</section>
 
 								<footer class="article-footer">
 

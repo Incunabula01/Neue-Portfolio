@@ -1016,7 +1016,7 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.blue-btn, .comment-reply-link, #submit, #filters .cyan-btn {
+.blue-btn, .comment-reply-link, #submit, .tags a, #filters .cyan-btn {
   display: inline-block;
   position: relative;
   font-family: "Alegreya Regular", Georgia, Times, serif;
@@ -1034,11 +1034,11 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   -moz-transition: background-color 0.14s ease-in-out;
   -o-transition: background-color 0.14s ease-in-out;
 }
-.blue-btn:hover, .comment-reply-link:hover, #submit:hover, #filters .cyan-btn:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, #filters .cyan-btn:focus {
+.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .tags a:hover, #filters .cyan-btn:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, .tags a:focus, #filters .cyan-btn:focus {
   color: white;
   text-decoration: none;
 }
-.blue-btn:active, .comment-reply-link:active, #submit:active, #filters .cyan-btn:active {
+.blue-btn:active, .comment-reply-link:active, #submit:active, .tags a:active, #filters .cyan-btn:active {
   top: 1px;
 }
 
@@ -1650,7 +1650,7 @@ POSTS & CONTENT STYLES
 }
 #skill-chart .chart-bar-1 {
   background-color: #21b6e3;
-  width: 70%;
+  width: 75%;
   min-width: 200px;
   height: 40px;
 }
@@ -1677,12 +1677,11 @@ POSTS & CONTENT STYLES
 #chart-range li {
   min-width: 320px;
   height: 45px;
-  padding-left: 5px;
   display: inline;
   font-family: "Alegreya Black", Georgia, Times, serif;
   color: #7bd4ef;
   font-size: 0.5em;
-  margin-right: 10%;
+  margin-right: 12%;
 }
 #chart-range li:before, #chart-range li:after {
   content: "  |  ";
@@ -1690,8 +1689,13 @@ POSTS & CONTENT STYLES
 
 #content {
   margin-top: 1.5em;
-  width: 100%;
+}
+
+.attachment-portfolio-post {
+  background-size: cover;
   height: auto;
+  width: 100%;
+  overflow: hidden;
 }
 
 .hentry {
@@ -1846,6 +1850,21 @@ POSTS & CONTENT STYLES
 /* gallery caption styles */
 .tags {
   margin: 0;
+  height: 15px;
+  width: 50px;
+  display: inline;
+}
+.tags a {
+  margin-left: 1em;
+  color: white;
+  background-color: #052636;
+  font-size: 1em;
+}
+.tags a:hover, .tags a:focus {
+  background-color: #031923;
+}
+.tags a:active {
+  background-color: #020c11;
 }
 
 /*********************
@@ -1858,11 +1877,13 @@ MISC STYLES
 
 #filters {
   width: 100%;
+  margin: 0 auto 15px auto;
+  clear: both;
 }
 #filters .cyan-btn {
   background-color: #4ec5e9;
   font-size: 1em;
-  width: 100%;
+  min-width: 60px;
   padding: 0.5em;
   margin: 0.5em 0;
   -o-box-shadow: 0px -3px 0px #052636 inset;
@@ -1882,6 +1903,9 @@ MISC STYLES
   -webkit-box-shadow: 0px 0px 0px #052636 inset;
   -moz-box-shadow: 0px 0px 0px #052636 inset;
   box-shadow: 0px 0px 0px #052636 inset;
+}
+#filters .cyan-btn:focus {
+  outline: -webkit-focus-ring-color auto 0px;
 }
 
 /******************************************************************
@@ -2126,10 +2150,11 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 .footer {
-  min-height: 300px;
+  max-height: 300px;
   background-color: #323944;
   color: #f8f9fa;
   padding: 5% 0;
+  clear: both;
 }
 
 .footer-links ul {
@@ -2390,7 +2415,7 @@ you can add resource intensive styles.
 
   /* end .nav */
   #chart-range li {
-    margin-right: 13em;
+    margin-right: 15%;
   }
 
   .single-title,

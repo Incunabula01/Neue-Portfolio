@@ -17,7 +17,11 @@
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 								<header class="article-header">
-
+									<?php 
+										if ( has_post_thumbnail() ) {
+											the_post_thumbnail('portfolio-post');
+											} 
+									?>
 									<h1 class="page-title"><?php the_title(); ?></h1>
 
 									<p class="byline vcard">
@@ -36,7 +40,7 @@
 
 								<footer class="article-footer">
 
-                  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+                  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ' ', '</p>' ); ?>
 
 								</footer>
 
