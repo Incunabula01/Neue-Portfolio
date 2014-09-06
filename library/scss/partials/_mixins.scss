@@ -70,6 +70,10 @@ COLOR TRANSPARENCY
 	background-color: rgba(255,255,255,$opacity);
 }
 
+@mixin transparent-cyan($opacity){
+	background-color: rgba(78, 197, 233, $opacity);
+}
+
 /*********************
 MISC HELPERS
 *********************/

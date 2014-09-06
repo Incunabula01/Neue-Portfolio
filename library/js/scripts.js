@@ -96,13 +96,13 @@ jQuery(document).ready(function($) {
 		$(this).toggleClass('toggled');
 	});
 
-	/* Init Isotope Gallery */
+	/* Init Portfolio Isotope Gallery */
 	var $container = $('#gallery-container');
 
 	$container.imagesLoaded( function(){
 		$container.isotope({
 			layoutMode: 'masonry',
-			itemSelector: '.item'
+			columnWidth: 300
 		});
 
 		$('#filters').on('click', 'button', function(){
@@ -119,7 +119,20 @@ jQuery(document).ready(function($) {
 				$(this).addClass('current');
 			});
 		});
-	});  
+	}); 
+
+
+	/* Masonry Gallery for Posts */
+
+	var postGallery = $('#gallery-1');
+
+	postGallery.imagesLoaded( function(){
+		postGallery.masonry({
+			columnWidth: '.gallery-item',
+			isFitWidth: true
+		});
+	});
+	
 
 }); 
 

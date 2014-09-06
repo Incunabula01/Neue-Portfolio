@@ -31,7 +31,7 @@
 
 									<h1 class="page-title"> Superpowers </h1>
 									
-									<div class="m-all t-1of3 d-2of7 last-col cf">
+									<div class="m-all t-1of4 d-2of8 last-col cf">
 										<ul id="skill-chart">
 											<li class="chart-bar-1">
 												<h2>HTML5</h2>
@@ -81,7 +81,7 @@
 										<?php
 										global $post;
 										$tmp_post = $post;
-										$args = array( 'numberposts' => 5 );
+										$args = array( 'numberposts' => -1 );
 										$myposts = get_posts( $args );
 										foreach( $myposts as $post ) :	setup_postdata($post); 
 											$post_thumbnail_id = get_post_thumbnail_id();
@@ -89,7 +89,8 @@
 										?>
 
 										<div class="item <?php $category = get_the_category(); echo $category[0]->cat_name; ?>">
-											<a href="<?php echo get_permalink($post_id); ?>" >
+											<a href="<?php echo get_permalink(); ?>" >
+												<div><span><h2><?php echo get_the_title(); ?></h2></span></div>
 												<img src="<?php echo $featured_src[0]; ?>"/>
 											</a>
 										</div>
