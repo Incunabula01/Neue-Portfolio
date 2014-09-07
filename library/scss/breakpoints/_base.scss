@@ -316,18 +316,69 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-
-/*canvas {
-	width: 100% !important;
-	max-width: 768px;
-	height: auto !important;
-}*/
+#skill-chart{
+	min-width: 320px;
+	height: auto;
+	li{
+		background-color: $cyan;
+		margin: 5px 2px;
+		text-decoration: none;
+		list-style: none;
+		h2{
+			font-family: $header-font;
+			color: $white;
+			padding: 0.2em;
+		}
+	}
+	.chart-bar-1{
+		background-color: darken($cyan,10%);
+		width: 75%;
+		min-width: 200px;
+		height: 40px;
+	}
+	.chart-bar-2{
+		background-color: darken($cyan,25%);
+		width: 25%;
+		min-width: 20px;
+		height: 40px;
+	}
+	.chart-bar-3{
+		background-color: darken($cyan,30%);
+		width: 50%;
+		min-width: 150px;
+		height: 40px;
+	}
+}
+#chart-range{
+	width: 100%;
+	@include top-border(0.2em,$cyan);
+	li{
+		min-width: 320px;
+		height: 45px;
+		//padding-left: 5px;
+		display: inline;
+		font-family: $serif-bold;
+		color: lighten($cyan,10%);
+		font-size: 0.5em;
+		margin-right: 12%;
+		&:before, &:after{
+			content: "  |  ";
+		}
+	}
+}
 
 #content {
 	margin-top: 1.5em;
-	width: 100%;
 }
 
+	.header-image{
+		background-size: cover;
+		height: 35em;
+  		width: 100%;
+		overflow: hidden;
+	}
+
+	
 		.hentry {
 			background-color: $light-gray;
 			margin-bottom: 1.5em;
@@ -354,6 +405,7 @@ POSTS & CONTENT STYLES
 		.page-title,
 		.entry-title {
 			margin: 0;
+			text-align: center;
 		}
 
 		.single-title {}
@@ -386,6 +438,7 @@ POSTS & CONTENT STYLES
 		/* entry content */
 		.entry-content {
 			padding: 1.5em 1.5em 0;
+			width: 100%;
 
 			p {
 				margin: 0 0 1.5em;
@@ -478,6 +531,7 @@ POSTS & CONTENT STYLES
 			img {
 				margin: 0 0 1.5em 0;
 				max-width: 100%;
+				min-width: 320px;
 				height: auto;
 			}
 
@@ -533,16 +587,27 @@ POSTS & CONTENT STYLES
 
 		/* image gallery styles */
 		.gallery {
-
 			dl {
+				margin: 1em;
+				a {
+					opacity: 1;
+					&:hover, &:active{
+						opacity: 0.6;
+						@include transition(opacity 0.2s ease-in);
+					}
+				}
 
-				a {}
-
-				img {}
+				img {
+					width: 100%;
+					height: auto;
+				}
 
 			}
 
-			dt {}
+			dt {
+				height: 100%;
+				background: url('../images/gallery-thumb2x.png') $cyan 50% 50% no-repeat;
+			}
 
 			dd {}
 
@@ -551,7 +616,12 @@ POSTS & CONTENT STYLES
 		/* gallery caption styles */
 		.gallery-caption {}
 
-		.size-full {}
+		.size-full {
+			background-size: cover;
+			width: 100%;
+			height: 20em;
+			overflow: hidden;
+		}
 		.size-large {}
 		.size-medium {}
 		.size-thumbnail {}
@@ -559,8 +629,95 @@ POSTS & CONTENT STYLES
 	// the tag output
 	.tags {
 		margin: 0;
+		height: 15px;
+		width: 100%;
+		display: inline-block;
+		a{
+			margin-left: 0.5em;					
+			color: $white;
+			@include button-style($cyan, 1em);
+		}
 	}
 
+/*********************
+MISC STYLES
+*********************/
+
+#respond {
+	min-height: 400px;
+	margin: 1em 0;
+}
+
+#filters{
+	width: 100%;
+	margin: 0 auto 15px auto;
+	clear: both;
+	.cyan-btn{
+		@include button-style($cyan,1em);
+		min-width: 60px;
+		padding: 0.5em;
+		margin: 0.5em 0;
+		@include button-shadow(0px,-3px,0px,$blue,inset);
+		&:active{
+			top: 3px;
+			@include button-shadow(0px,0px,0px,$blue,inset);
+		}
+		&:focus{
+			outline: -webkit-focus-ring-color auto 0px;
+		}
+	}
+}
+
+.item{
+	margin: 0.5em;
+	a{
+		div {
+			opacity: 0;
+			@include transparent-cyan(0.6);
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			&:hover{
+				opacity: 1;
+				@include transition(opacity 0.5s ease-in);
+			}
+			h2{
+				color: $white;
+				font-size: 2em;
+				padding: 5em 0;
+				text-align: center;
+				position: relative;
+				&:before{
+					position: absolute;
+					top: 0.5em;
+					text-align: center;
+					font-family: FontAwesome;
+					font-size: 4em;
+				}
+			}
+		}
+	}
+}
+.UI-UX{
+	h2:before{
+		content: "\f10b";
+	}
+}
+.Web{
+	h2:before{
+		content: "\f13b";
+		}
+}
+.Print {
+	h2:before{
+		content: "\f15b";
+	}
+}
+.Identity {
+	h2:before{
+		content: "\f1c5";
+	}
+}
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -934,29 +1091,40 @@ FOOTER STYLES
 *********************/
 
 .footer {
-	clear: both;
+	max-height: 300px;
 	background-color: $black;
 	color: $light-gray;
+	padding: 5% 0;
+	clear: both;
 }
 
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-	.footer-links {
-
-		ul {
-
-			li {}
-
+		.footer-links {
+			ul{
+				text-align: center;
+				li {
+					width: 60px;
+					height: 60px;
+					margin-left: 0.5em;
+					display: inline-block;
+					background-color: $cyan;
+					padding: 1em;
+					&:first-child{
+						margin-left: 0;
+					}
+					&:hover, &:active{
+						@include transition(all 0.6s ease-in);
+						background-color: darken($cyan, 25%);
+					}
+					a{
+						color: $white;
+						text-decoration: none;
+					}
+				}
+			}
 		}
 
-	} /* end .footer-links */
 
-
-	.copyright {}
+	.copyright {
+		color: $link-color;
+		text-align: center;
+	}

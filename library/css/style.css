@@ -540,7 +540,7 @@ FONT FACE (IN YOUR FACE)
   font-family: 'Ostrich Black';
   src: url("../fonts/ostrich-black-webfont.eot");
   src: url("../fonts/ostrich-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ostrich-black-webfont.woff") format("woff"), url("../fonts/ostrich-black-webfont.ttf") format("truetype"), url("../fonts/ostrich-black-webfont.svg#ostrich-black-webfont") format("svg");
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
 }
 @font-face {
@@ -674,6 +674,9 @@ COLOR TRANSPARENCY
 /*********************
 MISC HELPERS
 *********************/
+/********************
+BUTTONS
+********************/
 /******************************************************************
 Site Name:
 Author:
@@ -1013,10 +1016,10 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.blue-btn, .comment-reply-link, #submit {
+.blue-btn, .comment-reply-link, #submit, .tags a, #filters .cyan-btn {
   display: inline-block;
   position: relative;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Alegreya Regular", Georgia, Times, serif;
   text-decoration: none;
   color: white;
   font-size: 0.9em;
@@ -1031,19 +1034,14 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   -moz-transition: background-color 0.14s ease-in-out;
   -o-transition: background-color 0.14s ease-in-out;
 }
-.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
+.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .tags a:hover, #filters .cyan-btn:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, .tags a:focus, #filters .cyan-btn:focus {
   color: white;
   text-decoration: none;
 }
-.blue-btn:active, .comment-reply-link:active, #submit:active {
+.blue-btn:active, .comment-reply-link:active, #submit:active, .tags a:active, #filters .cyan-btn:active {
   top: 1px;
 }
 
-/*
-An example button.
-You can use this example if you want. Just replace all the variables
-and it will create a button dependant on those variables.
-*/
 .blue-btn, .comment-reply-link, #submit {
   background-color: #052636;
 }
@@ -1635,14 +1633,69 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/*canvas {
-	width: 100% !important;
-	max-width: 768px;
-	height: auto !important;
-}*/
+#skill-chart {
+  min-width: 320px;
+  height: auto;
+}
+#skill-chart li {
+  background-color: #4ec5e9;
+  margin: 5px 2px;
+  text-decoration: none;
+  list-style: none;
+}
+#skill-chart li h2 {
+  font-family: "Ostrich Black", Verdana, sans-serif;
+  color: white;
+  padding: 0.2em;
+}
+#skill-chart .chart-bar-1 {
+  background-color: #21b6e3;
+  width: 75%;
+  min-width: 200px;
+  height: 40px;
+}
+#skill-chart .chart-bar-2 {
+  background-color: #1482a3;
+  width: 25%;
+  min-width: 20px;
+  height: 40px;
+}
+#skill-chart .chart-bar-3 {
+  background-color: #11708d;
+  width: 50%;
+  min-width: 150px;
+  height: 40px;
+}
+
+#chart-range {
+  width: 100%;
+  -webkit-border-top: 0.2em solid #4ec5e9;
+  -moz-border-top: 0.2em solid #4ec5e9;
+  -o-border-top: 0.2em solid #4ec5e9;
+  border-top: 0.2em solid #4ec5e9;
+}
+#chart-range li {
+  min-width: 320px;
+  height: 45px;
+  display: inline;
+  font-family: "Alegreya Black", Georgia, Times, serif;
+  color: #7bd4ef;
+  font-size: 0.5em;
+  margin-right: 12%;
+}
+#chart-range li:before, #chart-range li:after {
+  content: "  |  ";
+}
+
 #content {
   margin-top: 1.5em;
+}
+
+.header-image {
+  background-size: cover;
+  height: 35em;
   width: 100%;
+  overflow: hidden;
 }
 
 .hentry {
@@ -1668,6 +1721,7 @@ POSTS & CONTENT STYLES
 .page-title,
 .entry-title {
   margin: 0;
+  text-align: center;
 }
 
 /* want to style individual post classes? Booya! */
@@ -1689,6 +1743,7 @@ POSTS & CONTENT STYLES
 /* entry content */
 .entry-content {
   padding: 1.5em 1.5em 0;
+  width: 100%;
   /*
   image alignment on a screen this size may be
   a bit difficult. It's set to start aligning
@@ -1748,6 +1803,7 @@ POSTS & CONTENT STYLES
 .entry-content img {
   margin: 0 0 1.5em 0;
   max-width: 100%;
+  min-width: 320px;
   height: auto;
 }
 .entry-content .size-auto,
@@ -1787,10 +1843,141 @@ POSTS & CONTENT STYLES
 
 /* end .wp-caption */
 /* image gallery styles */
+.gallery dl {
+  margin: 1em;
+}
+.gallery dl a {
+  opacity: 1;
+}
+.gallery dl a:hover, .gallery dl a:active {
+  opacity: 0.6;
+  -webkit-transition: opacity 0.2s ease-in;
+  -moz-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+}
+.gallery dl img {
+  width: 100%;
+  height: auto;
+}
+.gallery dt {
+  height: 100%;
+  background: url("../images/gallery-thumb2x.png") #4ec5e9 50% 50% no-repeat;
+}
+
 /* end .gallery */
 /* gallery caption styles */
+.size-full {
+  background-size: cover;
+  width: 100%;
+  height: 20em;
+  overflow: hidden;
+}
+
 .tags {
   margin: 0;
+  height: 15px;
+  width: 100%;
+  display: inline-block;
+}
+.tags a {
+  margin-left: 0.5em;
+  color: white;
+  background-color: #4ec5e9;
+  font-size: 1em;
+}
+.tags a:hover, .tags a:focus {
+  background-color: #3cbfe7;
+}
+.tags a:active {
+  background-color: #2ab9e4;
+}
+
+/*********************
+MISC STYLES
+*********************/
+#respond {
+  min-height: 400px;
+  margin: 1em 0;
+}
+
+#filters {
+  width: 100%;
+  margin: 0 auto 15px auto;
+  clear: both;
+}
+#filters .cyan-btn {
+  background-color: #4ec5e9;
+  font-size: 1em;
+  min-width: 60px;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  -o-box-shadow: 0px -3px 0px #052636 inset;
+  -webkit-box-shadow: 0px -3px 0px #052636 inset;
+  -moz-box-shadow: 0px -3px 0px #052636 inset;
+  box-shadow: 0px -3px 0px #052636 inset;
+}
+#filters .cyan-btn:hover, #filters .cyan-btn:focus {
+  background-color: #3cbfe7;
+}
+#filters .cyan-btn:active {
+  background-color: #2ab9e4;
+}
+#filters .cyan-btn:active {
+  top: 3px;
+  -o-box-shadow: 0px 0px 0px #052636 inset;
+  -webkit-box-shadow: 0px 0px 0px #052636 inset;
+  -moz-box-shadow: 0px 0px 0px #052636 inset;
+  box-shadow: 0px 0px 0px #052636 inset;
+}
+#filters .cyan-btn:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+.item {
+  margin: 0.5em;
+}
+.item a div {
+  opacity: 0;
+  background-color: rgba(78, 197, 233, 0.6);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.item a div:hover {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+}
+.item a div h2 {
+  color: white;
+  font-size: 2em;
+  padding: 5em 0;
+  text-align: center;
+  position: relative;
+}
+.item a div h2:before {
+  position: absolute;
+  top: 0.5em;
+  text-align: center;
+  font-family: FontAwesome;
+  font-size: 4em;
+}
+
+.UI-UX h2:before {
+  content: "\f10b";
+}
+
+.Web h2:before {
+  content: "\f13b";
+}
+
+.Print h2:before {
+  content: "\f15b";
+}
+
+.Identity h2:before {
+  content: "\f1c5";
 }
 
 /******************************************************************
@@ -2035,21 +2222,43 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 .footer {
-  clear: both;
+  max-height: 300px;
   background-color: #323944;
   color: #f8f9fa;
+  padding: 5% 0;
+  clear: both;
 }
 
-/*
-if you checked out the link above:
-http://www.alistapart.com/articles/organizing-mobile/
-you'll want to style the footer nav
-a bit more in-depth. Remember to keep
-it simple because you'll have to
-override these styles for the desktop
-view.
-*/
-/* end .footer-links */
+.footer-links ul {
+  text-align: center;
+}
+.footer-links ul li {
+  width: 60px;
+  height: 60px;
+  margin-left: 0.5em;
+  display: inline-block;
+  background-color: #4ec5e9;
+  padding: 1em;
+}
+.footer-links ul li:first-child {
+  margin-left: 0;
+}
+.footer-links ul li:hover, .footer-links ul li:active {
+  -webkit-transition: all 0.6s ease-in;
+  -moz-transition: all 0.6s ease-in;
+  -o-transition: all 0.6s ease-in;
+  background-color: #1482a3;
+}
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.copyright {
+  color: #fbad7c;
+  text-align: center;
+}
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -2277,6 +2486,52 @@ you can add resource intensive styles.
   }
 
   /* end .nav */
+  #chart-range li {
+    margin-right: 15%;
+  }
+
+  .single-title,
+  .page-title,
+  .entry-title {
+    margin: 0;
+    text-align: left;
+  }
+
+  #filters {
+    width: 100%;
+  }
+  #filters .cyan-btn {
+    width: 120px;
+    display: inline;
+  }
+
+  .gallery dl {
+    margin: 1em;
+  }
+  .gallery dl a {
+    opacity: 1;
+  }
+  .gallery dl a:hover {
+    opacity: 0.5;
+    -webkit-transition: opacity 0.2s ease-in;
+    -moz-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+  }
+  .gallery dl a:active {
+    opacity: 0.2;
+    -webkit-transition: opacity 0.2s ease-in;
+    -moz-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+  }
+  .gallery dl img {
+    max-width: 400px;
+  }
+  .gallery dt {
+    height: 100%;
+    background: url("../images/gallery-thumb.png") #4ec5e9 50% 50% no-repeat;
+  }
+
+  /* end .gallery */
   /*********************
   SIDEBARS & ASIDES
   *********************/
@@ -2321,12 +2576,8 @@ you can add resource intensive styles.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  .footer-links ul li {
-    /*
-    be careful with the depth of your menus.
-    it's very rare to have multi-depth menus in
-    the footer.
-    */
+  .footer-links ul {
+    text-align: right;
   }
 
   /* end .footer-links */

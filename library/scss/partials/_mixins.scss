@@ -51,6 +51,12 @@ BOX SIZING
 	-o-border-top: $size solid $color;
 	border-top: $size solid $color; 
 }
+@mixin left-border($size, $color){
+	-webkit-border-left: $size solid $color;
+	-moz-border-left: $size solid $color;
+	-o-border-left: $size solid $color;
+	border-left: $size solid $color; 
+}
 
 /*********************
 COLOR TRANSPARENCY
@@ -64,6 +70,10 @@ COLOR TRANSPARENCY
 	background-color: rgba(255,255,255,$opacity);
 }
 
+@mixin transparent-cyan($opacity){
+	background-color: rgba(78, 197, 233, $opacity);
+}
+
 /*********************
 MISC HELPERS
 *********************/
@@ -72,4 +82,29 @@ MISC HELPERS
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
+}
+
+/********************
+BUTTONS
+********************/
+
+@mixin button-style($color,$size){
+  @extend %btn; 
+  background-color: $color;
+  font-size: $size;
+  &:hover,
+  &:focus {
+    background-color: darken($color, 4%);
+  } 
+
+  &:active {
+    background-color: darken($color, 8%);
+  } 
+}
+
+@mixin button-shadow($top, $left, $blur, $color, $inset) {
+	-o-box-shadow:$top $left $blur $color $inset;
+	-webkit-box-shadow:$top $left $blur $color $inset;
+	-moz-box-shadow:$top $left $blur $color $inset;
+	box-shadow:$top $left $blur $color $inset;
 }

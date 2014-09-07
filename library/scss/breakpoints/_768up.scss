@@ -164,6 +164,55 @@ NAVIGATION STYLES
 
 } /* end .nav */
 
+#chart-range{
+	li{
+		margin-right: 15%;
+	}
+}
+.single-title,
+.page-title,
+.entry-title {
+	margin: 0;
+	text-align: left;
+}
+
+#filters{
+	width: 100%;
+	.cyan-btn{
+		width: 120px;
+		display: inline;
+	}
+}
+
+.gallery {
+			dl {
+				margin: 1em;
+				a {
+					opacity: 1;
+					&:hover{
+						opacity: 0.5;
+						@include transition(opacity 0.2s ease-in);
+					}
+					&:active{
+						opacity: 0.2;
+						@include transition(opacity 0.2s ease-in);
+					}
+				}
+
+				img {
+					max-width: 400px;
+				}
+
+			}
+
+			dt {
+				height: 100%;
+				background: url('../images/gallery-thumb.png') $cyan 50% 50% no-repeat;
+			}
+
+			dd {}
+
+		} /* end .gallery */
 /*********************
 SIDEBARS & ASIDES
 *********************/
@@ -298,15 +347,11 @@ mobile. Make sure to double check these!
 */
 .footer-links {
 	ul {
+		text-align: right;
 		li {
 			a {
 				&:hover {}
 			}
-			/*
-			be careful with the depth of your menus.
-			it's very rare to have multi-depth menus in
-			the footer.
-			*/
 			ul {}
 		}
 	}

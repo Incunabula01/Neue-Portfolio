@@ -1,9 +1,24 @@
 <?php
 /*
- Template Name: Portfolio Page
+ Template Name: Contact Form
 */
 ?>
 
+<?php
+ 
+  //response generation function
+  $response = "";
+ 
+  //function to generate response
+  function my_contact_form_generate_response($type, $message){
+ 
+    global $response;
+ 
+    if($type == "success") $response = "<div class='success'>{$message}</div>";
+    else $response = "<div class='error'>{$message}</div>";
+ 
+  }
+?>
 <?php get_header(); ?>
 
 			<div id="content">
@@ -23,43 +38,23 @@
 								</header>
 
 								<section class="entry-content cf" itemprop="articleBody">
+									<div class="m-all t-1of2 d-1of3">
 									<?php
+										// the content (pretty self explanatory huh)
 										the_content();
 									?>
-									<h1 class="page-title"> Work </h1>
-
-									<div id="filters" class="button-group">
-										<button class="cyan-btn current" data-filter="*">Show All</button>
-										<button class="cyan-btn" data-filter=".UI-UX">UI UX</button>
-										<button class="cyan-btn" data-filer=".Web">Web</button>	
-										<button class="cyan-btn" data-filter=".Print">Print</button>
-										<button class="cyan-btn" data-filter=".Identity">Identity</button>
 									</div>
-									
-									<div id="gallery-container">
-										<?php
-										global $post;
-										$tmp_post = $post;
-										$args = array( 'numberposts' => -1 );
-										$myposts = get_posts( $args );
-										foreach( $myposts as $post ) :	setup_postdata($post); 
-											$post_thumbnail_id = get_post_thumbnail_id();
-											$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'medium' );
-										?>
-
-										<div class="item <?php $category = get_the_category(); echo $category[0]->cat_name; ?>">
-											<a href="<?php echo get_permalink(); ?>" >
-												<div><span><h2><?php echo get_the_title(); ?></h2></span></div>
-												<img src="<?php echo $featured_src[0]; ?>"/>
-											</a>
-										</div>
-
-										<?php endforeach; ?>
-										<?php $post = $tmp_post; ?>
+									<div id="respond" class="m-all t-3of5 d-2of5">
+ 										 <?php echo $response; ?>
+										  <form class="field" action="<?php the_permalink(); ?>" method="post">
+										    	<input type="text" name="message_name" placeholder="Name" value="<?php echo esc_attr($_POST['message_name']); ?>">
+										    	<input type="text" name="message_email" placeholder="Email" value="<?php echo esc_attr($_POST['message_email']); ?>">
+										    	<textarea type="text" placeholder="Message" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
+										    	<input type="hidden" name="submitted" value="1">
+										    	<input class="blue-btn" type="submit" value="Go">
+										  </form>
 									</div>
-									
 								</section>
-
 
 								<footer class="article-footer">
 

@@ -91,10 +91,49 @@ var timeToWaitForLast = 100;
 jQuery(document).ready(function($) {
 
 	/* Mobile Nav Menu */
-	$('.menu-toggle').on( 'click',function(){
-		$('.nav-menu').slideToggle(500, 'easeInOutQuad');
+	$('.menu-toggle').click( function(){
+		$('.nav-menu').slideToggle(500);
 		$(this).toggleClass('toggled');
 	});
+
+	/* Init Portfolio Isotope Gallery */
+	var $container = $('#gallery-container');
+
+	$container.imagesLoaded( function(){
+		$container.isotope({
+			layoutMode: 'masonry',
+			columnWidth: 300
+		});
+
+		$('#filters').on('click', 'button', function(){
+			var filterValue = $(this).attr('data-filter');
+			$container.isotope({
+				filter: filterValue
+			});
+		});
+
+		$('.button-group').each( function (i, buttonGroup){
+			var $buttonGroup = $(buttonGroup);
+			$buttonGroup.on('click', 'button', function(){
+				$buttonGroup.find('.current').removeClass('current');
+				$(this).addClass('current');
+			});
+		});
+	}); 
+
+
+	/* Masonry Gallery for Posts */
+
+	var postGallery = $('.gallery');
+
+	postGallery.imagesLoaded( function(){
+		postGallery.masonry({
+			columnWidth: '.gallery-item',
+			isFitWidth: true
+		});
+	});
+	
+
 }); 
 
 
