@@ -1,15 +1,6 @@
 <?php
 /*
- Template Name: Custom Page Example
- *
- * This is your custom page template. You can create as many of these as you need.
- * Simply name is "page-whatever.php" and in add the "Template Name" title at the
- * top, the same way it is here.
- *
- * When you create your page, you can just select the template and viola, you have
- * a custom page template to call your very own. Your mother would be so proud.
- *
- * For more info: http://codex.wordpress.org/Page_Templates
+ Template Name: Portfolio Page
 */
 ?>
 
@@ -19,7 +10,7 @@
 
 				<div id="inner-content" class="wrap cf">
 
-						<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
+						<div id="main" class="m-all t-all d-all cf" role="main">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -29,37 +20,44 @@
 
 									<h1 class="page-title"><?php the_title(); ?></h1>
 
-									<p class="byline vcard">
-										<?php printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
-									</p>
-
-
 								</header>
 
 								<section class="entry-content cf" itemprop="articleBody">
 									<?php
-										// the content (pretty self explanatory huh)
 										the_content();
-
-										/*
-										 * Link Pages is used in case you have posts that are set to break into
-										 * multiple pages. You can remove this if you don't plan on doing that.
-										 *
-										 * Also, breaking content up into multiple pages is a horrible experience,
-										 * so don't do it. While there are SOME edge cases where this is useful, it's
-										 * mostly used for people to get more ad views. It's up to you but if you want
-										 * to do it, you're wrong and I hate you. (Ok, I still love you but just not as much)
-										 *
-										 * http://gizmodo.com/5841121/google-wants-to-help-you-avoid-stupid-annoying-multiple-page-articles
-										 *
-										*/
-										wp_link_pages( array(
-											'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
-											'after'       => '</div>',
-											'link_before' => '<span>',
-											'link_after'  => '</span>',
-										) );
 									?>
+									<h1 class="page-title"> Work </h1>
+
+									<div id="filters" class="button-group">
+										<button class="cyan-btn current" data-filter="*">Show All</button>
+										<button class="cyan-btn" data-filter=".UI-UX">UI UX</button>
+										<button class="cyan-btn" data-filer=".Web">Web</button>	
+										<button class="cyan-btn" data-filter=".Print">Print</button>
+										<button class="cyan-btn" data-filter=".Identity">Identity</button>
+									</div>
+									
+									<div id="gallery-container">
+										<?php
+										global $post;
+										$tmp_post = $post;
+										$args = array( 'numberposts' => -1 );
+										$myposts = get_posts( $args );
+										foreach( $myposts as $post ) :	setup_postdata($post); 
+											$post_thumbnail_id = get_post_thumbnail_id();
+											$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'medium' );
+										?>
+
+										<div class="item <?php $category = get_the_category(); echo $category[0]->cat_name; ?>">
+											<a href="<?php echo get_permalink(); ?>" >
+												<div><span><h2><?php echo get_the_title(); ?></h2></span></div>
+												<img src="<?php echo $featured_src[0]; ?>"/>
+											</a>
+										</div>
+
+										<?php endforeach; ?>
+										<?php $post = $tmp_post; ?>
+									</div>
+									
 								</section>
 
 
@@ -68,8 +66,6 @@
                   <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 
 								</footer>
-
-								<?php comments_template(); ?>
 
 							</article>
 
@@ -90,8 +86,6 @@
 							<?php endif; ?>
 
 						</div>
-
-						<?php get_sidebar(); ?>
 
 				</div>
 

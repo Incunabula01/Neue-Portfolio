@@ -64,42 +64,32 @@
 											</li>
 										</ul>
 									</div>
+								<div class="m-all t-all d-all cf">
 
-								<div class="cf">
-
-									<h1 class="page-title"> Work </h1>
-
-									<div id="filters" class="button-group">
-										<button class="cyan-btn current" data-filter="*">Show All</button>
-										<button class="cyan-btn" data-filter=".UI-UX">UI UX</button>
-										<button class="cyan-btn" data-filer=".Web">Web</button>	
-										<button class="cyan-btn" data-filter=".Print">Print</button>
-										<button class="cyan-btn" data-filter=".Identity">Identity</button>
-									</div>
-									
-									<div id="gallery-container">
+									<div class="gallery">
 										<?php
-										global $post;
-										$tmp_post = $post;
-										$args = array( 'numberposts' => -1 );
-										$myposts = get_posts( $args );
-										foreach( $myposts as $post ) :	setup_postdata($post); 
-											$post_thumbnail_id = get_post_thumbnail_id();
-											$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'medium' );
+											global $post;
+											$tmp_post = $post;
+											$args = array( 'numberposts' => 6 );
+											$myposts = get_posts( $args );
+											foreach( $myposts as $post ) :	setup_postdata($post); 
+												$post_thumbnail_id = get_post_thumbnail_id();
+												$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'bones-thumb-400' );
 										?>
 
-										<div class="item <?php $category = get_the_category(); echo $category[0]->cat_name; ?>">
-											<a href="<?php echo get_permalink(); ?>" >
-												<div><span><h2><?php echo get_the_title(); ?></h2></span></div>
-												<img src="<?php echo $featured_src[0]; ?>"/>
-											</a>
-										</div>
+											<div class="item gallery-item <?php $category = get_the_category(); echo $category[0]->cat_name; ?>">
+												<a href="<?php echo get_permalink(); ?>" >
+													<div><span><h2><?php echo get_the_title(); ?></h2></span></div>
+													<img src="<?php echo $featured_src[0]; ?>"/>
+												</a>
+											</div>
 
 										<?php endforeach; ?>
 										<?php $post = $tmp_post; ?>
 									</div>
 
 								</div>
+
 								</section>
 
 								<footer class="article-footer">

@@ -11,11 +11,11 @@
 
 						 <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-						 	 <?php
-			                  	if (has_post_thumbnail()){
-			                  		the_post_thumbnail('portfolio-post');
-			                  	}
-			                 ?>
+						 	<?php $thumb_id = get_post_thumbnail_id();
+								  $post_header = wp_get_attachment_image_src($thumb_id, 'portfolio-post', true);
+							?>
+
+						 	<div class="header-image" style="background: url(<?php echo $post_header[0]; ?>) 50% 0 no-repeat; background-size: cover"></div>
 
 			                <header class="article-header wrap">
 

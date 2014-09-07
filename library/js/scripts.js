@@ -124,7 +124,7 @@ jQuery(document).ready(function($) {
 
 	/* Masonry Gallery for Posts */
 
-	var postGallery = $('#gallery-1');
+	var postGallery = $('.gallery');
 
 	postGallery.imagesLoaded( function(){
 		postGallery.masonry({

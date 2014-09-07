@@ -80,6 +80,7 @@ add_image_size( 'bones-thumb-400', 400, 200, true);
 add_image_size( 'bones-thumb-300', 300, 100, true );
 add_image_size( 'portfolio-post', 800, 400, true);
 add_image_size( 'gallery-thumb' , 500, 300, true);
+add_image_size( 'portfolio-header', 9999, 300, true);
 
 
 add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );

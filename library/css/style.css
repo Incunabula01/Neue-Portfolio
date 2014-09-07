@@ -1691,9 +1691,9 @@ POSTS & CONTENT STYLES
   margin-top: 1.5em;
 }
 
-.attachment-portfolio-post {
+.header-image {
   background-size: cover;
-  height: auto;
+  height: 35em;
   width: 100%;
   overflow: hidden;
 }
@@ -1855,9 +1855,13 @@ POSTS & CONTENT STYLES
   -moz-transition: opacity 0.2s ease-in;
   -o-transition: opacity 0.2s ease-in;
 }
+.gallery dl img {
+  width: 100%;
+  height: auto;
+}
 .gallery dt {
   height: 100%;
-  background: url("../images/thumb-bg.png") #f98e4b 50% 50% no-repeat;
+  background: url("../images/gallery-thumb2x.png") #4ec5e9 50% 50% no-repeat;
 }
 
 /* end .gallery */
@@ -2501,6 +2505,33 @@ you can add resource intensive styles.
     display: inline;
   }
 
+  .gallery dl {
+    margin: 1em;
+  }
+  .gallery dl a {
+    opacity: 1;
+  }
+  .gallery dl a:hover {
+    opacity: 0.5;
+    -webkit-transition: opacity 0.2s ease-in;
+    -moz-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+  }
+  .gallery dl a:active {
+    opacity: 0.2;
+    -webkit-transition: opacity 0.2s ease-in;
+    -moz-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+  }
+  .gallery dl img {
+    max-width: 400px;
+  }
+  .gallery dt {
+    height: 100%;
+    background: url("../images/gallery-thumb.png") #4ec5e9 50% 50% no-repeat;
+  }
+
+  /* end .gallery */
   /*********************
   SIDEBARS & ASIDES
   *********************/
