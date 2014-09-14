@@ -76,21 +76,20 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-400', 400, 200, true);
-add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'bones-thumb-400', 450, 250, true);
+add_image_size( 'bones-thumb-300', 300, 150, true );
 add_image_size( 'portfolio-post', 800, 400, true);
-add_image_size( 'gallery-thumb' , 500, 300, true);
-add_image_size( 'portfolio-header', 9999, 300, true);
+add_image_size( 'gallery-thumb' , 320, 600, true);
 
 
 add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'bones-thumb-400' => __('400px by 200px'),
+        'bones-thumb-400' => __('400px by 250px'),
         'bones-thumb-300' => __('300px by 100px'),
         'portfolio-post' => __('800px by 400px'),
-        'gallery-thumb' => __('500px by 300px')
+        'gallery-thumb' => __('600px by 320px')
     ) );
 }
 
@@ -112,8 +111,8 @@ function bones_register_sidebars() {
 		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
+		'before_title' => '<h3 class="widgettitle">',
+		'after_title' => '</h3>',
 	));
 
 	/*

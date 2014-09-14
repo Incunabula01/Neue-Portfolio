@@ -609,48 +609,7 @@ p {
 /******************************************************************
 Site Name:
 Author:
-
-Stylesheet: Sass Functions
-
-You can do a lot of really cool things in Sass. Functions help you
-make repeated actions a lot easier. They are really similar to mixins,
-but can be used for so much more.
-
-Anyway, keep them all in here so it's easier to find when you're
-looking for one.
-
-For more info on functions, go here:
-http://sass-lang.com/documentation/Sass/Script/Functions.html
-
-******************************************************************/
-/*********************
-COLOR FUNCTIONS
-These are helpful when you're working
-with shadows and such things. It's essentially
-a quicker way to write RGBA.
-
-Example:
-box-shadow: 0 0 4px black(0.3);
-compiles to:
-box-shadow: 0 0 4px rgba(0,0,0,0.3);
-*********************/
-/*********************
-RESPONSIVE HELPER FUNCTION
-If you're creating a responsive site, then
-you've probably already read
-Responsive Web Design: http://www.abookapart.com/products/responsive-web-design
-
-Here's a nice little helper function for calculating
-target / context
-as mentioned in that book.
-
-Example:
-width: cp(650px, 1000px);
-or
-width: calc-percent(650px, 1000px);
-both compile to:
-width: 65%;
-*********************/
+*/
 /******************************************************************
 Site Name:
 Author:
@@ -1016,7 +975,7 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.blue-btn, .comment-reply-link, #submit, .tags a, #filters .cyan-btn {
+.blue-btn, .comment-reply-link, #submit, .cyan-btn, .tags a, .widget ul li {
   display: inline-block;
   position: relative;
   font-family: "Alegreya Regular", Georgia, Times, serif;
@@ -1034,11 +993,11 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   -moz-transition: background-color 0.14s ease-in-out;
   -o-transition: background-color 0.14s ease-in-out;
 }
-.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .tags a:hover, #filters .cyan-btn:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, .tags a:focus, #filters .cyan-btn:focus {
+.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .cyan-btn:hover, .tags a:hover, .widget ul li:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, .cyan-btn:focus, .tags a:focus, .widget ul li:focus {
   color: white;
   text-decoration: none;
 }
-.blue-btn:active, .comment-reply-link:active, #submit:active, .tags a:active, #filters .cyan-btn:active {
+.blue-btn:active, .comment-reply-link:active, #submit:active, .cyan-btn:active, .tags a:active, .widget ul li:active {
   top: 1px;
 }
 
@@ -1050,6 +1009,26 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 }
 .blue-btn:active, .comment-reply-link:active, #submit:active {
   background-color: #03161f;
+}
+
+.cyan-btn {
+  background-color: #4ec5e9;
+  -o-box-shadow: 0px -3px 0px #052636 inset;
+  -webkit-box-shadow: 0px -3px 0px #052636 inset;
+  -moz-box-shadow: 0px -3px 0px #052636 inset;
+  box-shadow: 0px -3px 0px #052636 inset;
+}
+.cyan-btn:hover, .cyan-btn:focus {
+  background-color: #3cbfe7;
+  outline: -webkit-focus-ring-color auto 0px;
+}
+.cyan-btn:active {
+  top: 3px;
+  background-color: #37bee6;
+  -o-box-shadow: 0px 0px 0px #052636 inset;
+  -webkit-box-shadow: 0px 0px 0px #052636 inset;
+  -moz-box-shadow: 0px 0px 0px #052636 inset;
+  box-shadow: 0px 0px 0px #052636 inset;
 }
 
 /******************************************************************
@@ -1355,16 +1334,8 @@ you set a great foundation, you won't need to add too many styles in
 the other stylesheets. Remember, keep it light: Speed is Important.
 *********************/
 /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Base Mobile Stylesheet
-
-Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
-
+Site Name: Neue Portfolio	
+Author: Joe Widener
 ******************************************************************/
 /*********************
 GENERAL STYLES
@@ -1574,10 +1545,10 @@ NAVIGATION STYLES
 
 .nav-menu {
   clear: both;
-  background-color: #7bd4ef;
   border-bottom: 0;
   display: none;
   width: 100%;
+  background-color: #7bd4ef;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
@@ -1620,14 +1591,19 @@ NAVIGATION STYLES
 
 /* end .nav */
 /*****Nav Icons*****/
-#menu-item-22 a:before {
+.work a:before, .work h1:before {
   padding: 0.2em;
   content: "\f0b1";
 }
 
-#menu-item-23 a:before {
+.contact-me a:before, .contact-me h1:before {
   padding: 0.2em;
   content: "\f0e0";
+}
+
+.about-me a:before, .about-me h1:before {
+  padding: 0.2em;
+  content: "\f007";
 }
 
 /*********************
@@ -1698,22 +1674,27 @@ POSTS & CONTENT STYLES
   overflow: hidden;
 }
 
-.hentry {
+.hentry, .sidebar, .widgettitle {
   background-color: #f8f9fa;
   margin-bottom: 1.5em;
   border-bottom: 1px solid #cccccc;
 }
-.hentry header {
+.hentry header, .sidebar header, .widgettitle header {
   background-color: white;
   border-bottom: 1px solid #eaedf2;
   padding: 1.5em;
 }
-.hentry footer {
+.hentry footer, .sidebar footer, .widgettitle footer {
   padding: 1.5em;
   border-top: 1px solid #eaedf2;
 }
-.hentry footer p {
+.hentry footer p, .sidebar footer p, .widgettitle footer p {
   margin: 0;
+}
+.hentry footer .cyan-btn, .sidebar footer .cyan-btn, .widgettitle footer .cyan-btn {
+  padding: 0.2em;
+  width: 100%;
+  font-size: 1.5em;
 }
 
 /* end .hentry */
@@ -1722,6 +1703,25 @@ POSTS & CONTENT STYLES
 .entry-title {
   margin: 0;
   text-align: center;
+}
+.single-title:before,
+.page-title:before,
+.entry-title:before {
+  font-family: FontAwesome;
+  font-size: 1em;
+}
+
+#archive-header {
+  background-color: white;
+}
+
+.archive-title {
+  padding: 0.5em;
+}
+.archive-title h2 {
+  font-family: "Ostrich Black", Verdana, sans-serif;
+  color: #f98e4b;
+  font-size: 2em;
 }
 
 /* want to style individual post classes? Booya! */
@@ -1740,19 +1740,29 @@ POSTS & CONTENT STYLES
   margin: 0;
 }
 
+/* post images */
+img {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  min-width: 320px;
+  height: auto;
+  overflow: hidden;
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
 /* entry content */
 .entry-content {
-  padding: 1.5em 1.5em 0;
   width: 100%;
-  /*
-  image alignment on a screen this size may be
-  a bit difficult. It's set to start aligning
-  and floating images at the next breakpoint,
-  but it's up to you. Feel free to change it up.
-  */
-}
-.entry-content p {
-  margin: 0 0 1.5em;
+  padding: 0 1.5em;
+  margin-bottom: 1.5em;
 }
 .entry-content table {
   width: 100%;
@@ -1799,20 +1809,6 @@ POSTS & CONTENT STYLES
   font-size: 0.9em;
   color: #787878;
   margin-bottom: 1.5em;
-}
-.entry-content img {
-  margin: 0 0 1.5em 0;
-  max-width: 100%;
-  min-width: 320px;
-  height: auto;
-}
-.entry-content .size-auto,
-.entry-content .size-full,
-.entry-content .size-large,
-.entry-content .size-medium,
-.entry-content .size-thumbnail {
-  max-width: 100%;
-  height: auto;
 }
 .entry-content pre {
   background: #323944;
@@ -1862,6 +1858,7 @@ POSTS & CONTENT STYLES
 .gallery dt {
   height: 100%;
   background: url("../images/gallery-thumb2x.png") #4ec5e9 50% 50% no-repeat;
+  background-size: 50%;
 }
 
 /* end .gallery */
@@ -1900,41 +1897,21 @@ MISC STYLES
   margin: 1em 0;
 }
 
-#filters {
-  width: 100%;
-  margin: 0 auto 15px auto;
-  clear: both;
-}
 #filters .cyan-btn {
-  background-color: #4ec5e9;
-  font-size: 1em;
-  min-width: 60px;
+  width: 18%;
+  font-size: 0.8em;
+  margin: 0.5em 0.1em;
+}
+#filters i {
   padding: 0.5em;
-  margin: 0.5em 0;
-  -o-box-shadow: 0px -3px 0px #052636 inset;
-  -webkit-box-shadow: 0px -3px 0px #052636 inset;
-  -moz-box-shadow: 0px -3px 0px #052636 inset;
-  box-shadow: 0px -3px 0px #052636 inset;
 }
-#filters .cyan-btn:hover, #filters .cyan-btn:focus {
-  background-color: #3cbfe7;
-}
-#filters .cyan-btn:active {
-  background-color: #2ab9e4;
-}
-#filters .cyan-btn:active {
-  top: 3px;
-  -o-box-shadow: 0px 0px 0px #052636 inset;
-  -webkit-box-shadow: 0px 0px 0px #052636 inset;
-  -moz-box-shadow: 0px 0px 0px #052636 inset;
-  box-shadow: 0px 0px 0px #052636 inset;
-}
-#filters .cyan-btn:focus {
-  outline: -webkit-focus-ring-color auto 0px;
+#filters p {
+  display: none;
 }
 
+/*  Isotope Gallery Icons */
 .item {
-  margin: 0.5em;
+  margin: 1em;
 }
 .item a div {
   opacity: 0;
@@ -1959,13 +1936,15 @@ MISC STYLES
 .item a div h2:before {
   position: absolute;
   top: 0.5em;
+  left: 0.8em;
   text-align: center;
   font-family: FontAwesome;
   font-size: 4em;
 }
 
 .UI-UX h2:before {
-  content: "\f10b";
+  padding-left: 0.1em;
+  content: "\f10a";
 }
 
 .Web h2:before {
@@ -2205,8 +2184,37 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
+.sidebar {
+  margin-top: 0em;
+}
+
+.widgettitle {
+  padding: 0.2em;
+  text-align: center;
+  color: #f98e4b;
+}
+
+.widget {
+  padding: 0 1em;
+}
 .widget ul li {
+  background-color: #4ec5e9;
+  font-size: 1em;
+  width: 100%;
+  padding: 0.2em;
+  text-align: center;
+  margin: 0.5em 0;
   /* deep nesting */
+}
+.widget ul li:hover, .widget ul li:focus {
+  background-color: #3cbfe7;
+}
+.widget ul li:active {
+  background-color: #2ab9e4;
+}
+.widget ul li a {
+  color: white;
+  text-decoration: none;
 }
 
 .no-widgets {
@@ -2418,6 +2426,11 @@ you can add resource intensive styles.
   /*********************
   NAVIGATION STYLES
   *********************/
+  .nav {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0 auto;
+  }
+
   .menu-toggle {
     display: none;
   }
@@ -2427,7 +2440,7 @@ you can add resource intensive styles.
     margin: 0 auto;
     display: block;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
@@ -2437,8 +2450,9 @@ you can add resource intensive styles.
     margin-top: 0;
   }
   .nav-menu li {
-    float: left;
+    display: inline-block;
     position: relative;
+    width: 32%;
     /*
     plan your menus and drop-downs wisely.
     */
@@ -2497,12 +2511,26 @@ you can add resource intensive styles.
     text-align: left;
   }
 
+  .entry-content footer .cyan-btn {
+    width: 120px;
+    float: right;
+  }
+
   #filters {
     width: 100%;
   }
   #filters .cyan-btn {
-    width: 120px;
     display: inline;
+    height: 45px;
+    padding: 0 1em;
+    line-height: 0.2em;
+  }
+  #filters i {
+    padding: 0.3em;
+  }
+  #filters p {
+    display: inline-block;
+    font-size: 1.5em;
   }
 
   .gallery dl {
@@ -2535,18 +2563,16 @@ you can add resource intensive styles.
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  .sidebar {
-    margin-top: 2.2em;
-  }
-
   .widgettitle {
-    border-bottom: 2px solid #444;
+    text-align: left;
+    border-bottom: 0.1em solid #eaedf2;
     margin-bottom: 0.75em;
+    padding: 0em;
   }
 
   .widget {
     padding: 0 10px;
-    margin: 2.2em 0;
+    margin: 0em;
   }
   .widget ul li {
     margin-bottom: 0.75em;

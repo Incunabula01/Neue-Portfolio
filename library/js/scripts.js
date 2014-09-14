@@ -101,8 +101,9 @@ jQuery(document).ready(function($) {
 
 	$container.imagesLoaded( function(){
 		$container.isotope({
-			layoutMode: 'masonry',
-			columnWidth: 300
+			itemSelector: '.item',
+			layoutMode: 'fitRows',
+			columnWidth: 400
 		});
 
 		$('#filters').on('click', 'button', function(){

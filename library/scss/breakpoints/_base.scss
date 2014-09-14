@@ -1,14 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Base Mobile Stylesheet
-
-Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
-
+Site Name: Neue Portfolio	
+Author: Joe Widener
 ******************************************************************/
 
 /*********************
@@ -196,6 +188,7 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
+
 .menu-toggle {
 	top: 0.5em;
 	right: 0.5em;
@@ -226,11 +219,10 @@ NAVIGATION STYLES
 
 .nav-menu {
 	clear: both;
-	background-color: lighten($cyan, 10%);
 	border-bottom: 0;
 	display: none;
 	width: 100%;
-
+	background-color: lighten($cyan, 10%);
 	li {
 		margin: 0 auto;
 		font-size: 1.5em;
@@ -299,17 +291,24 @@ NAVIGATION STYLES
 
 /*****Nav Icons*****/
 
-#menu-item-22{
-	a:before{
+.work{
+	a:before, h1:before{
 		padding: 0.2em;
 		content: "\f0b1"; //briefcase icon
 	}
 }
 
-#menu-item-23{
-	a:before{
+.contact-me{
+	a:before, h1:before {
 		padding: 0.2em;
 		content: "\f0e0"; //envelope icon
+	}
+}
+
+.about-me{
+	a:before, h1:before {
+		padding: 0.2em;
+		content: "\f007";
 	}
 }
 
@@ -397,6 +396,11 @@ POSTS & CONTENT STYLES
 				p {
 					margin: 0;
 				}
+				.cyan-btn{
+					padding: 0.2em;
+					width: 100%;
+					font-size: 1.5em;
+				}
 			}
 
 		} /* end .hentry */
@@ -406,6 +410,10 @@ POSTS & CONTENT STYLES
 		.entry-title {
 			margin: 0;
 			text-align: center;
+			&:before{
+				font-family: FontAwesome;
+				font-size: 1em;
+			}
 		}
 
 		.single-title {}
@@ -414,7 +422,18 @@ POSTS & CONTENT STYLES
 
 		.entry-title {}
 
-		.archive-title {}
+		#archive-header{
+			background-color: $white;
+		}
+
+		.archive-title {
+			padding: 0.5em;
+			h2{
+				font-family: $header-font;
+				color: $orange;
+				font-size: 2em;
+			}
+		}
 
 		/* want to style individual post classes? Booya! */
 		.post-id {}         /* post by id (i.e. post-3) */
@@ -435,15 +454,36 @@ POSTS & CONTENT STYLES
 			time {}
 		}
 
-		/* entry content */
-		.entry-content {
-			padding: 1.5em 1.5em 0;
-			width: 100%;
+		/* post images */
 
-			p {
-				margin: 0 0 1.5em;
+		img {
+				margin-bottom: 1.5em;
+				max-width: 100%;
+				min-width: 320px;
+				height: auto;
+				overflow: hidden;
 			}
 
+			.alignleft, img.alignleft {}
+			.alignright, img.alignright {}
+			.aligncenter, img.aligncenter {}
+
+			.size-auto,
+			.size-full,
+			.size-large,
+			.size-medium,
+			.size-thumbnail {
+				max-width: 100%;
+				height: auto;
+			}
+
+		/* entry content */
+		.entry-content {
+			width: 100%;
+			padding: 0 1.5em;
+			margin-bottom: 1.5em;
+
+			p {}
 
 			ul, ol, table, dl {}
 
@@ -528,32 +568,6 @@ POSTS & CONTENT STYLES
 				margin-bottom: 1.5em;
 			}
 
-			img {
-				margin: 0 0 1.5em 0;
-				max-width: 100%;
-				min-width: 320px;
-				height: auto;
-			}
-
-			/*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/
-			.alignleft, img.alignleft {}
-			.alignright, img.alignright {}
-			.aligncenter, img.aligncenter {}
-
-			.size-auto,
-			.size-full,
-			.size-large,
-			.size-medium,
-			.size-thumbnail {
-				max-width: 100%;
-				height: auto;
-			}
-
 			pre {
 				background: $black;
 				color: $light-gray;
@@ -607,6 +621,7 @@ POSTS & CONTENT STYLES
 			dt {
 				height: 100%;
 				background: url('../images/gallery-thumb2x.png') $cyan 50% 50% no-repeat;
+				background-size: 50%;
 			}
 
 			dd {}
@@ -649,27 +664,23 @@ MISC STYLES
 }
 
 #filters{
-	width: 100%;
-	margin: 0 auto 15px auto;
-	clear: both;
 	.cyan-btn{
-		@include button-style($cyan,1em);
-		min-width: 60px;
+		width: 18%;
+		font-size: 0.8em;
+		margin: 0.5em 0.1em;
+	}
+	i{
 		padding: 0.5em;
-		margin: 0.5em 0;
-		@include button-shadow(0px,-3px,0px,$blue,inset);
-		&:active{
-			top: 3px;
-			@include button-shadow(0px,0px,0px,$blue,inset);
-		}
-		&:focus{
-			outline: -webkit-focus-ring-color auto 0px;
-		}
+	}
+	p{
+		display: none;
 	}
 }
 
+/*  Isotope Gallery Icons */
+
 .item{
-	margin: 0.5em;
+	margin: 1em;
 	a{
 		div {
 			opacity: 0;
@@ -690,6 +701,7 @@ MISC STYLES
 				&:before{
 					position: absolute;
 					top: 0.5em;
+					left: 0.8em;
 					text-align: center;
 					font-family: FontAwesome;
 					font-size: 4em;
@@ -700,7 +712,8 @@ MISC STYLES
 }
 .UI-UX{
 	h2:before{
-		content: "\f10b";
+		padding-left: 0.1em;
+		content: "\f10a";
 	}
 }
 .Web{
@@ -1052,21 +1065,37 @@ COMMENT FORM STYLES
 SIDEBARS & ASIDES
 *********************/
 
-.sidebar {}
+.sidebar {
+	margin-top: 0em;
+	@extend .hentry
+}
 
-	.widgettitle {}
+	.widgettitle {
+		padding: 0.2em;
+		text-align: center;
+		color: $orange;
+		@extend .hentry
+	}
 
 	.widget {
-
+		padding: 0 1em;
 		ul {
 
 			li {
+				@include button-style($cyan,1em);
+				width: 100%;
+				padding: 0.2em;
+				text-align: center;
+				margin: 0.5em 0;
 
 				&:first-child {}
 
 				&:last-child {}
 
-				a {}
+				a {
+					color: $white;
+					text-decoration: none;
+				}
 
 				/* deep nesting */
 				ul {}

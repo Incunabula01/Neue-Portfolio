@@ -68,3 +68,19 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 } 
 
+.cyan-btn {
+  @extend %btn; // here we load the btn defaults
+  background-color: $cyan;
+  @include button-shadow(0px,-3px,0px,$blue,inset);
+    &:hover,
+    &:focus {
+      background-color: darken($cyan, 4%);
+      outline: -webkit-focus-ring-color auto 0px;
+    } // end hover
+    &:active{
+      top: 3px;
+      background-color: darken($cyan, 5%);
+      @include button-shadow(0px,0px,0px,$blue,inset);
+    }
+} 
+

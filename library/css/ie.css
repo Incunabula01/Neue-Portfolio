@@ -319,6 +319,11 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
+.nav {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+}
+
 .menu-toggle {
   display: none;
 }
@@ -328,7 +333,7 @@ NAVIGATION STYLES
   margin: 0 auto;
   display: block;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */
@@ -338,8 +343,9 @@ NAVIGATION STYLES
   margin-top: 0;
 }
 .nav-menu li {
-  float: left;
+  display: inline-block;
   position: relative;
+  width: 32%;
   /*
   plan your menus and drop-downs wisely.
   */
@@ -398,12 +404,26 @@ NAVIGATION STYLES
   text-align: left;
 }
 
+.entry-content footer .cyan-btn {
+  width: 120px;
+  float: right;
+}
+
 #filters {
   width: 100%;
 }
 #filters .cyan-btn {
-  width: 120px;
   display: inline;
+  height: 45px;
+  padding: 0 1em;
+  line-height: 0.2em;
+}
+#filters i {
+  padding: 0.3em;
+}
+#filters p {
+  display: inline-block;
+  font-size: 1.5em;
 }
 
 .gallery dl {
@@ -436,18 +456,16 @@ NAVIGATION STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.sidebar {
-  margin-top: 2.2em;
-}
-
 .widgettitle {
-  border-bottom: 2px solid #444;
+  text-align: left;
+  border-bottom: 0.1em solid #eaedf2;
   margin-bottom: 0.75em;
+  padding: 0em;
 }
 
 .widget {
   padding: 0 10px;
-  margin: 2.2em 0;
+  margin: 0em;
 }
 .widget ul li {
   margin-bottom: 0.75em;
