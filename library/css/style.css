@@ -605,7 +605,6 @@ p {
   font-feature-settings: "liga", "dlig";
 }
 
-/* Font Awesome Fonts */
 /******************************************************************
 Site Name:
 Author:
@@ -641,24 +640,6 @@ Site Name:
 Author:
 
 Stylesheet: Grid Stylesheet
-
-I've seperated the grid so you can swap it out easily. It's
-called at the top the style.scss stylesheet.
-
-There are a ton of grid solutions out there. You should definitely
-experiment with your own. Here are some recommendations:
-
-http://gridsetapp.com - Love this site. Responsive Grids made easy.
-http://susy.oddbird.net/ - Grids using Compass. Very elegant.
-http://gridpak.com/ - Create your own responsive grid.
-https://github.com/dope/lemonade - Neat lightweight grid.
-
-
-The grid below is a custom built thingy I modeled a bit after
-Gridset. It's VERY basic and probably shouldn't be used on
-your client projects. The idea is you learn how to roll your
-own grids. It's better in the long run and allows you full control
-over your project's layout.
 
 ******************************************************************/
 .last-col {
@@ -952,29 +933,12 @@ you can just remove this stylesheet.
 }
 
 /******************************************************************
-Site Name:
-Author:
+Site Name: Neue Portfolio
+Author: Joe Widener
 
 Stylesheet: Button Styles
 
-Buttons are a pretty important part of your site's style, so it's
-important to have a consistent baseline for them. Use this stylesheet
-to create all kinds of buttons.
-
-Helpful Links:
-http://galp.in/blog/2011/08/02/the-ui-guide-part-1-buttons/
-
 ******************************************************************/
-/*********************
-BUTTON DEFAULTS
-We're gonna use a placeholder selector here
-so we can use common styles. We then use this
-to load up the defaults in all our buttons.
-
-Here's a quick video to show how it works:
-http://www.youtube.com/watch?v=hwdVpKiJzac
-
-*********************/
 .blue-btn, .comment-reply-link, #submit, .cyan-btn, .tags a, .widget ul li {
   display: inline-block;
   position: relative;
@@ -1013,6 +977,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 .cyan-btn {
   background-color: #4ec5e9;
+  height: 45px;
   -o-box-shadow: 0px -3px 0px #052636 inset;
   -webkit-box-shadow: 0px -3px 0px #052636 inset;
   -moz-box-shadow: 0px -3px 0px #052636 inset;
@@ -1036,17 +1001,6 @@ Site Name:
 Author:
 
 Stylesheet: Form Styles
-
-We put all the form and button styles in here to setup a consistent
-look. If we need to customize them, we can do this in the main
-stylesheets and just override them. Easy Peasy.
-
-You're gonna see a few data-uri thingies down there. If you're not
-sure what they are, check this link out:
-http://css-tricks.com/data-uris/
-If you want to create your own, use this helpful link:
-http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/
-
 ******************************************************************/
 /*********************
 INPUTS
@@ -1081,7 +1035,7 @@ textarea,
   border: 0;
   width: 100%;
   max-width: 400px;
-  font-family: "Ostrich Black", Verdana, sans-serif;
+  font-family: "Alegreya Regular", Georgia, Times, serif;
   background-color: #eaedf2;
   -webkit-transition: background-color 0.24s ease-in-out;
   -moz-transition: background-color 0.24s ease-in-out;
@@ -1909,6 +1863,15 @@ MISC STYLES
   display: none;
 }
 
+#contactForm .cyan-btn {
+  width: 100%;
+  font-size: 1em;
+  margin: 0.5em 0.1em;
+}
+#contactForm .fa-send:before {
+  padding: 0.5em;
+}
+
 /*  Isotope Gallery Icons */
 .item {
   margin: 1em;
@@ -2230,17 +2193,30 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 .footer {
-  max-height: 300px;
+  min-height: 300px;
   background-color: #323944;
   color: #f8f9fa;
   padding: 5% 0;
   clear: both;
 }
 
-.footer-links ul {
+.footer-links .footer-text-menu h3 {
+  background: transparent;
+}
+.footer-links .footer-text-menu ul {
   text-align: center;
 }
-.footer-links ul li {
+.footer-links .footer-text-menu ul li {
+  padding: 1em;
+}
+.footer-links .footer-text-menu ul li a {
+  color: #f98e4b;
+  text-decoration: none;
+}
+.footer-links .social-media-links ul {
+  text-align: center;
+}
+.footer-links .social-media-links ul li {
   width: 60px;
   height: 60px;
   margin-left: 0.5em;
@@ -2248,16 +2224,16 @@ FOOTER STYLES
   background-color: #4ec5e9;
   padding: 1em;
 }
-.footer-links ul li:first-child {
+.footer-links .social-media-links ul li:first-child {
   margin-left: 0;
 }
-.footer-links ul li:hover, .footer-links ul li:active {
+.footer-links .social-media-links ul li:hover, .footer-links .social-media-links ul li:active {
   -webkit-transition: all 0.6s ease-in;
   -moz-transition: all 0.6s ease-in;
   -o-transition: all 0.6s ease-in;
   background-color: #1482a3;
 }
-.footer-links ul li a {
+.footer-links .social-media-links ul li a {
   color: white;
   text-decoration: none;
 }

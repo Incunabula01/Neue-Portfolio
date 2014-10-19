@@ -79,7 +79,7 @@ if ( ! isset( $content_width ) ) {
 add_image_size( 'bones-thumb-400', 450, 250, true);
 add_image_size( 'bones-thumb-300', 300, 150, true );
 add_image_size( 'portfolio-post', 800, 400, true);
-add_image_size( 'gallery-thumb' , 320, 600, true);
+add_image_size( 'gallery-thumb' , 300, 500, true);
 
 
 add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
@@ -112,33 +112,34 @@ function bones_register_sidebars() {
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widgettitle">',
-		'after_title' => '</h3>',
+		'after_title' => '</h3>'
 	));
 
-	/*
-	to add more sidebars or widgetized areas, just copy
-	and edit the above sidebar code. In order to call
-	your new sidebar just use the following code:
+  register_sidebar(array(
+    'id' => 'Footer-Menu-1',
+    'name' => __( 'Footer1', 'bonestheme' ),
+    'description' => __( 'Footer Menu Left', 'bonestheme' ),
+    'before_title' => '<h3 class>',
+    'after_title' => '</h3>'
+  ));
 
-	Just change the name to whatever your new
-	sidebar's id is, for example:
+  register_sidebar(array(
+    'id' => 'Footer-Menu-2',
+    'name' => __( 'Footer2', 'bonestheme' ),
+    'description' => __( 'Footer Menu Middle', 'bonestheme' ),
+    'before_title' => '<h3 class>',
+    'after_title' => '</h3>'
+  ));
 
-	register_sidebar(array(
-		'id' => 'sidebar2',
-		'name' => __( 'Sidebar 2', 'bonestheme' ),
-		'description' => __( 'The second (secondary) sidebar.', 'bonestheme' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
-	));
+  register_sidebar(array(
+    'id' => 'Footer-Menu-3',
+    'name' => __( 'Footer3', 'bonestheme' ),
+    'description' => __( 'Footer Menu Right', 'bonestheme' ),
+    'before_title' => '<h3 class>',
+    'after_title' => '</h3>'
+  ));
 
-	To call the sidebar in your template, you can just copy
-	the sidebar.php file and rename it to your sidebar's name.
-	So using the above example, it would be:
-	sidebar-sidebar2.php
-
-	*/
+	
 } // don't remove this bracket!
 
 
@@ -178,12 +179,12 @@ function bones_comments( $comment, $args, $depth ) {
 
 function charts_js() {
 wp_register_script('chart_js', get_template_directory_uri() . '/library/js/libs/ChartNew.js', 'jQuery','1.1', true);
-wp_register_script('skillChart_js' , get_template_directory_uri() . '/library/js/libs/skillChart.js' , 'jQuery' , '1.1' , true);
+wp_register_script('skillChart_js' , get_template_directory_uri() . '/library/js/skillChart.js' , 'jQuery' , '1.1' , true);
 wp_enqueue_script('chart_js');
 wp_enqueue_script('skillChart_js');
 }
 
-add_action( 'wp_enqueue_scripts', 'charts_js' ); */
+add_action( 'wp_enqueue_scripts', 'charts_js' ); 
 
 /************* Sticky Navs *********************/
 
@@ -209,5 +210,13 @@ wp_enqueue_script('isotope_js');
 
 add_action( 'wp_enqueue_scripts', 'masonryGallery_js' ); 
 
+/************* Contact Form Validation *********************/
+
+function contactFormValidation(){
+wp_register_script('jqueryValidate_js', get_template_directory_uri() . '/library/js/libs/jquery.validate.min.js', 'jQuery','2.1', true);
+wp_enqueue_script('jqueryValidate_js');
+}
+
+add_action( 'wp_enqueue_scripts', 'contactFormValidation');
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

@@ -39,7 +39,7 @@
 
 		<div id="container">
 
-			<header class="header" role="banner">
+			<header id="nav" class="header" role="banner">
 
 				<div id="inner-header" class="cf">
 					<a id="main-logo" href="<?php echo home_url(); ?>" rel="nofollow" alt="JWidener Design"></a>

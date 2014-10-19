@@ -5,19 +5,55 @@
 ?>
 
 <?php
- 
-  //response generation function
-  $response = "";
- 
-  //function to generate response
-  function my_contact_form_generate_response($type, $message){
- 
-    global $response;
- 
-    if($type == "success") $response = "<div class='success'>{$message}</div>";
-    else $response = "<div class='error'>{$message}</div>";
- 
-  }
+
+	$nameError = 'Please enter your name.';
+	$emailError = 'Please enter your email address.';
+	$commentError = 'Please enter a message.';
+	$hasError = false;
+
+if(isset($_POST['submitted'])) {
+
+	if(trim($_POST['contactName']) === '') {
+		$nameError;
+		$hasError = true;
+	} else {
+		$name = trim($_POST['contactName']);
+	}
+
+	if(trim($_POST['email']) === '')  {
+		$emailError;
+		$hasError = true;
+	} else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['email']))) {
+		$emailError;
+		$hasError = true;
+	} else {
+		$email = trim($_POST['email']);
+	}
+
+	if(trim($_POST['comments']) === '') {
+		$commentError;
+		$hasError = true;
+	} else {
+		if(function_exists('stripslashes')) {
+			$comments = stripslashes(trim($_POST['comments']));
+		} else {
+			$comments = trim($_POST['comments']);
+		}
+	}
+
+	if(!isset($hasError)) {
+		$emailTo = get_option('tz_email');
+		if (!isset($emailTo) || ($emailTo == '') ){
+			$emailTo = get_option('admin_email');
+		}
+		$subject = 'JWidener Design From '.$name;
+		$body = "Name: $name \n\nEmail: $email \n\nComments: $comments";
+		$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
+
+		wp_mail($emailTo, $subject, $body, $headers);
+		$emailSent = true;
+	}
+} 
 ?>
 <?php get_header(); ?>
 
@@ -45,15 +81,57 @@
 												<?php the_content(); ?>
 										</div>
 
-										<div id="respond" class="m-all t-3of5 d-2of5">
-	 										 <?php echo $response; ?>
-											  <form class="field" action="<?php the_permalink(); ?>" method="post">
-											    	<input type="text" name="message_name" placeholder="Name" value="<?php echo esc_attr($_POST['message_name']); ?>">
-											    	<input type="text" name="message_email" placeholder="Email" value="<?php echo esc_attr($_POST['message_email']); ?>">
-											    	<textarea type="text" placeholder="Message" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
-											    	<input type="hidden" name="submitted" value="1">
-											    	<input class="blue-btn" type="submit" value="Go">
-											  </form>
+										<div class="m-all t-3of5 d-2of5">
+
+											<?php if(isset($emailSent) && $emailSent == true) { ?>
+												<div class="thanks">
+													<i class="fa fa-paper-plane-o fa-5x"></i>
+													<p>Thanks, your email was sent successfully.You will be contacted asap!</p>
+												</div>
+											<?php } else { ?>
+												<?php if(isset($hasError)) { ?>
+												<div class="error">
+													<i class="fa fa-frown-o fa-5x"></i>
+													<p>Sorry, an error occured. Please try again.</p>
+												</div>
+												<?php } ?>
+	 										 <form action="<?php the_permalink(); ?>" id="contactForm" method="post">
+													<ul class="contactform">
+													<li>
+														<label for="contactName">Name:</label>
+														<input type="text" name="contactName" id="contactName" value="<?php if(isset($_POST['contactName'])) echo $_POST['contactName'];?>" class="required requiredField" />
+														<?php if($nameError != '') { ?>
+															<span class="error"><?= $nameError; ?></span>
+														<?php } ?>
+													</li>
+
+													<li>
+														<label for="email">Email</label>
+														<input type="text" name="email" id="email" value="<?php if(isset($_POST['email']))  echo $_POST['email'];?>" class="required requiredField email" />
+														<?php if($emailError != '') { ?>
+															<span class="error"><?=$emailError;?></span>
+														<?php } ?>
+													</li>
+
+													<li>
+													<label for="commentsText">Message:</label>
+													<textarea type="text" name="comments" id="commentsText" rows="20" cols="30" class="required requiredField"><?php if(isset($_POST['comments'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['comments']); } else { echo $_POST['comments']; } } ?></textarea>
+														<?php if($commentError != '') { ?>
+															<span class="error"><?=$commentError;?></span>
+														<?php } ?>
+													</li>
+
+													<li>
+														<button class="cyan-btn" type="submit">
+															<i class="fa fa-send"><p>Send Email</p></i>
+														</button>
+										
+													</li>
+												</ul>
+												<input type="hidden" name="submitted" id="submitted" value="true" />
+											</form>
+											<?php } ?>
+			
 										</div>
 										
 									</div>

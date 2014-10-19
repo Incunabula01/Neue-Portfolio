@@ -1,9 +1,9 @@
 (function($){
 				var data = {
-					labels: ["HTML5","CSS","jQuery","Wordpress","UI-UX"],
+					labels: ["HTML5","CSS","jQuery","UI-UX"],
 					datasets: [{
 						fillColor: "rgba(78, 197, 233, 0.5)",
-						data: [90,80,20,60,60],
+						data: [90,80,20,60],
 						title: "Numbers"
 					}]
 				};
@@ -19,7 +19,7 @@
 		            scaleLineColor: "rgba(78, 197, 233, 0.2)",
 		            scaleLineWidth: 1,
 		            scaleShowLabels: true,
-		            scaleFontFamily: "'Ostrich Regular'",
+		            scaleFontFamily: "Ostrich Regular",
             		scaleFontSize: 16,
             		scaleFontStyle: "normal",
             		scaleFontColor: "#052636",
@@ -46,13 +46,22 @@
 					reverseOrder: false,
 					graphMin : 0,
 					fullWidthGraph : true,
-					yAxisFontFamily: "'Ostrich Black'",
+					yAxisFontFamily: "Ostrich Black",
             		yAxisFontSize: 18,
             		yAxisFontStyle: "normal",
             		yAxisFontColor: "#052636",
 				};
 
 				var canvas = $('#skillChart');
+
+				function graphDimensions(){
+					canvas.height = window.innerHeight / 2;
+					canvas.width = window.innerWidth > 960 ? 960 : window.innerWidth;
+				};
+
+				var graph = canvas.html(function(){
+					graphDimensions();
+				});
 				var ctx = canvas.get(0).getContext('2d');
 
 				new Chart(ctx).HorizontalBar(data,options);

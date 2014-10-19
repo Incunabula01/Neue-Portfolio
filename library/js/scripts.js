@@ -103,7 +103,7 @@ jQuery(document).ready(function($) {
 		$container.isotope({
 			itemSelector: '.item',
 			layoutMode: 'fitRows',
-			columnWidth: 400
+			columnWidth: 300
 		});
 
 		$('#filters').on('click', 'button', function(){
@@ -134,7 +134,38 @@ jQuery(document).ready(function($) {
 		});
 	});
 	
+	/* Contact Form Validation */
 
+	$("#contactForm").validate({
+		rules: {
+    		"form_name": {
+     			required: true,
+      			minlength: 5
+    		},
+    		"email": {
+    			required: true,
+    			email: true
+    		}
+  		},
+  		messages: {
+  			"form_name": {
+  				minlength: "Name must be 5 characters long."
+  			},
+  			"email": {
+  				email: "You must use a real email address."
+  			}
+  		}
+	});
+
+	/* Sticky Header
+	if (window.length > 320 || window.length < 768){
+		$('#nav').waypoint('sticky', {
+			offset: -40
+		});
+	}else{
+		$('#nav').waypoint('unsticky');
+	};
+	*/
 }); 
 
 
