@@ -119,7 +119,7 @@ function bones_register_sidebars() {
     'id' => 'Footer-Menu-1',
     'name' => __( 'Footer1', 'bonestheme' ),
     'description' => __( 'Footer Menu Left', 'bonestheme' ),
-    'before_title' => '<h3 class>',
+    'before_title' => '<h3>',
     'after_title' => '</h3>'
   ));
 
@@ -127,7 +127,7 @@ function bones_register_sidebars() {
     'id' => 'Footer-Menu-2',
     'name' => __( 'Footer2', 'bonestheme' ),
     'description' => __( 'Footer Menu Middle', 'bonestheme' ),
-    'before_title' => '<h3 class>',
+    'before_title' => '<h3>',
     'after_title' => '</h3>'
   ));
 
@@ -135,7 +135,7 @@ function bones_register_sidebars() {
     'id' => 'Footer-Menu-3',
     'name' => __( 'Footer3', 'bonestheme' ),
     'description' => __( 'Footer Menu Right', 'bonestheme' ),
-    'before_title' => '<h3 class>',
+    'before_title' => '<h3>',
     'after_title' => '</h3>'
   ));
 
@@ -175,16 +175,6 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
-/*********** JS Charts ************************
-
-function charts_js() {
-wp_register_script('chart_js', get_template_directory_uri() . '/library/js/libs/ChartNew.js', 'jQuery','1.1', true);
-wp_register_script('skillChart_js' , get_template_directory_uri() . '/library/js/skillChart.js' , 'jQuery' , '1.1' , true);
-wp_enqueue_script('chart_js');
-wp_enqueue_script('skillChart_js');
-}
-
-add_action( 'wp_enqueue_scripts', 'charts_js' ); 
 
 /************* Sticky Navs *********************/
 
@@ -196,6 +186,17 @@ wp_enqueue_script('stickyWayPoints_js');
 }
 
 add_action( 'wp_enqueue_scripts', 'wayPoints_js' );
+
+/*********** JS Charts ************************/
+
+function charts_js() {
+wp_register_script('chart_js', 'http://d3js.org/d3.v3.min.js','jQuery', 1.1, true);
+wp_register_script('skillChart_js' , get_template_directory_uri() . '/library/js/skillChart.js','jQuery',1.1, true);
+wp_enqueue_script('chart_js');
+wp_enqueue_script('skillChart_js');
+}
+
+add_action( 'wp_enqueue_scripts', 'charts_js' );
 
 
 /************* Masonry Gallery *********************/

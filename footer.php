@@ -14,20 +14,21 @@
 								<?php dynamic_sidebar('Footer2') ?>
 							</ul>
 						</div>
-						<div id="Footer-Menu-3" class="social-media-links m-all t-1of3 d-2of7 last-col cf">
-
+					
+						<div id="Footer-Menu-3" class="social-media-links m-all t-1of3 d-2of7 cf">
+							<h3>Follow Me</h3>
 							<ul>
 								<li>
-									<a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+									<a href="#"><i class="fa fa-linkedin fa-1x"></i></a>
 								</li>
 								<li>
-									<a href="#"><i class=" fa fa-twitter fa-2x"></i></a>
+									<a href="#"><i class=" fa fa-twitter fa-1x"></i></a>
 								</li>
 								<li>
-									<a href="#"><i class=" fa fa-instagram fa-2x"></i></a>
+									<a href="#"><i class=" fa fa-instagram fa-1x"></i></a>
 								</li>
 								<li>
-									<a href="#"><i class=" fa fa-github fa-2x"></i></a>
+									<a href="#"><i class=" fa fa-github fa-1x"></i></a>
 								</li>
 							</ul>
 

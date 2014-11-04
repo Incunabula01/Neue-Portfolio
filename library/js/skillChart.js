@@ -1,70 +1,61 @@
 (function($){
-				var data = {
-					labels: ["HTML5","CSS","jQuery","UI-UX"],
-					datasets: [{
-						fillColor: "rgba(78, 197, 233, 0.5)",
-						data: [90,80,20,60],
-						title: "Numbers"
-					}]
-				};
+    $("#skillChart").waypoint(function(){
 
-				var options = {
-					spaceRight: 30,
-					responsive: true,
-		            scaleOverlay: false,
-		            scaleOverride: false,
-		            scaleSteps: null,
-		            scaleStepWidth: null,
-		            scaleStartValue: null,
-		            scaleLineColor: "rgba(78, 197, 233, 0.2)",
-		            scaleLineWidth: 1,
-		            scaleShowLabels: true,
-		            scaleFontFamily: "Ostrich Regular",
-            		scaleFontSize: 16,
-            		scaleFontStyle: "normal",
-            		scaleFontColor: "#052636",
-		            scaleShowGridLines: false,
-		            scaleXGridLinesStep : 1,
-		            scaleYGridLinesStep : 1,
-		            scaleGridLineColor: "rgba(78, 197, 233, 0.5)",
-		            scaleGridLineWidth: 1,
-		            scaleTickSizeLeft: 5,
-		            scaleTickSizeRight: 5,
-		            scaleTickSizeBottom: 5,
-		            scaleTickSizeTop: 5,
-		            showYAxisMin: true,      // Show the minimum value on Y axis (in original version, this minimum is not displayed - it can overlap the X labels)
-		            rotateLabels: "smart",   // smart <=> 0 degre if space enough; otherwise 45 degres if space enough otherwise90 degre; 
-		            barShowStroke: false,
-		            barStrokeWidth: 2,
-		            barValueSpacing: 5,
-		            barDatasetSpacing: 1,
-		            animation: true,
-		            animationSteps: 60,
-		            animationEasing: "easeOutQuart",
-		            onAnimationComplete: null,
-		            annotateLabel: "<%=(v1 == '' ? '' : v1) + (v1!='' && v2 !='' ? ' - ' : '')+(v2 == '' ? '' : v2)+(v1!='' || v2 !='' ? ':' : '') + v3 + ' (' + v6 + ' %)'%>",
-					reverseOrder: false,
-					graphMin : 0,
-					fullWidthGraph : true,
-					yAxisFontFamily: "Ostrich Black",
-            		yAxisFontSize: 18,
-            		yAxisFontStyle: "normal",
-            		yAxisFontColor: "#052636",
-				};
+        var dataset = [100,100,40,50,70];
+        var labels = ["Html5","CSS3/Sass","javaScript","wordpress","UI-UX"];
 
-				var canvas = $('#skillChart');
+        var h = 300;
+        var w;
+        var barPadding = 1;
 
-				function graphDimensions(){
-					canvas.height = window.innerHeight / 2;
-					canvas.width = window.innerWidth > 960 ? 960 : window.innerWidth;
-				};
+        var svg = d3.select("#skillChart")
+        				.append("svg")
+        				.attr("height", h);
 
-				var graph = canvas.html(function(){
-					graphDimensions();
-				});
-				var ctx = canvas.get(0).getContext('2d');
+        svg.selectAll("rect")
+        	.data(dataset)
+        	.enter()
+        	.append("rect")
+        	.attr("x", 10)
+            .attr("y", function(d,i){
+            	return i * (h / dataset.length - barPadding);
+            })
+            .attr("width", 0)
+            .attr("height", 50)
+            .transition("ease-in")
+            .delay(function(d,i){
+                return i * 1000;
+            })
+            .attr("fill", function(d){
+            	return "hsl(194, 78%,"+ (d / 2) +"%)"
+           	})
+            .attr("width", function(d){
+            	return d * 5;
+            });
 
-				new Chart(ctx).HorizontalBar(data,options);
+         svg.selectAll("text")
+         	.data(labels)
+         	.enter()
+         	.append("text")
+         	.transition("ease-in")
+            .delay(function(d,i){
+                return i * 1000;
+            })
+            .text(function(d){
+                return d;
+            })
+         	.attr("x", 30)
+         	.attr("y", function(d, i){
+         		return i * (h / dataset.length) + (h / dataset.length - barPadding) / 2;
+         	})
+         	.attr("fill", "white");
 
-				
-})(jQuery);
+    },{
+
+        offset: 300,
+        triggerOnce: true
+
+    });
+}(jQuery));
+
+

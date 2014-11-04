@@ -94,10 +94,10 @@ BUTTONS
   font-size: $size;
   &:hover,
   &:focus {
-    background-color: darken($color, 4%);
+    background-color: darken($color, 14%);
   } 
   &:active {
-    background-color: darken($color, 8%);
+    background-color: darken($color, 18%);
   } 
 }
 

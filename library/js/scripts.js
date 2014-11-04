@@ -157,14 +157,12 @@ jQuery(document).ready(function($) {
   		}
 	});
 
-	/* Sticky Header
-	if (window.length > 320 || window.length < 768){
+	/* Sticky Header 
+	
 		$('#nav').waypoint('sticky', {
-			offset: -40
-		});
-	}else{
-		$('#nav').waypoint('unsticky');
-	};
+			offset: -40,
+			triggerOnce: true
+		}
 	*/
 }); 
 

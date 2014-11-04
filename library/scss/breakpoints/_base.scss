@@ -315,53 +315,18 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-#skill-chart{
-	min-width: 320px;
-	height: auto;
-	li{
-		background-color: $cyan;
-		margin: 5px 2px;
-		text-decoration: none;
-		list-style: none;
-		h2{
-			font-family: $header-font;
-			color: $white;
-			padding: 0.2em;
-		}
-	}
-	.chart-bar-1{
-		background-color: darken($cyan,10%);
-		width: 75%;
-		min-width: 200px;
-		height: 40px;
-	}
-	.chart-bar-2{
-		background-color: darken($cyan,25%);
-		width: 25%;
-		min-width: 20px;
-		height: 40px;
-	}
-	.chart-bar-3{
-		background-color: darken($cyan,30%);
-		width: 50%;
-		min-width: 150px;
-		height: 40px;
-	}
-}
-#chart-range{
+svg {
 	width: 100%;
-	@include top-border(0.2em,$cyan);
-	li{
-		min-width: 320px;
-		height: 45px;
-		display: inline;
-		font-family: $serif-bold;
-		color: lighten($cyan,10%);
-		font-size: 0.5em;
-		margin-right: 12%;
-		&:before, &:after{
-			content: "  |  ";
-		}
+	height: auto;
+	text{
+		font-family: $header-font;
+		fill: $white;
+		padding: 0.2em;
+	}
+	g{
+		stroke: $cyan;
+		fill: none;
+		stroke-weight: 0.5em;
 	}
 }
 
@@ -1096,7 +1061,7 @@ SIDEBARS & ASIDES
 				width: 100%;
 				padding: 0.2em;
 				text-align: center;
-				margin: 0.5em 0;
+				margin: 0.2em 0;
 
 				&:first-child {}
 
@@ -1141,41 +1106,47 @@ FOOTER STYLES
 			.footer-text-menu{
 				h3{
 					background: transparent;
+					text-align: center;
 				}
 				ul{
 					text-align: center;
 					li{
-						padding: 1em;
+						padding: 0em;
+						height: 35px;
+						margin-bottom: 0.2em
 						a{
-							color: $orange;
+							color: $white;
 							text-decoration: none;
 						}
 					}
 				}
 			}
 			.social-media-links{
+				h3{
+					text-align: center;
+				}
 				ul{
-				text-align: center;
-				li {
-					width: 60px;
-					height: 60px;
-					margin-left: 0.5em;
-					display: inline-block;
-					background-color: $cyan;
-					padding: 1em;
-					&:first-child{
-						margin-left: 0;
-					}
-					&:hover, &:active{
-						@include transition(all 0.6s ease-in);
-						background-color: darken($cyan, 25%);
-					}
-					a{
-						color: $white;
-						text-decoration: none;
+					text-align: center;
+					li {
+						width: 50px;
+						height: 50px;
+						margin-left: 0.2em;
+						display: inline-block;
+						background-color: $cyan;
+						padding: 1em;
+						&:first-child{
+							margin-left: 0;
+						}
+						&:hover, &:active{
+							@include transition(all 0.6s ease-in);
+							background-color: darken($cyan, 18%);
+						}
+						a{
+							color: $white;
+							text-decoration: none;
+						}
 					}
 				}
-			}
 			}
 		}
 
@@ -1183,4 +1154,5 @@ FOOTER STYLES
 	.copyright {
 		color: $link-color;
 		text-align: center;
+		clear: both;
 	}

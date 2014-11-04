@@ -489,13 +489,27 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
-*/
+#footer {
+  min-height: 600px;
+}
+
 .footer-links ul {
-  text-align: right;
+  text-align: left;
+}
+.footer-links ul h3 {
+  text-align: left;
+}
+.footer-links ul li {
+  width: 100px;
+}
+.footer-links ul li a {
+  background-color: inherit;
+}
+.footer-links ul li a:hover {
+  color: #f98e4b;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
 }
 
 /* end .footer-links */
@@ -510,7 +524,7 @@ be seen on the Desktop.
 
 ******************************************************************/
 .wrap {
-  width: 1040px;
+  width: 900px;
 }
 
 /*

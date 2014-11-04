@@ -362,17 +362,24 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 
-/*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
-*/
+#footer{
+	min-height: 600px;
+}
+
 .footer-links {
 	ul {
-		text-align: right;
+		text-align: left;
+		h3{
+			text-align: left;
+		}
 		li {
+			width: 100px;
 			a {
-				&:hover {}
+				background-color: inherit;
+				&:hover {
+					color: $orange;
+					@include transition(all 0.5s ease-in);
+				}
 			}
 			ul {}
 		}

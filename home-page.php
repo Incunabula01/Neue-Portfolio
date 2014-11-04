@@ -25,44 +25,15 @@
 									<section class="entry-content cf" itemprop="articleBody">
 
 										<div class="wrap">
+
 											<div class="m-all t-2of3 d-5of7 cf">
 													<?php the_content(); ?>
 											</div>
+											<div class="m-all t-all d-5of7 lastcol cf">
+												<h1 class="page-title"> Superpowers </h1>
 
-											<h1 class="page-title"> Superpowers </h1>
-											
-											<div class="m-all t-1of4 d-2of8 last-col cf">
-												<ul id="skill-chart">
-													<li class="chart-bar-1">
-														<h2>HTML5</h2>
-													</li>
-													<li class="chart-bar-1">
-														<h2>CSS3/Sass</h2>
-													</li>
-													<li class="chart-bar-2">
-														<h2>jQuery</h2>
-													</li>
-													<li class="chart-bar-3">
-														<h2>WordPress</h2>
-													</li>
-													<li class="chart-bar-3">
-														<h2>UI/UX</h2>
-													</li>
-												</ul>
-												<ul id="chart-range">
-													<li>
-														Beginner
-													</li>
-													<li>
-														Intermediate
-													</li>
-													<li>
-														Skilled
-													</li>
-													<li>
-														Advanced
-													</li>
-												</ul>
+												<div id="skillChart"></div>
+
 											</div>
 
 											<div class="m-all t-all d-all cf">

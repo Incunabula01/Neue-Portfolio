@@ -1563,58 +1563,19 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-#skill-chart {
-  min-width: 320px;
+svg {
+  width: 100%;
   height: auto;
 }
-#skill-chart li {
-  background-color: #4ec5e9;
-  margin: 5px 2px;
-  text-decoration: none;
-  list-style: none;
-}
-#skill-chart li h2 {
+svg text {
   font-family: "Ostrich Black", Verdana, sans-serif;
-  color: white;
+  fill: white;
   padding: 0.2em;
 }
-#skill-chart .chart-bar-1 {
-  background-color: #21b6e3;
-  width: 75%;
-  min-width: 200px;
-  height: 40px;
-}
-#skill-chart .chart-bar-2 {
-  background-color: #1482a3;
-  width: 25%;
-  min-width: 20px;
-  height: 40px;
-}
-#skill-chart .chart-bar-3 {
-  background-color: #11708d;
-  width: 50%;
-  min-width: 150px;
-  height: 40px;
-}
-
-#chart-range {
-  width: 100%;
-  -webkit-border-top: 0.2em solid #4ec5e9;
-  -moz-border-top: 0.2em solid #4ec5e9;
-  -o-border-top: 0.2em solid #4ec5e9;
-  border-top: 0.2em solid #4ec5e9;
-}
-#chart-range li {
-  min-width: 320px;
-  height: 45px;
-  display: inline;
-  font-family: "Alegreya Black", Georgia, Times, serif;
-  color: #7bd4ef;
-  font-size: 0.5em;
-  margin-right: 12%;
-}
-#chart-range li:before, #chart-range li:after {
-  content: "  |  ";
+svg g {
+  stroke: #4ec5e9;
+  fill: none;
+  stroke-weight: 0.5em;
 }
 
 #content {
@@ -1837,10 +1798,10 @@ img {
   font-size: 1em;
 }
 .tags a:hover, .tags a:focus {
-  background-color: #3cbfe7;
+  background-color: #1aaad5;
 }
 .tags a:active {
-  background-color: #2ab9e4;
+  background-color: #189bc3;
 }
 
 /*********************
@@ -2166,14 +2127,14 @@ SIDEBARS & ASIDES
   width: 100%;
   padding: 0.2em;
   text-align: center;
-  margin: 0.5em 0;
+  margin: 0.2em 0;
   /* deep nesting */
 }
 .widget ul li:hover, .widget ul li:focus {
-  background-color: #3cbfe7;
+  background-color: #1aaad5;
 }
 .widget ul li:active {
-  background-color: #2ab9e4;
+  background-color: #189bc3;
 }
 .widget ul li a {
   color: white;
@@ -2202,24 +2163,28 @@ FOOTER STYLES
 
 .footer-links .footer-text-menu h3 {
   background: transparent;
+  text-align: center;
 }
 .footer-links .footer-text-menu ul {
   text-align: center;
 }
 .footer-links .footer-text-menu ul li {
-  padding: 1em;
+  padding: 0em;
+  height: 35px;
+  margin-bottom: 0.2em a;
+  margin-bottom-color: white;
+  margin-bottom-text-decoration: none;
 }
-.footer-links .footer-text-menu ul li a {
-  color: #f98e4b;
-  text-decoration: none;
+.footer-links .social-media-links h3 {
+  text-align: center;
 }
 .footer-links .social-media-links ul {
   text-align: center;
 }
 .footer-links .social-media-links ul li {
-  width: 60px;
-  height: 60px;
-  margin-left: 0.5em;
+  width: 50px;
+  height: 50px;
+  margin-left: 0.2em;
   display: inline-block;
   background-color: #4ec5e9;
   padding: 1em;
@@ -2231,7 +2196,7 @@ FOOTER STYLES
   -webkit-transition: all 0.6s ease-in;
   -moz-transition: all 0.6s ease-in;
   -o-transition: all 0.6s ease-in;
-  background-color: #1482a3;
+  background-color: #189bc3;
 }
 .footer-links .social-media-links ul li a {
   color: white;
@@ -2241,6 +2206,7 @@ FOOTER STYLES
 .copyright {
   color: #fbad7c;
   text-align: center;
+  clear: both;
 }
 
 /*********************
@@ -2573,13 +2539,27 @@ you can add resource intensive styles.
   /*********************
   FOOTER STYLES
   *********************/
-  /*
-  you'll probably need to do quite a bit
-  of overriding here if you styled them for
-  mobile. Make sure to double check these!
-  */
+  #footer {
+    min-height: 600px;
+  }
+
   .footer-links ul {
-    text-align: right;
+    text-align: left;
+  }
+  .footer-links ul h3 {
+    text-align: left;
+  }
+  .footer-links ul li {
+    width: 100px;
+  }
+  .footer-links ul li a {
+    background-color: inherit;
+  }
+  .footer-links ul li a:hover {
+    color: #f98e4b;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
   }
 
   /* end .footer-links */
@@ -2602,7 +2582,7 @@ you can add resource intensive styles.
   
   ******************************************************************/
   .wrap {
-    width: 1040px;
+    width: 900px;
   }
 }
 /*********************
