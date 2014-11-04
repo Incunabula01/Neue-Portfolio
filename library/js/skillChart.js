@@ -1,10 +1,10 @@
 (function($){
     $("#skillChart").waypoint(function(){
 
-        var dataset = [100,100,40,50,70];
-        var labels = ["Html5","CSS3/Sass","javaScript","wordpress","UI-UX"];
+        var dataset = [100,100,40,50,70,30];
+        var labels = ["Html5","CSS3/Sass","javaScript","wordpress","UI-UX","Ruby-on-Rails"];
 
-        var h = 300;
+        var h = 400;
         var w;
         var barPadding = 1;
 
@@ -46,7 +46,7 @@
             })
          	.attr("x", 30)
          	.attr("y", function(d, i){
-         		return i * (h / dataset.length) + (h / dataset.length - barPadding) / 2;
+         		return i * (h / dataset.length) + (h / dataset.length - barPadding) /2.3;
          	})
          	.attr("fill", "white");
 

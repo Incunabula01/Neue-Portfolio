@@ -4,19 +4,22 @@
 
 					<div class="footer-links">
 
-						<div id="Footer-Menu-1" class="m-all t-1of3 d-2of7 cf">
+						<div id="Footer-Menu-1" class="m-all t-1of4 d-2of7 cf">
 							<ul class="footer-text-menu">
 								<?php dynamic_sidebar('Footer1') ?>
 							</ul>
 						</div>
-						<div id="Footer-Menu-2" class="m-all t-1of3 d-2of7 cf">
+						<div id="Footer-Menu-2" class="m-all t-1of4 d-2of7 cf">
 							<ul class="footer-text-menu">
 								<?php dynamic_sidebar('Footer2') ?>
 							</ul>
 						</div>
 					
-						<div id="Footer-Menu-3" class="social-media-links m-all t-1of3 d-2of7 cf">
-							<h3>Follow Me</h3>
+						<div id="Footer-Menu-3" class="m-all t-1of4 d-2of7 cf">
+							<ul class="social-media-links">
+								<?php dynamic_sidebar('Footer3') ?>
+							</ul>
+						<!--	<h3>Follow Me</h3>
 							<ul>
 								<li>
 									<a href="#"><i class="fa fa-linkedin fa-1x"></i></a>
@@ -31,7 +34,7 @@
 									<a href="#"><i class=" fa fa-github fa-1x"></i></a>
 								</li>
 							</ul>
-
+						-->
 						</div>
 
 					</div>

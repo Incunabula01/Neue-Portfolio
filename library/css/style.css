@@ -939,7 +939,7 @@ Author: Joe Widener
 Stylesheet: Button Styles
 
 ******************************************************************/
-.blue-btn, .comment-reply-link, #submit, .cyan-btn, .tags a, .widget ul li {
+.blue-btn, .comment-reply-link, #submit, .cyan-btn, .tags a, .widget ul li, .footer-text-menu a {
   display: inline-block;
   position: relative;
   font-family: "Alegreya Regular", Georgia, Times, serif;
@@ -957,11 +957,11 @@ Stylesheet: Button Styles
   -moz-transition: background-color 0.14s ease-in-out;
   -o-transition: background-color 0.14s ease-in-out;
 }
-.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .cyan-btn:hover, .tags a:hover, .widget ul li:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, .cyan-btn:focus, .tags a:focus, .widget ul li:focus {
+.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .cyan-btn:hover, .tags a:hover, .widget ul li:hover, .footer-text-menu a:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, .cyan-btn:focus, .tags a:focus, .widget ul li:focus, .footer-text-menu a:focus {
   color: white;
   text-decoration: none;
 }
-.blue-btn:active, .comment-reply-link:active, #submit:active, .cyan-btn:active, .tags a:active, .widget ul li:active {
+.blue-btn:active, .comment-reply-link:active, #submit:active, .cyan-btn:active, .tags a:active, .widget ul li:active, .footer-text-menu a:active {
   top: 1px;
 }
 
@@ -2161,44 +2161,80 @@ FOOTER STYLES
   clear: both;
 }
 
-.footer-links .footer-text-menu h3 {
+.footer-text-menu {
+  text-align: center;
+}
+.footer-text-menu h3 {
   background: transparent;
   text-align: center;
+  font-family: "Ostrich Black", Verdana, sans-serif;
+  font-size: 2em;
 }
-.footer-links .footer-text-menu ul {
+.footer-text-menu a {
+  background-color: #4ec5e9;
+  font-size: 0.8em;
+  height: 45px;
+  width: 80%;
+  padding: 0.4em;
+}
+.footer-text-menu a:hover, .footer-text-menu a:focus {
+  background-color: #1aaad5;
+}
+.footer-text-menu a:active {
+  background-color: #189bc3;
+}
+.footer-text-menu a:hover, .footer-text-menu a:active {
+  -webkit-transition: all 0.6s ease-in;
+  -moz-transition: all 0.6s ease-in;
+  -o-transition: all 0.6s ease-in;
+  background-color: #189bc3;
+}
+.footer-text-menu a i {
+  font-family: "Alegreya Regular", Georgia, Times, serif;
+}
+.footer-text-menu a i:before {
+  font-family: FontAwesome;
+  padding: 0.5em;
+}
+.footer-text-menu ul {
   text-align: center;
 }
-.footer-links .footer-text-menu ul li {
+.footer-text-menu ul li {
   padding: 0em;
   height: 35px;
   margin-bottom: 0.2em a;
   margin-bottom-color: white;
   margin-bottom-text-decoration: none;
 }
-.footer-links .social-media-links h3 {
+
+.social-media-links h3 {
+  background: transparent;
+  text-align: center;
+  font-family: "Ostrich Black", Verdana, sans-serif;
+  font-size: 2em;
+}
+.social-media-links ul {
   text-align: center;
 }
-.footer-links .social-media-links ul {
-  text-align: center;
-}
-.footer-links .social-media-links ul li {
+.social-media-links ul li {
   width: 50px;
   height: 50px;
-  margin-left: 0.2em;
+  margin-left: 0.5em;
   display: inline-block;
   background-color: #4ec5e9;
-  padding: 1em;
+  padding: 0.4em;
+  border-radius: 25px;
 }
-.footer-links .social-media-links ul li:first-child {
+.social-media-links ul li:first-child {
   margin-left: 0;
 }
-.footer-links .social-media-links ul li:hover, .footer-links .social-media-links ul li:active {
+.social-media-links ul li:hover, .social-media-links ul li:active {
   -webkit-transition: all 0.6s ease-in;
   -moz-transition: all 0.6s ease-in;
   -o-transition: all 0.6s ease-in;
   background-color: #189bc3;
 }
-.footer-links .social-media-links ul li a {
+.social-media-links ul li a {
   color: white;
   text-decoration: none;
 }
@@ -2549,17 +2585,38 @@ you can add resource intensive styles.
   .footer-links ul h3 {
     text-align: left;
   }
-  .footer-links ul li {
-    width: 100px;
-  }
   .footer-links ul li a {
     background-color: inherit;
   }
-  .footer-links ul li a:hover {
+  .footer-links ul li a:active {
     color: #f98e4b;
     -webkit-transition: all 0.5s ease-in;
     -moz-transition: all 0.5s ease-in;
     -o-transition: all 0.5s ease-in;
+  }
+
+  .footer-text-menu {
+    text-align: left;
+  }
+  .footer-text-menu a {
+    background-color: transparent;
+    padding: 0px;
+  }
+  .footer-text-menu a:hover {
+    background-color: transparent;
+    color: #f98e4b;
+  }
+  .footer-text-menu a i:before {
+    font-size: 1em;
+    padding-right: 1em;
+  }
+
+  .social-media-links ul li {
+    width: 50px;
+    margin-left: 0.2em;
+  }
+  .social-media-links ul li i {
+    font-size: 1.5em;
   }
 
   /* end .footer-links */

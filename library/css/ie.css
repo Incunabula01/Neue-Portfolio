@@ -499,17 +499,38 @@ FOOTER STYLES
 .footer-links ul h3 {
   text-align: left;
 }
-.footer-links ul li {
-  width: 100px;
-}
 .footer-links ul li a {
   background-color: inherit;
 }
-.footer-links ul li a:hover {
+.footer-links ul li a:active {
   color: #f98e4b;
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
+}
+
+.footer-text-menu {
+  text-align: left;
+}
+.footer-text-menu a {
+  background-color: transparent;
+  padding: 0px;
+}
+.footer-text-menu a:hover {
+  background-color: transparent;
+  color: #f98e4b;
+}
+.footer-text-menu a i:before {
+  font-size: 1em;
+  padding-right: 1em;
+}
+
+.social-media-links ul li {
+  width: 50px;
+  margin-left: 0.2em;
+}
+.social-media-links ul li i {
+  font-size: 1.5em;
 }
 
 /* end .footer-links */

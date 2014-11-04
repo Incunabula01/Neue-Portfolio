@@ -373,10 +373,9 @@ FOOTER STYLES
 			text-align: left;
 		}
 		li {
-			width: 100px;
 			a {
 				background-color: inherit;
-				&:hover {
+				&:active {
 					color: $orange;
 					@include transition(all 0.5s ease-in);
 				}
@@ -384,5 +383,32 @@ FOOTER STYLES
 			ul {}
 		}
 	}
-} /* end .footer-links */
+} 
+.footer-text-menu {
+	text-align: left;
+	a{
+		background-color: transparent;
+		padding: 0px;
+		&:hover{
+			background-color: transparent;
+			color: $orange;
+		}
+		i:before{
+			font-size: 1em;
+			padding-right: 1em;
+		}
+	} 
+}
+.social-media-links{
+	ul{
+		li{
+			width: 50px;
+			margin-left: 0.2em;
+			i{
+				font-size: 1.5em;
+			}
+		}
+	}
+}
+	/* end .footer-links */
 
