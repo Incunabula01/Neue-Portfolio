@@ -17,17 +17,20 @@
 
 						 	<div class="header-image" style="background: url(<?php echo $post_header[0]; ?>) 50% 0 no-repeat; background-size: cover"></div>
 
-			                <header class="article-header wrap">
+			                <header class="article-header">
+			                	<div class="wrap">
 
-			                  <h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
+			                  		<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 
-
+			                  	</div>
 			                </header> 
 
-			                <section class="entry-content wrap cf" itemprop="articleBody">
-			                  <?php
-			                    the_content();
-			                  ?>
+			                <section class="entry-content cf" itemprop="articleBody">
+			                	<div class="wrap">
+			                  		<?php
+			                    		the_content();
+			                  		?>
+			                 	 </div>
 			                </section> 
 
 			                <footer class="article-footer wrap">

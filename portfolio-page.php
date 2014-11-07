@@ -31,31 +31,30 @@
 										</div>
 
 										<div class="wrap">
+			
 											<div id="filters" class="button-group">
 												<button class="cyan-btn current" data-filter="*">
 													<i class="fa fa-image fa-2x"></i>
-													<p>Show All</p>
+													Show All
 												</button>
 												<button class="cyan-btn" data-filter=".UI-UX">
 													<i class="fa fa-tablet fa-2x"></i>
-													<p>UI UX</p>
+													UI UX
 												</button>
 												<button class="cyan-btn" data-filter=".Web">
 													<i class="fa fa-html5 fa-2x"></i>
-													<p>Web</p>
+													Web
 												</button>	
 												<button class="cyan-btn" data-filter=".Print">
 													<i class="fa fa-file fa-2x"></i>
-													<p>Print</p>
+													Print
 												</button>
 												<button class="cyan-btn" data-filter=".Identity">
 													<i class="fa fa-file-image-o fa-2x"></i>
-													<p>Identity</p>
+													Identity
 												</button>
 											</div>
-										</div>
-										
-										<div class="wrap">
+								
 											<div id="gallery-container">
 												<?php
 												global $post;
@@ -78,6 +77,7 @@
 												<?php $post = $tmp_post; ?>
 											</div>
 										</div>
+
 									</section>
 
 

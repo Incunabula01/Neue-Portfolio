@@ -511,30 +511,8 @@ use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
 /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Typography
-
-Need to import a font or set of icons for your site? Drop them in
-here or just use this to establish your typographical grid. Or not.
-Do whatever you want to...GOSH!
-
-Helpful Articles:
-http://trentwalton.com/2012/06/19/fluid-type/
-http://ia.net/blog/responsive-typography-the-basics/
-http://alistapart.com/column/responsive-typography-is-a-physical-discipline
-
-******************************************************************/
-/*********************
-FONT FACE (IN YOUR FACE)
-*********************/
-/*  To embed your own fonts, use this syntax
-  and place your fonts inside the
-  ../fonts folder. For more information
-  on embedding fonts, go to:
-  http://www.fontsquirrel.com/
-  Be sure to remove the comment brackets.
+Site Name: Neue-Portfolio
+Author: Joe Widener
 */
 @font-face {
   font-family: 'Ostrich Black';
@@ -1578,8 +1556,8 @@ svg g {
   stroke-weight: 0.5em;
 }
 
-#content {
-  margin-top: 1.5em;
+#content p {
+  margin: 80px 0;
 }
 
 .header-image {
@@ -1591,7 +1569,6 @@ svg g {
 
 .hentry, .sidebar, .widgettitle {
   background-color: #f8f9fa;
-  margin-bottom: 1.5em;
   border-bottom: 1px solid #cccccc;
 }
 .hentry header, .sidebar header, .widgettitle header {
@@ -1631,12 +1608,17 @@ svg g {
 }
 
 .archive-title {
+  margin-top: -1px;
   padding: 0.5em;
 }
 .archive-title h2 {
   font-family: "Ostrich Black", Verdana, sans-serif;
   color: #f98e4b;
   font-size: 2em;
+}
+
+.chart {
+  margin: 40px 0;
 }
 
 /* want to style individual post classes? Booya! */
@@ -1754,6 +1736,9 @@ img {
 
 /* end .wp-caption */
 /* image gallery styles */
+.gallery {
+  margin: 20px auto;
+}
 .gallery dl {
   margin: 1em;
 }
@@ -2579,12 +2564,6 @@ you can add resource intensive styles.
     min-height: 600px;
   }
 
-  .footer-links ul {
-    text-align: left;
-  }
-  .footer-links ul h3 {
-    text-align: left;
-  }
   .footer-links ul li a {
     background-color: inherit;
   }
@@ -2595,8 +2574,8 @@ you can add resource intensive styles.
     -o-transition: all 0.5s ease-in;
   }
 
-  .footer-text-menu {
-    text-align: left;
+  .footer-text-menu ul {
+    text-align: right;
   }
   .footer-text-menu a {
     background-color: transparent;
@@ -2611,6 +2590,9 @@ you can add resource intensive styles.
     padding-right: 1em;
   }
 
+  .social-media-links {
+    text-align: left;
+  }
   .social-media-links ul li {
     width: 50px;
     margin-left: 0.2em;

@@ -95,7 +95,6 @@ a, a:visited {
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
 }
-
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
@@ -331,7 +330,9 @@ svg {
 }
 
 #content {
-	margin-top: 1.5em;
+	p {
+	margin: 80px 0;
+}
 }
 
 	.header-image{
@@ -344,7 +345,7 @@ svg {
 	
 		.hentry {
 			background-color: $light-gray;
-			margin-bottom: 1.5em;
+			//margin-bottom: 1.5em;
 			border-bottom: 1px solid $border-color;
 
 			header {
@@ -391,12 +392,17 @@ svg {
 		}
 
 		.archive-title {
+			margin-top: -1px;
 			padding: 0.5em;
 			h2{
 				font-family: $header-font;
 				color: $orange;
 				font-size: 2em;
 			}
+		}
+
+		.chart{
+			margin: 40px 0
 		}
 
 		/* want to style individual post classes? Booya! */
@@ -565,6 +571,7 @@ svg {
 
 		/* image gallery styles */
 		.gallery {
+			margin: 20px auto;
 			dl {
 				margin: 1em;
 				a {

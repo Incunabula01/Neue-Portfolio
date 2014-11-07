@@ -368,10 +368,6 @@ FOOTER STYLES
 
 .footer-links {
 	ul {
-		text-align: left;
-		h3{
-			text-align: left;
-		}
 		li {
 			a {
 				background-color: inherit;
@@ -385,7 +381,9 @@ FOOTER STYLES
 	}
 } 
 .footer-text-menu {
-	text-align: left;
+	ul{
+		text-align: right;
+	}
 	a{
 		background-color: transparent;
 		padding: 0px;
@@ -400,6 +398,7 @@ FOOTER STYLES
 	} 
 }
 .social-media-links{
+	text-align: left;
 	ul{
 		li{
 			width: 50px;

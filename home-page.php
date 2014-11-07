@@ -30,10 +30,13 @@
 													<?php the_content(); ?>
 											</div>
 											<div class="m-all t-all d-5of7 lastcol cf">
-												<h1 class="page-title"> Superpowers </h1>
 
-												<div id="skillChart"></div>
+												<div class="chart">
 
+													<h1 class="page-title"> Superpowers </h1>
+													<div id="skillChart"></div>
+													
+												</div>
 											</div>
 
 											<div class="m-all t-all d-all cf">

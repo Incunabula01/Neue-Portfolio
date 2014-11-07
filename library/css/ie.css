@@ -40,30 +40,8 @@ use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
 /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Typography
-
-Need to import a font or set of icons for your site? Drop them in
-here or just use this to establish your typographical grid. Or not.
-Do whatever you want to...GOSH!
-
-Helpful Articles:
-http://trentwalton.com/2012/06/19/fluid-type/
-http://ia.net/blog/responsive-typography-the-basics/
-http://alistapart.com/column/responsive-typography-is-a-physical-discipline
-
-******************************************************************/
-/*********************
-FONT FACE (IN YOUR FACE)
-*********************/
-/*  To embed your own fonts, use this syntax
-  and place your fonts inside the
-  ../fonts folder. For more information
-  on embedding fonts, go to:
-  http://www.fontsquirrel.com/
-  Be sure to remove the comment brackets.
+Site Name: Neue-Portfolio
+Author: Joe Widener
 */
 @font-face {
   font-family: 'Ostrich Black';
@@ -493,12 +471,6 @@ FOOTER STYLES
   min-height: 600px;
 }
 
-.footer-links ul {
-  text-align: left;
-}
-.footer-links ul h3 {
-  text-align: left;
-}
 .footer-links ul li a {
   background-color: inherit;
 }
@@ -509,8 +481,8 @@ FOOTER STYLES
   -o-transition: all 0.5s ease-in;
 }
 
-.footer-text-menu {
-  text-align: left;
+.footer-text-menu ul {
+  text-align: right;
 }
 .footer-text-menu a {
   background-color: transparent;
@@ -525,6 +497,9 @@ FOOTER STYLES
   padding-right: 1em;
 }
 
+.social-media-links {
+  text-align: left;
+}
 .social-media-links ul li {
   width: 50px;
   margin-left: 0.2em;
