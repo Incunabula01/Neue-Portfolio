@@ -24,43 +24,59 @@
 
 									<section class="entry-content cf" itemprop="articleBody">
 
-										<div class="wrap">
-
-											<div class="m-all t-2of3 d-5of7 cf">
-													<?php the_content(); ?>
-											</div>
-											<div class="m-all t-all d-5of7 lastcol cf">
-
-												<div class="chart">
-
-													<h1 class="page-title"> Superpowers </h1>
-													<div id="skillChart"></div>
-													
-												</div>
-											</div>
-
 											<div class="m-all t-all d-all cf">
 
-												<div class="gallery">
-													<?php
-														global $post;
-														$tmp_post = $post;
-														$args = array( 'numberposts' => 6 );
-														$myposts = get_posts( $args );
-														foreach( $myposts as $post ) :	setup_postdata($post); 
-															$post_thumbnail_id = get_post_thumbnail_id();
-															$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'gallery-thumb' );
-													?>
+												<div class="wrap">
 
-														<div class="item gallery-item <?php $category = get_the_category(); echo $category[0]->cat_name; ?>">
-															<a href="<?php echo get_permalink(); ?>" >
-																<div><span><h2><?php echo get_the_title(); ?></h2></span></div>
-																<img src="<?php echo $featured_src[0]; ?>"/>
-															</a>
+													<?php the_content(); ?>
+
+												</div>
+
+												<div class="chart-section">
+
+													<div class="chart skills">
+														<div class="wrap">
+
+															<h1 class="page-title">Superpowers</h1>
+													
+															<div id="skillChart"></div>
+
 														</div>
+													</div>
+												</div>
 
-													<?php endforeach; ?>
-													<?php $post = $tmp_post; ?>
+											</div>
+
+											<div class="gallery-section m-all t-all d-all cf">
+
+												<div class="wrap img-gallery">
+
+													<h1 class="page-title">Gallery</div>
+
+													<div class="gallery">
+
+														<?php
+															global $post;
+															$tmp_post = $post;
+															$args = array( 'numberposts' => 6 );
+															$myposts = get_posts( $args );
+															foreach( $myposts as $post ) :	setup_postdata($post); 
+																$post_thumbnail_id = get_post_thumbnail_id();
+																$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'gallery-thumb' );
+														?>
+
+															<div class="item gallery-item <?php $category = get_the_category(); echo $category[0]->cat_name; ?>">
+																<a href="<?php echo get_permalink(); ?>" >
+																	<div><span><h2><?php echo get_the_title(); ?></h2></span></div>
+																	<img src="<?php echo $featured_src[0]; ?>"/>
+																</a>
+															</div>
+
+														<?php endforeach; ?>
+														<?php $post = $tmp_post; ?>
+
+													</div>
+
 												</div>
 
 											</div>

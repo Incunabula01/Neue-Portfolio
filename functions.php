@@ -79,17 +79,17 @@ if ( ! isset( $content_width ) ) {
 add_image_size( 'bones-thumb-400', 450, 250, true);
 add_image_size( 'bones-thumb-300', 300, 150, true );
 add_image_size( 'portfolio-post', 800, 400, true);
-add_image_size( 'gallery-thumb' , 300, 500, true);
+add_image_size( 'gallery-thumb' , 300, 400, true);
 
 
 add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'bones-thumb-400' => __('400px by 250px'),
-        'bones-thumb-300' => __('300px by 100px'),
+        'bones-thumb-400' => __('450px by 250px'),
+        'bones-thumb-300' => __('300px by 150px'),
         'portfolio-post' => __('800px by 400px'),
-        'gallery-thumb' => __('600px by 320px')
+        'gallery-thumb' => __('300px by 400px')
     ) );
 }
 
@@ -204,9 +204,11 @@ add_action( 'wp_enqueue_scripts', 'charts_js' );
 function masonryGallery_js() {
 wp_register_script('imageLoaded_js', get_template_directory_uri() . '/library/js/libs/imagesloaded.pkgd.min.js', 'jQuery','1.1', true);
 wp_register_script('isotope_js', get_template_directory_uri() . '/library/js/libs/isotope.pkgd.min.js', 'jQuery','1.1', true);
+wp_register_script('packery_js', get_template_directory_uri() . '/library/js/libs/packery-mode.pkgd.min.js', 'jQuery', '1.1', true);
 wp_enqueue_script('imageLoaded_js');
 wp_enqueue_script('masonry');
 wp_enqueue_script('isotope_js');
+wp_enqueue_script('packery_js');
 }
 
 add_action( 'wp_enqueue_scripts', 'masonryGallery_js' ); 

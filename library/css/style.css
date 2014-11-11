@@ -1480,7 +1480,7 @@ NAVIGATION STYLES
   border-bottom: 0;
   display: none;
   width: 100%;
-  background-color: #7bd4ef;
+  background-color: #f06108;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
@@ -1502,7 +1502,7 @@ NAVIGATION STYLES
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
-  background-color: #0c4c5f;
+  background-color: black;
 }
 .nav-menu li a:before {
   font-family: FontAwesome;
@@ -1524,24 +1524,38 @@ NAVIGATION STYLES
 /* end .nav */
 /*****Nav Icons*****/
 .work a:before, .work h1:before {
-  padding: 0.2em;
+  padding: 0.2em 0.2em 0.2em 0;
   content: "\f0b1";
 }
 
 .contact-me a:before, .contact-me h1:before {
-  padding: 0.2em;
+  padding: 0.2em 0.2em 0.2em 0;
   content: "\f0e0";
 }
 
 .about-me a:before, .about-me h1:before {
-  padding: 0.2em;
+  padding: 0.2em 0.2em 0.2em 0;
   content: "\f007";
+}
+
+.skills a:before, .skills h1:before {
+  padding: 0.2em 0.2em 0.2em 0;
+  content: "\f0a3";
+}
+
+.img-gallery {
+  color: white;
+}
+.img-gallery a:before, .img-gallery h1:before {
+  padding: 0.2em 0.2em 0.2em 0;
+  content: "\f03e";
 }
 
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 svg {
+  margin: 0 auto;
   width: 100%;
   height: auto;
 }
@@ -1618,7 +1632,20 @@ svg g {
 }
 
 .chart {
-  margin: 40px 0;
+  display: block;
+  min-height: 400px;
+  padding: 1.5em 0;
+}
+.chart h1 {
+  margin-bottom: 1em;
+  color: white;
+}
+.chart h1:before {
+  color: white;
+}
+
+.chart-section {
+  background-color: #4ec5e9;
 }
 
 /* want to style individual post classes? Booya! */
@@ -1658,8 +1685,10 @@ img {
 /* entry content */
 .entry-content {
   width: 100%;
-  padding: 0 1.5em;
-  margin-bottom: 1.5em;
+}
+.entry-content p {
+  padding: 0 2em;
+  font-size: 1.5rem/1.8rem;
 }
 .entry-content table {
   width: 100%;
@@ -1736,8 +1765,22 @@ img {
 
 /* end .wp-caption */
 /* image gallery styles */
+#gallery-container {
+  position: relative;
+  margin: 0 auto;
+}
+
+.gallery-section {
+  background-color: #094765;
+}
+.gallery-section h1 {
+  margin: 1em 0;
+}
+
 .gallery {
   margin: 20px auto;
+  overflow-y: hidden;
+  height: 100%;
 }
 .gallery dl {
   margin: 1em;
@@ -1797,15 +1840,25 @@ MISC STYLES
   margin: 1em 0;
 }
 
-#filters .cyan-btn {
+#filters {
+  margin: 2em auto;
+  text-align: center;
+}
+#filters li {
+  display: inline-block;
+  position: relative;
+  list-style: none;
   width: 18%;
+}
+#filters li .cyan-btn {
   font-size: 0.8em;
   margin: 0.5em 0.1em;
+  padding: 0em;
 }
-#filters i {
-  padding: 0.5em;
+#filters li i {
+  padding: 0.2em 0.5em;
 }
-#filters p {
+#filters li h4 {
   display: none;
 }
 
@@ -2140,7 +2193,7 @@ FOOTER STYLES
 *********************/
 .footer {
   min-height: 300px;
-  background-color: #323944;
+  background-color: #03161f;
   color: #f8f9fa;
   padding: 5% 0;
   clear: both;
@@ -2176,6 +2229,7 @@ FOOTER STYLES
 }
 .footer-text-menu a i {
   font-family: "Alegreya Regular", Georgia, Times, serif;
+  font-size: 1.5em;
 }
 .footer-text-menu a i:before {
   font-family: FontAwesome;
@@ -2207,7 +2261,7 @@ FOOTER STYLES
   margin-left: 0.5em;
   display: inline-block;
   background-color: #4ec5e9;
-  padding: 0.4em;
+  padding: 0.6em;
   border-radius: 25px;
 }
 .social-media-links ul li:first-child {
@@ -2482,18 +2536,23 @@ you can add resource intensive styles.
   #filters {
     width: 100%;
   }
+  #filters li {
+    position: relative;
+    list-style: none;
+  }
+  #filters li h4 {
+    display: block;
+  }
+  #filters li h4:before, #filters li h4:after {
+    content: "|";
+  }
   #filters .cyan-btn {
-    display: inline;
-    height: 45px;
-    padding: 0 1em;
-    line-height: 0.2em;
+    padding: 0 0.5em;
+    font-size: 2em/1em;
+    width: 100px;
   }
   #filters i {
     padding: 0.3em;
-  }
-  #filters p {
-    display: inline-block;
-    font-size: 1.5em;
   }
 
   .gallery dl {
@@ -2574,8 +2633,11 @@ you can add resource intensive styles.
     -o-transition: all 0.5s ease-in;
   }
 
-  .footer-text-menu ul {
-    text-align: right;
+  .footer-text-menu h3 {
+    text-align: left;
+  }
+  .footer-text-menu .textwidget {
+    text-align: left;
   }
   .footer-text-menu a {
     background-color: transparent;
@@ -2590,7 +2652,10 @@ you can add resource intensive styles.
     padding-right: 1em;
   }
 
-  .social-media-links {
+  .social-media-links h3 {
+    text-align: left;
+  }
+  .social-media-links ul {
     text-align: left;
   }
   .social-media-links ul li {
@@ -2598,7 +2663,7 @@ you can add resource intensive styles.
     margin-left: 0.2em;
   }
   .social-media-links ul li i {
-    font-size: 1.5em;
+    font-size: 1.5em/1.5em;
   }
 
   /* end .footer-links */

@@ -25,7 +25,7 @@ CSS3 GRADIENTS
 *********************/
 
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
-@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
+@mixin css-gradient($from, $to) {
 	background-color: $to;
 	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
 	background-image: -webkit-linear-gradient(top, $from, $to);
@@ -106,4 +106,11 @@ BUTTONS
 	-webkit-box-shadow:$top $left $blur $color $inset;
 	-moz-box-shadow:$top $left $blur $color $inset;
 	box-shadow:$top $left $blur $color $inset;
+}
+
+@mixin nav-icons($content) {
+	a:before, h1:before{
+		padding: 0.2em 0.2em 0.2em 0;
+		content: $content; 
+	}
 }

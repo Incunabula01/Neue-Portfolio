@@ -221,7 +221,7 @@ NAVIGATION STYLES
 	border-bottom: 0;
 	display: none;
 	width: 100%;
-	background-color: lighten($cyan, 10%);
+	background-color: darken($orange, 15%);
 	li {
 		margin: 0 auto;
 		font-size: 1.5em;
@@ -235,7 +235,7 @@ NAVIGATION STYLES
 			&:hover, &:focus {
 				color: $link-hover;
 				@include transition(all 0.2s ease-in);
-				background-color: darken($cyan, 40%);
+				background-color: darken($blue, 40%);
 			}
 			&:before {
 				font-family: FontAwesome;
@@ -291,30 +291,32 @@ NAVIGATION STYLES
 /*****Nav Icons*****/
 
 .work{
-	a:before, h1:before{
-		padding: 0.2em;
-		content: "\f0b1"; //briefcase icon
-	}
+	@include nav-icons("\f0b1");
 }
 
 .contact-me{
-	a:before, h1:before {
-		padding: 0.2em;
-		content: "\f0e0"; //envelope icon
-	}
+	@include nav-icons("\f0e0");
 }
 
 .about-me{
-	a:before, h1:before {
-		padding: 0.2em;
-		content: "\f007";
-	}
+	@include nav-icons("\f007");
 }
+
+.skills{
+	@include nav-icons("\f0a3");
+}
+
+.img-gallery{
+	@include nav-icons("\f03e");
+	color: $white;
+}
+
 
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 svg {
+	margin: 0 auto;
 	width: 100%;
 	height: auto;
 	text{
@@ -331,8 +333,8 @@ svg {
 
 #content {
 	p {
-	margin: 80px 0;
-}
+		margin: 80px 0;
+	}
 }
 
 	.header-image{
@@ -402,7 +404,20 @@ svg {
 		}
 
 		.chart{
-			margin: 40px 0
+			display: block;
+			min-height: 400px;
+			padding: 1.5em 0;
+			h1{
+				margin-bottom: 1em;
+				color: $white;
+				&:before{
+					color: $white;
+				}
+			}
+		}
+
+		.chart-section {
+			background-color: $cyan;
 		}
 
 		/* want to style individual post classes? Booya! */
@@ -450,10 +465,11 @@ svg {
 		/* entry content */
 		.entry-content {
 			width: 100%;
-			padding: 0 1.5em;
-			margin-bottom: 1.5em;
 
-			p {}
+			p {
+				padding: 0 2em;
+				font-size: 1.5rem/1.8rem;
+			}
 
 			ul, ol, table, dl {}
 
@@ -570,8 +586,22 @@ svg {
 		} /* end .wp-caption */
 
 		/* image gallery styles */
+		#gallery-container{
+			position: relative;
+			margin: 0 auto;
+		}
+
+		.gallery-section{
+			background-color: lighten($blue, 10%);
+			h1{
+				margin: 1em 0;
+			}
+		}
+
 		.gallery {
 			margin: 20px auto;
+			overflow-y: hidden;
+			height: 100%;
 			dl {
 				margin: 1em;
 				a {
@@ -635,16 +665,24 @@ MISC STYLES
 }
 
 #filters{
-	.cyan-btn{
+	margin: 2em auto;
+	text-align: center;
+	li{
+		display: inline-block;
+		position: relative;
+		list-style: none;
 		width: 18%;
-		font-size: 0.8em;
-		margin: 0.5em 0.1em;
-	}
-	i{
-		padding: 0.5em;
-	}
-	p{
-		display: none;
+		.cyan-btn{
+			font-size: 0.8em;
+			margin: 0.5em 0.1em;
+			padding: 0em;
+		}
+		i{
+			padding: 0.2em 0.5em;
+		}
+		h4{
+			display: none;
+		}
 	}
 }
 
@@ -1103,7 +1141,7 @@ FOOTER STYLES
 
 .footer {
 	min-height: 300px;
-	background-color: $black;
+	background-color: darken($blue, 5%);
 	color: $light-gray;
 	padding: 5% 0;
 	clear: both;
@@ -1129,6 +1167,7 @@ FOOTER STYLES
 						}
 					i{
 						font-family: $serif;
+						font-size: 1.5em;
 					}
 					i:before{
 						font-family: FontAwesome;
@@ -1163,7 +1202,7 @@ FOOTER STYLES
 						margin-left: 0.5em;
 						display: inline-block;
 						background-color: $cyan;
-						padding: 0.4em;
+						padding: 0.6em;
 						border-radius: 25px;
 						&:first-child{
 							margin-left: 0;

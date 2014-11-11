@@ -389,18 +389,23 @@ NAVIGATION STYLES
 #filters {
   width: 100%;
 }
+#filters li {
+  position: relative;
+  list-style: none;
+}
+#filters li h4 {
+  display: block;
+}
+#filters li h4:before, #filters li h4:after {
+  content: "|";
+}
 #filters .cyan-btn {
-  display: inline;
-  height: 45px;
-  padding: 0 1em;
-  line-height: 0.2em;
+  padding: 0 0.5em;
+  font-size: 2em/1em;
+  width: 100px;
 }
 #filters i {
   padding: 0.3em;
-}
-#filters p {
-  display: inline-block;
-  font-size: 1.5em;
 }
 
 .gallery dl {
@@ -481,8 +486,11 @@ FOOTER STYLES
   -o-transition: all 0.5s ease-in;
 }
 
-.footer-text-menu ul {
-  text-align: right;
+.footer-text-menu h3 {
+  text-align: left;
+}
+.footer-text-menu .textwidget {
+  text-align: left;
 }
 .footer-text-menu a {
   background-color: transparent;
@@ -497,7 +505,10 @@ FOOTER STYLES
   padding-right: 1em;
 }
 
-.social-media-links {
+.social-media-links h3 {
+  text-align: left;
+}
+.social-media-links ul {
   text-align: left;
 }
 .social-media-links ul li {
@@ -505,7 +516,7 @@ FOOTER STYLES
   margin-left: 0.2em;
 }
 .social-media-links ul li i {
-  font-size: 1.5em;
+  font-size: 1.5em/1.5em;
 }
 
 /* end .footer-links */
