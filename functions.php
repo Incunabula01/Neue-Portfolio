@@ -191,9 +191,7 @@ add_action( 'wp_enqueue_scripts', 'wayPoints_js' );
 
 function charts_js() {
 wp_register_script('chart_js', 'http://d3js.org/d3.v3.min.js','jQuery', 1.1, true);
-wp_register_script('skillChart_js' , get_template_directory_uri() . '/library/js/skillChart.js','jQuery',1.1, true);
 wp_enqueue_script('chart_js');
-wp_enqueue_script('skillChart_js');
 }
 
 add_action( 'wp_enqueue_scripts', 'charts_js' );
