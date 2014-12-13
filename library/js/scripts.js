@@ -96,28 +96,50 @@ var timeToWaitForLast = 100;
 jQuery(document).ready(function($) {
 
 	/* Mobile Nav Menu */
-  $(window).on( 'load resize', function(){
-  
-      var $navContainer = $('#navigation');
 
-      if(window.width > 768){
-          $navContainer.waypoint('unsticky');
-          console.log('unsticky!');
-      }else{
-          $navContainer.waypoint('sticky', {
-            offset: 50
-          });
-          console.log('sticky!');
-      };
-  });
-   
-  
+  $('.menu-toggle').on( 'load click' , function(){
 
-  $('.menu-toggle').click( function(){
-      $('.nav-menu').slideToggle(500);
+      var $navMenu = $('.nav-menu');
+
+      $navMenu.slideToggle(500);
       $(this).toggleClass('toggled');
+
   });
+
+  $(window).on( 'load resize', function(){
+
+    var $windowWidth = $(window).width();
   
+    var $navContainer = $('#nav');
+
+    event.stopPropagation;
+    
+    if( $windowWidth  <= 640) {
+
+      // Untoggle nav bar
+      $('#menu-main-nav').hide();
+
+      //Sticky Nav Bar
+      $navContainer.waypoint('sticky', { 
+        offset: 55,
+        triggerOnce: true 
+      });
+
+    } else if( $windowWidth >= 640){
+
+      // Toggle nav bar
+      $('#menu-main-nav').show();
+
+      // Unsticky nav bar
+       $navContainer.waypoint('unsticky' ,{
+        triggerOnce: true
+       });
+    };
+
+  });
+
+  
+
   
   
 

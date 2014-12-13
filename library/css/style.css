@@ -2500,6 +2500,7 @@ you can add resource intensive styles.
     display: inline-block;
     position: relative;
     width: 32%;
+    border-bottom: 0px;
     /*
     plan your menus and drop-downs wisely.
     */
