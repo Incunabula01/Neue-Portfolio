@@ -13,8 +13,8 @@ Stylesheet: Button Styles
   text-decoration: none;
   color: $white;
   font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
+  font-size: 22px;
+  line-height: 24px;
   font-weight: normal;
   padding: 0 24px;
   border-radius: 4px;
@@ -53,7 +53,7 @@ Stylesheet: Button Styles
 .cyan-btn {
   @extend %btn; // here we load the btn defaults
   background-color: $cyan;
-  height: 45px;
+  height: 50px;
   @include button-shadow(0px,-3px,0px,$blue,inset);
     &:hover,
     &:focus {

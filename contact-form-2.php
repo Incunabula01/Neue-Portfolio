@@ -27,6 +27,10 @@
 									<div class="wrap">
 
 										<div class="m-all t-1of2 d-2of5">
+
+												<div class="portrait">
+													<img src="/wp-content/themes/Neue-Portfolio/library/images/jw-portrait.jpg"/>
+												</div>
 												<?php the_content(); ?>
 										</div>
 

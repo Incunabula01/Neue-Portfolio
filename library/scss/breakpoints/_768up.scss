@@ -167,11 +167,10 @@ NAVIGATION STYLES
 
 } /* end .nav */
 
-#chart-range{
-	li{
-		margin-right: 15%;
-	}
+#skillChart{
+	width: 100%;
 }
+
 .single-title,
 .page-title,
 .entry-title {
@@ -232,7 +231,6 @@ NAVIGATION STYLES
 			}
 
 			dt {
-				height: 100%;
 				background: url('../images/gallery-thumb.png') $cyan 50% 50% no-repeat;
 			}
 
@@ -422,3 +420,6 @@ FOOTER STYLES
 }
 	/* end .footer-links */
 
+.portrait {
+	margin: 0px;
+}

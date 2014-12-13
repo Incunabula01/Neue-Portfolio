@@ -518,7 +518,7 @@ Author: Joe Widener
   font-family: 'Ostrich Black';
   src: url("../fonts/ostrich-black-webfont.eot");
   src: url("../fonts/ostrich-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ostrich-black-webfont.woff") format("woff"), url("../fonts/ostrich-black-webfont.ttf") format("truetype"), url("../fonts/ostrich-black-webfont.svg#ostrich-black-webfont") format("svg");
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
 }
 @font-face {
@@ -924,8 +924,8 @@ Stylesheet: Button Styles
   text-decoration: none;
   color: white;
   font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
+  font-size: 22px;
+  line-height: 24px;
   font-weight: normal;
   padding: 0 24px;
   border-radius: 4px;
@@ -955,7 +955,7 @@ Stylesheet: Button Styles
 
 .cyan-btn {
   background-color: #4ec5e9;
-  height: 45px;
+  height: 50px;
   -o-box-shadow: 0px -3px 0px #052636 inset;
   -webkit-box-shadow: 0px -3px 0px #052636 inset;
   -moz-box-shadow: 0px -3px 0px #052636 inset;
@@ -1281,6 +1281,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+p {
+  font-size: 22px;
+}
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -1405,12 +1409,12 @@ HEADER STYLES
 
 #main-logo {
   opacity: 1;
-  margin: 2px;
+  margin: 5px;
   display: block;
   background: url("../images/JWDesign_Logo_Mobile.png") 50% 0 no-repeat #323944;
-  height: 43px;
-  width: 43px;
-  border-radius: 21.5px;
+  height: 42px;
+  width: 42px;
+  border-radius: 21px;
   float: left;
   font: 0/0 a;
   text-shadow: none;
@@ -1447,6 +1451,13 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
+.stuck {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+}
+
 .menu-toggle {
   top: 0.5em;
   right: 0.5em;
@@ -1456,7 +1467,7 @@ NAVIGATION STYLES
   background-color: rgba(255, 255, 255, 0.5);
   padding: 0.50em;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   float: right;
   margin-bottom: 5px;
 }
@@ -1480,7 +1491,7 @@ NAVIGATION STYLES
   border-bottom: 0;
   display: none;
   width: 100%;
-  background-color: #f06108;
+  background-color: #fa9d64;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
@@ -1554,6 +1565,10 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+#skillChart {
+  width: 95%;
+}
+
 svg {
   margin: 0 auto;
   width: 100%;
@@ -1571,7 +1586,7 @@ svg g {
 }
 
 #content p {
-  margin: 80px 0;
+  margin: 40px 0;
 }
 
 .header-image {
@@ -1799,9 +1814,8 @@ img {
   height: auto;
 }
 .gallery dt {
-  height: 100%;
+  height: 400px;
   background: url("../images/gallery-thumb2x.png") #4ec5e9 50% 50% no-repeat;
-  background-size: 50%;
 }
 
 /* end .gallery */
@@ -1852,16 +1866,19 @@ MISC STYLES
 }
 #filters li .cyan-btn {
   font-size: 0.8em;
-  margin: 0.5em 0.1em;
+  margin: 0.2em;
   padding: 0em;
 }
 #filters li i {
-  padding: 0.2em 0.5em;
+  padding: 0.1em 0.4em;
 }
 #filters li h4 {
   display: none;
 }
 
+#contactForm {
+  padding: 0 2em;
+}
 #contactForm .cyan-btn {
   width: 100%;
   font-size: 1em;
@@ -1880,7 +1897,7 @@ MISC STYLES
   background-color: rgba(78, 197, 233, 0.6);
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 95%;
 }
 .item a div:hover {
   opacity: 1;
@@ -1919,6 +1936,19 @@ MISC STYLES
 
 .Identity h2:before {
   content: "\f1c5";
+}
+
+.portrait {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+.portrait img {
+  margin: 1em 0;
+  border-radius: 100px;
+  min-width: 200px;
 }
 
 /******************************************************************
@@ -2212,8 +2242,8 @@ FOOTER STYLES
   background-color: #4ec5e9;
   font-size: 0.8em;
   height: 45px;
-  width: 80%;
-  padding: 0.4em;
+  width: 90%;
+  padding: 1em;
 }
 .footer-text-menu a:hover, .footer-text-menu a:focus {
   background-color: #1aaad5;
@@ -2261,7 +2291,7 @@ FOOTER STYLES
   margin-left: 0.5em;
   display: inline-block;
   background-color: #4ec5e9;
-  padding: 0.6em;
+  padding: 0.8em;
   border-radius: 25px;
 }
 .social-media-links ul li:first-child {
@@ -2517,8 +2547,8 @@ you can add resource intensive styles.
   }
 
   /* end .nav */
-  #chart-range li {
-    margin-right: 15%;
+  #skillChart {
+    width: 100%;
   }
 
   .single-title,
@@ -2577,7 +2607,6 @@ you can add resource intensive styles.
     max-width: 400px;
   }
   .gallery dt {
-    height: 100%;
     background: url("../images/gallery-thumb.png") #4ec5e9 50% 50% no-repeat;
   }
 
@@ -2667,6 +2696,9 @@ you can add resource intensive styles.
   }
 
   /* end .footer-links */
+  .portrait {
+    margin: 0px;
+  }
 }
 /*********************
 DESKTOP

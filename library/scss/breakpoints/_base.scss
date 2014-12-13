@@ -16,6 +16,9 @@ body {
   	-webkit-font-smoothing: antialiased;
 }
 
+p {
+	font-size: 22px;
+}
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -149,12 +152,12 @@ HEADER STYLES
 	
 	#main-logo {
 		opacity: 1;
-		margin: 2px;
+		margin: 5px;
 		display: block;
 		background: url('../images/JWDesign_Logo_Mobile.png') 50% 0 no-repeat $black;
-		height: 43px;
-		width: 43px;
-		border-radius: 21.5px;
+		height: 42px;
+		width: 42px;
+		border-radius: 21px;
 		float: left;
 		@include hide-text;
 			&:hover {
@@ -187,6 +190,12 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
+.stuck{
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+	top: 0;
+}
 
 .menu-toggle {
 	top: 0.5em;
@@ -197,7 +206,7 @@ NAVIGATION STYLES
 	@include transparent-white(0.5);
 	padding: 0.50em;
 	position: absolute;
-	z-index: 1;
+	z-index: 3;
 	float: right;
 	margin-bottom: 5px;
 	&:hover, &:active{
@@ -221,7 +230,7 @@ NAVIGATION STYLES
 	border-bottom: 0;
 	display: none;
 	width: 100%;
-	background-color: darken($orange, 15%);
+	background-color: darken($light-orange, 15%);
 	li {
 		margin: 0 auto;
 		font-size: 1.5em;
@@ -315,6 +324,11 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+
+#skillChart{
+	width: 95%;
+}
+
 svg {
 	margin: 0 auto;
 	width: 100%;
@@ -333,7 +347,7 @@ svg {
 
 #content {
 	p {
-		margin: 80px 0;
+		margin: 40px 0;
 	}
 }
 
@@ -620,9 +634,9 @@ svg {
 			}
 
 			dt {
-				height: 100%;
+				height: 400px;
 				background: url('../images/gallery-thumb2x.png') $cyan 50% 50% no-repeat;
-				background-size: 50%;
+				//background-size: 50%;
 			}
 
 			dd {}
@@ -674,11 +688,11 @@ MISC STYLES
 		width: 18%;
 		.cyan-btn{
 			font-size: 0.8em;
-			margin: 0.5em 0.1em;
+			margin: 0.2em;
 			padding: 0em;
 		}
 		i{
-			padding: 0.2em 0.5em;
+			padding: 0.1em 0.4em;
 		}
 		h4{
 			display: none;
@@ -686,7 +700,8 @@ MISC STYLES
 	}
 }
 
-#contactForm{
+#contactForm {
+		padding: 0 2em;
 		.cyan-btn{
 			width: 100%;
 			font-size: 1em;
@@ -707,7 +722,7 @@ MISC STYLES
 			@include transparent-cyan(0.6);
 			position: absolute;
 			width: 100%;
-			height: 100%;
+			height: 95%;
 			&:hover{
 				opacity: 1;
 				@include transition(opacity 0.5s ease-in);
@@ -751,6 +766,20 @@ MISC STYLES
 		content: "\f1c5";
 	}
 }
+
+.portrait{
+	width: 200px;
+	height: 200px;
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	img{
+		margin: 1em 0;
+		border-radius: 100px;
+		min-width: 200px;
+	}
+}
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -1159,8 +1188,8 @@ FOOTER STYLES
 				a{
 					@include button-style($cyan, 0.8em);
 					height: 45px;
-					width: 80%;
-					padding: 0.4em;
+					width: 90%;
+					padding: 1em;
 					&:hover, &:active{
 							@include transition(all 0.6s ease-in);
 							background-color: darken($cyan, 18%);
@@ -1202,7 +1231,7 @@ FOOTER STYLES
 						margin-left: 0.5em;
 						display: inline-block;
 						background-color: $cyan;
-						padding: 0.6em;
+						padding: 0.8em;
 						border-radius: 25px;
 						&:first-child{
 							margin-left: 0;

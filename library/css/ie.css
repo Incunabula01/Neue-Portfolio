@@ -47,7 +47,7 @@ Author: Joe Widener
   font-family: 'Ostrich Black';
   src: url("../fonts/ostrich-black-webfont.eot");
   src: url("../fonts/ostrich-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ostrich-black-webfont.woff") format("woff"), url("../fonts/ostrich-black-webfont.ttf") format("truetype"), url("../fonts/ostrich-black-webfont.svg#ostrich-black-webfont") format("svg");
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
 }
 @font-face {
@@ -370,8 +370,8 @@ NAVIGATION STYLES
 }
 
 /* end .nav */
-#chart-range li {
-  margin-right: 15%;
+#skillChart {
+  width: 100%;
 }
 
 .single-title,
@@ -430,7 +430,6 @@ NAVIGATION STYLES
   max-width: 400px;
 }
 .gallery dt {
-  height: 100%;
   background: url("../images/gallery-thumb.png") #4ec5e9 50% 50% no-repeat;
 }
 
@@ -520,6 +519,10 @@ FOOTER STYLES
 }
 
 /* end .footer-links */
+.portrait {
+  margin: 0px;
+}
+
 /******************************************************************
 Site Name:
 Author:

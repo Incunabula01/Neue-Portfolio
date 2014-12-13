@@ -19,7 +19,12 @@
  * ( source: http://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript )
 */
 function updateViewportDimensions() {
-	var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
+	var w=window,
+      d=document,
+      e=d.documentElement,
+      g=d.getElementsByTagName('body')[0],
+      x=w.innerWidth||e.clientWidth||g.clientWidth,
+      y=w.innerHeight||e.clientHeight||g.clientHeight;
 	return { width:x,height:y }
 }
 // setting the viewport width
@@ -91,13 +96,34 @@ var timeToWaitForLast = 100;
 jQuery(document).ready(function($) {
 
 	/* Mobile Nav Menu */
-	$('.menu-toggle').click( function(){
-		$('.nav-menu').slideToggle(500);
-		$(this).toggleClass('toggled');
-	});
+  $(window).on( 'load resize', function(){
+  
+      var $navContainer = $('#navigation');
+
+      if(window.width > 768){
+          $navContainer.waypoint('unsticky');
+          console.log('unsticky!');
+      }else{
+          $navContainer.waypoint('sticky', {
+            offset: 50
+          });
+          console.log('sticky!');
+      };
+  });
+   
+  
+
+  $('.menu-toggle').click( function(){
+      $('.nav-menu').slideToggle(500);
+      $(this).toggleClass('toggled');
+  });
+  
+  
+  
 
 	/* Init Portfolio Isotope Gallery */
 	var $container = $('#gallery-container');
+
 
 	$container.imagesLoaded( function(){
 		$container.isotope({
@@ -113,14 +139,6 @@ jQuery(document).ready(function($) {
 			var filterValue = $(this).attr('data-filter');
 			$container.isotope({
 				filter: filterValue
-			});
-		});
-
-		$('.button-group').each( function (i, buttonGroup){
-			var $buttonGroup = $(buttonGroup);
-			$buttonGroup.on('click', 'button', function(){
-				$buttonGroup.find('.current').removeClass('current');
-				$(this).addClass('current');
 			});
 		});
 	}); 
