@@ -111,8 +111,6 @@ jQuery(document).ready(function($) {
     var $windowWidth = $(window).width();
   
     var $navContainer = $('#nav');
-
-    event.stopPropagation;
     
     if( $windowWidth  <= 640) {
 
@@ -135,6 +133,8 @@ jQuery(document).ready(function($) {
         triggerOnce: true
        });
     };
+
+    event.stopPropagation;
 
   });
 

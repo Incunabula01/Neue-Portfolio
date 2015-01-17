@@ -19,7 +19,12 @@
  * ( source: http://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript )
 */
 function updateViewportDimensions() {
-	var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
+	var w=window,
+      d=document,
+      e=d.documentElement,
+      g=d.getElementsByTagName('body')[0],
+      x=w.innerWidth||e.clientWidth||g.clientWidth,
+      y=w.innerHeight||e.clientHeight||g.clientHeight;
 	return { width:x,height:y }
 }
 // setting the viewport width
@@ -91,10 +96,52 @@ var timeToWaitForLast = 100;
 jQuery(document).ready(function($) {
 
 	/* Mobile Nav Menu */
-	$('.menu-toggle').click( function(){
-		$('.nav-menu').slideToggle(500);
-		$(this).toggleClass('toggled');
-	});
+
+  $('.menu-toggle').on( 'load click' , function(){
+
+      var $navMenu = $('.nav-menu');
+
+      $navMenu.slideToggle(500);
+      $(this).toggleClass('toggled');
+
+  });
+
+  $(window).on( 'load resize', function(){
+
+    var $windowWidth = $(window).width();
+  
+    var $navContainer = $('#nav');
+    
+    if( $windowWidth  <= 640) {
+
+      // Untoggle nav bar
+      $('#menu-main-nav').hide();
+
+      //Sticky Nav Bar
+      $navContainer.waypoint('sticky', { 
+        offset: 55,
+        triggerOnce: true 
+      });
+
+    } else if( $windowWidth >= 640){
+
+      // Toggle nav bar
+      $('#menu-main-nav').show();
+
+      // Unsticky nav bar
+       $navContainer.waypoint('unsticky' ,{
+        triggerOnce: true
+       });
+    };
+
+    event.stopPropagation;
+
+  });
+
+  
+
+  
+  
 
 	/* Init Portfolio Isotope Gallery */
 	var $container = $('#gallery-container');
