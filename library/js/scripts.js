@@ -97,7 +97,7 @@ jQuery(document).ready(function($) {
 
 	/* Mobile Nav Menu */
 
-  $('.menu-toggle').on( 'load click' , function(){
+  $('.menu-toggle').click( function(){
 
       var $navMenu = $('.nav-menu');
 
@@ -225,10 +225,6 @@ jQuery(document).ready(function($) {
         },{
             label: "javaScript",
             rank: 35,
-            tick: "Beginner"
-        },{
-            label: "Ruby on Rails",
-            rank: 20,
             tick: "Beginner"
         }];
 

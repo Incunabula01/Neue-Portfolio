@@ -4,92 +4,87 @@ Author: Joe Widener
 */
 
 @font-face {
-      font-family: 'Ostrich Black';
-      src: url('../fonts/ostrich-black-webfont.eot');
-      src: url('../fonts/ostrich-black-webfont.eot?#iefix') format('embedded-opentype'),
-             url('../fonts/ostrich-black-webfont.woff') format('woff'),
-             url('../fonts/ostrich-black-webfont.ttf') format('truetype'),
-             url('../fonts/ostrich-black-webfont.svg#ostrich-black-webfont') format('svg');
-      font-weight: normal;
-      font-style: normal;
-      
-  }
-
-@font-face {
-      font-family: 'Ostrich Light';
-      src: url('../fonts/ostrich-light-webfont.eot');
-      src: url('../fonts/ostrich-light-webfont.eot?#iefix') format('embedded-opentype'),
-             url('../fonts/ostrich-light-webfont.woff') format('woff'),
-             url('../fonts/ostrich-light-webfont.ttf') format('truetype'),
-             url('../fonts/ostrich-light-webfont.svg#ostrich-light-webfont') format('svg');
+      font-family: 'Lato Bold';
+      src: url('../fonts/lato-bold-webfont.eot');
+      src: url('../fonts/lato-bold-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/lato-bold-webfont.woff') format('woff'),
+             url('../fonts/lato-bold-webfont.ttf') format('truetype'),
+             url('../fonts/lato-bold-webfont.svg#lato-bold-webfont') format('svg');
       font-weight: normal;
       font-style: normal;
       
   }
 
   @font-face {
-      font-family: 'Ostrich Regular';
-      src: url('../fonts/ostrich-regular-webfont.eot');
-      src: url('../fonts/ostrich-regular-webfont.eot?#iefix') format('embedded-opentype'),
-             url('../fonts/ostrich-regular-webfont.woff') format('woff'),
-             url('../fonts/ostrich-regular-webfont.ttf') format('truetype'),
-             url('../fonts/ostrich-regular-webfont.svg#ostrich-light-webfont') format('svg');
+      font-family: 'Lato Regular';
+      src: url('../fonts/lato-regular-webfont.eot');
+      src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/lato-regular-webfont.woff') format('woff'),
+             url('../fonts/lato-regular-webfont.ttf') format('truetype'),
+             url('../fonts/lato-regular-webfont.svg#lato-regular-webfont') format('svg');
       font-weight: normal;
       font-style: normal;
       
   }
 
-@font-face {
-      font-family: 'Alegreya Regular';
-      src: url('../fonts/alegreya-regular-webfont.eot');
-      src: url('../fonts/alegreya-regular-webfont.eot?#iefix') format('embedded-opentype'),
-             url('../fonts/alegreya-regular-webfont.woff') format('woff'),
-             url('../fonts/alegreya-regular-webfont.ttf') format('truetype'),
-             url('../fonts/alegreya-regular-webfont.svg#alegreya-regular-webfont') format('svg');
+  @font-face {
+      font-family: 'Lato Thin';
+      src: url('../fonts/lato-thin-webfont.eot');
+      src: url('../fonts/lato-thin-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/lato-thin-webfont.woff') format('woff'),
+             url('../fonts/lato-thin-webfont.ttf') format('truetype'),
+             url('../fonts/lato-thin-webfont.svg#lato-thin-webfont') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'Lato Hairline';
+      src: url('../fonts/lato-hairline-webfont.eot');
+      src: url('../fonts/lato-hairline-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/lato-hairline-webfont.woff') format('woff'),
+             url('../fonts/lato-hairline-webfont.ttf') format('truetype'),
+             url('../fonts/lato-hairline-webfont.svg#lato-hairline-webfont') format('svg');
       font-weight: normal;
       font-style: normal;
       
   }
 
-@font-face {
-      font-family: 'Alegreya Black';
-      src: url('../fonts/alegreya-black-webfont.eot');
-      src: url('../fonts/alegreya-black-webfont.eot?#iefix') format('embedded-opentype'),
-             url('../fonts/alegreya-black-webfont.woff') format('woff'),
-             url('../fonts/alegreya-black-webfont.ttf') format('truetype'),
-             url('../fonts/alegreya-black-webfont.svg#alegreya-black-webfont') format('svg');
+  @font-face {
+      font-family: 'Merriweather Regular';
+      src: url('../fonts/merriweather-regular-webfont.eot');
+      src: url('../fonts/merriweather-regular-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/merriweather-regular-webfont.woff') format('woff'),
+             url('../fonts/merriweather-regular-webfont.ttf') format('truetype'),
+             url('../fonts/merriweather-regular-webfont.svg#merriweather-regular-webfont') format('svg');
       font-weight: normal;
       font-style: normal;
       
   }
 
- @font-face {
-      font-family: 'Alegreya Italic';
-      src: url('../fonts/alegreya-italic-webfont.eot');
-      src: url('../fonts/alegreya-italic-webfont.eot?#iefix') format('embedded-opentype'),
-             url('../fonts/alegreya-italic-webfont.woff') format('woff'),
-             url('../fonts/alegreya-italic-webfont.ttf') format('truetype'),
-             url('../fonts/alegreya-italic-webfont.svg#alegreya-italic-webfont') format('svg');
+  @font-face {
+      font-family: 'Merriweather Italic';
+      src: url('../fonts/merriweather-italic-webfont.eot');
+      src: url('../fonts/merriweather-italic-webfont.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/merriweather-italic-webfont.woff') format('woff'),
+             url('../fonts/merriweather-italic-webfont.ttf') format('truetype'),
+             url('../fonts/merriweather-italic-webfont.svg#merriweather-italic-webfont') format('svg');
       font-weight: normal;
       font-style: normal;
       
-  } 
+  }
 
-/*
-The following is based of Typebase:
-https://github.com/devinhunt/typebase.css
-I've edited it a bit, but it's a nice starting point.
-*/
 
 
 // font stacks
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             "Alegreya Regular", Georgia, Times, serif;
-$serif-bold:        "Alegreya Black", Georgia, Times, serif;
+$serif:             "Merriweather Regular", Georgia, Times, serif;
+$serif-italic:      "Merriweather Italic", Georgia, Times, serif;
 
-$logo-font:         "Ostrich Regular", Verdana, sans-serif;
-$header-font:       "Ostrich Black", Verdana, sans-serif;
-$sub-header-font:   "Alegreya Italic", Georgia, serif;
+$logo-font:         "Lato Hairline", Verdana, sans-serif;
+$header-font:       "Lato Thin", Verdana, sans-serif;
+$sub-header-font:   "Lato Bold", Verdana, sans-serif;
+$link-font:         "Lato Regular" , Verdana, sans-serif;
 
 /*
 some nice typographical defaults

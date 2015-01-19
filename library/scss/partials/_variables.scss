@@ -30,12 +30,14 @@ $gray:              #eaedf2;
 $text-color:        #5c6b80;
 $meta-gray:         #9fa6b4;
 
-$orange:			#F98E4B;
-$light-orange:		lighten($orange,20%);
 $blue:              #052636;
 $cyan:				#4EC5E9;
+$teal: 				#00CC99;
+$transparent-teal:	rgba(0, 204, 153, 0.8);
+$transparent-cyan:	rgba(78, 197, 233, 0.8);
+$dark-teal:			darken($teal,20%);
 
-$link-color:        lighten($orange, 10%);
+$link-color:        lighten($blue, 10%);
 $link-hover:        darken($link-color, 10%);
 
 $border-color:      #ccc;

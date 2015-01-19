@@ -77,6 +77,8 @@ LINK STYLES
 
 a, a:visited {
 	color: $link-color;
+	font-family: $link-font;
+	text-decoration: none;
 
 	/* on hover */
 	&:hover, &:focus {
@@ -85,7 +87,8 @@ a, a:visited {
 
 	/* on click */
 	&:active {
-
+		font-family: $link-font;
+		color: $dark-teal;
 	}
 
 	/* mobile tap color */
@@ -146,43 +149,28 @@ HEADER STYLES
 *********************/
 
 .header {
-	background: $light-orange;
+	background: $teal;
 	min-height: 55px;
 }
-	
-	#main-logo {
-		opacity: 1;
-		margin: 5px;
-		display: block;
-		background: url('../images/JWDesign_Logo_Mobile.png') 50% 0 no-repeat $black;
-		height: 42px;
-		width: 42px;
-		border-radius: 21px;
-		float: left;
-		@include hide-text;
-			&:hover {
-				@include transparent-black(0.5);
-				@include transition(all 0.5s ease-in-out);
-			}
-			&:active {
-				opacity: 0.6;
-				@include transparent-black(0.8);
-			}
-	}
 
 	#logo-text {
 		margin: 0.5em;
 		float: left;
 		text-align: center;
-		font-family: $logo-font;
-		color: $blue;
+		font-family: $header-font;
+		color: $white;
 		font-size: 2em;
 		line-height: 0.75em;
 
 		a {
 			color: $white;
 		}
+		&:hover, &:active{
+			color: $blue;
+			@include transition(all 0.5s ease-in);
+		}
 	}
+
 	.subheader {
 		display: none;
 	}
@@ -230,21 +218,20 @@ NAVIGATION STYLES
 	border-bottom: 0;
 	display: none;
 	width: 100%;
-	background-color: darken($light-orange, 15%);
+	background-color: darken($teal, 15%);
 	li {
 		margin: 0 auto;
 		font-size: 1.5em;
-		border-bottom: 0.1em solid $white;
+		border-bottom: 0.1em solid $cyan;
 		a {
 			text-align: center;
 			display: block;
 			text-decoration: none;
 			padding: 0.2em 0.5em;
-			color: $blue;
+			color: $white;
 			&:hover, &:focus {
 				color: $link-hover;
 				@include transition(all 0.2s ease-in);
-				background-color: darken($blue, 40%);
 			}
 			&:before {
 				font-family: FontAwesome;
@@ -290,7 +277,8 @@ NAVIGATION STYLES
 	li.current_page_ancestor {
 
 		a {
-			font-family: $serif-bold;
+			font-family: $link-font;
+			color: lighten($cyan, 20%);
 		}
 
 	}  /* end current highlighters */
@@ -412,7 +400,7 @@ svg {
 			padding: 0.5em;
 			h2{
 				font-family: $header-font;
-				color: $orange;
+				color: $teal;
 				font-size: 2em;
 			}
 		}
@@ -1122,7 +1110,7 @@ SIDEBARS & ASIDES
 	.widgettitle {
 		padding: 0.2em;
 		text-align: center;
-		color: $orange;
+		color: $teal;
 		@extend .hentry
 	}
 

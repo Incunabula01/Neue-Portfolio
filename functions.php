@@ -220,4 +220,13 @@ wp_enqueue_script('jqueryValidate_js');
 
 add_action( 'wp_enqueue_scripts', 'contactFormValidation');
 
+function onePageNav(){
+wp_register_script('jqueryScrollTo_js', get_template_directory_uri() . '/library/js/libs/jquery.scrollTo.min.js', 'JQuery', '2.1', true);
+wp_register_script('jqueryOnePageNav_js', get_template_directory_uri() . '/library/js/libs/jquery.nav.js', 'jQuery' , '2.1', true);
+wp_enqueue_script('jqueryScrollTo_js');
+wp_enqueue_script('jqueryOnePageNav_js');
+}
+
+add_action( 'wp_enqueue_scripts', 'onePageNav' );
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
