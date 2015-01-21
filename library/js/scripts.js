@@ -95,25 +95,94 @@ var timeToWaitForLast = 100;
 
 jQuery(document).ready(function($) {
 
-	/* Mobile Nav Menu */
-
-  $('.menu-toggle').click( function(){
-
-      var $navMenu = $('.nav-menu');
-
-      $navMenu.slideToggle(500);
-      $(this).toggleClass('toggled');
-
-  });
-
-  $(window).on( 'load resize', function(){
-
-    var $windowWidth = $(window).width();
-  
+    var $headerText = $('#header-text');
     var $navContainer = $('#nav');
+    var $windowWidth = $(window).width();
+    var $navMenu = $('.nav-menu');
+    var $menuToggle = $('.menu-toggle');
+    
+
+    $(window).on( 'load resize', function(){
+
+      var $logoText = $('#logo-text-stuck');
+      var $mainDiv = $('#main');
+      var outerHeight = $navMenu.outerHeight();
+      // Desktop nav
+
+      $headerText.waypoint({
+
+        handler: function(direction){
+
+          if ($windowWidth  >= 768) {
+
+            $(window).off('resize');
+
+            if (direction === 'down'){
+
+              $headerText.hide({
+                easeInCubic: 900
+              });
+
+              $navContainer.addClass('stuck');
+              $navMenu.hide();
+              $('.menu-toggle , #logo-text-stuck').show();
+              $mainDiv.addClass('resize');
+
+            } else if (direction === 'up'){
+
+              $mainDiv.removeClass('resize');
+              $navContainer.removeClass('stuck');
+              $('.menu-toggle , #logo-text-stuck').hide();
+              $navMenu.show();
+
+              $headerText.show({
+                easeOutCubic: 900
+              });
+
+            }
+
+          } else {
+          // Mobile Nav
+
+              $logoText.hide();
+
+              if(direction == 'down'){
+
+                $navContainer.addClass('stuck');
+                $mainDiv.addClass('resize');
+
+              } 
+          };    
+        },
+
+        offset: function(){
+          if($windowWidth >= 640){
+            return -outerHeight + 55;
+          } else if ($windowWidth <= 640){
+            return outerHeight + 55;
+          }
+        }
+
+      });
+
+    });
+
+      
+  
+    /* Mobile Nav Menu */
+
+    $('.menu-toggle').click(function(){
+
+        $navMenu.slideToggle(500);
+        $(this).toggleClass('toggled');
+
+    }).stop();
+
+  /*$(window).on( 'load resize', function(){
     
     if( $windowWidth  <= 640) {
-
+      $(window).off('resize');
+      
       // Untoggle nav bar
       $('#menu-main-nav').hide();
 
@@ -136,8 +205,8 @@ jQuery(document).ready(function($) {
 
     event.stopPropagation;
 
-  });
-
+  }); */
+ 
   
 
   

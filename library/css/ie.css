@@ -260,9 +260,29 @@ HEADER STYLES
   font-size: 7em;
   line-height: 0.75em;
   float: none;
+  display: block;
 }
 #logo-text a {
   color: #fff;
+}
+
+#logo-text-stuck {
+  margin: 0.5em;
+  float: left;
+  text-align: left;
+  font-family: "Lato Thin", Verdana, sans-serif;
+  color: #fff;
+  font-size: 2em;
+  line-height: 0.75em;
+}
+#logo-text-stuck a {
+  color: #fff;
+}
+#logo-text-stuck:hover, #logo-text-stuck:active {
+  color: #052636;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
 }
 
 .subheader {
@@ -305,8 +325,12 @@ NAVIGATION STYLES
 .nav-menu li {
   display: inline-block;
   position: relative;
-  width: 32%;
+  width: 25%;
   border-bottom: 0px;
+  -webkit-border: 1px solid #fff;
+  -moz-border: 1px solid #fff;
+  -o-border: 1px solid #fff;
+  border: 1px solid #fff;
   /*
   plan your menus and drop-downs wisely.
   */
@@ -314,11 +338,13 @@ NAVIGATION STYLES
 }
 .nav-menu li a {
   border-bottom: 0;
+  text-align: center;
 }
 .nav-menu li a:hover, .nav-menu li a:focus {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
+  background-color: rgba(0, 204, 153, 0.8);
+  -webkit-transition: background-color 0.5s ease-in-out;
+  -moz-transition: background-color 0.5s ease-in-out;
+  -o-transition: background-color 0.5s ease-in-out;
 }
 .nav-menu li ul.sub-menu,
 .nav-menu li ul.children {
@@ -362,6 +388,13 @@ NAVIGATION STYLES
 .entry-title {
   margin: 0;
   text-align: left;
+}
+
+.resize {
+  margin-top: 20%;
+  -webkit-transition: margin-top 0.2s ease-in;
+  -moz-transition: margin-top 0.2s ease-in;
+  -o-transition: margin-top 0.2s ease-in;
 }
 
 .entry-content footer .cyan-btn {

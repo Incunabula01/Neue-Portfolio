@@ -38,10 +38,30 @@ HEADER STYLES
 		font-size: 7em;
 		line-height: 0.75em;
 		float: none;
+		display: block;
 		a {
 			color: $white;
 		}
 	}
+
+	#logo-text-stuck {
+		margin: 0.5em;
+		float: left;
+		text-align: left;
+		font-family: $header-font;
+		color: $white;
+		font-size: 2em;
+		line-height: 0.75em;
+		a {
+			color: $white;
+		}
+		&:hover, &:active{
+			color: $blue;
+			@include transition(all 0.5s ease-in);
+		}
+	}
+
+	
 	.subheader {
 		display: block;
 		@include border-box( 0.1em, $white);
@@ -75,13 +95,16 @@ NAVIGATION STYLES
 	li {
 		display: inline-block;
 		position: relative;
-		width: 32%;
+		width: 25%;
 		border-bottom: 0px;
+		@include border-box(1px, $white);
 		a {
 			border-bottom: 0;
+			text-align: center;
 
 			&:hover, &:focus {
-				@include transition(all 0.5s ease-in-out);
+				background-color: $transparent-teal;
+				@include transition(background-color 0.5s ease-in-out);
 			}
 		}
 		&:first-child {}
@@ -163,6 +186,11 @@ NAVIGATION STYLES
 .entry-title {
 	margin: 0;
 	text-align: left;
+}
+
+.resize {
+	margin-top: 20%;
+    @include transition(margin-top 0.2s ease-in);
 }
 
 .entry-content{

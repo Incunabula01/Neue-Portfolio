@@ -52,7 +52,12 @@
 						<h3 class="subheader"><?php bloginfo('description'); ?></h3>
 					</div>
 
+					<a href="<?php echo home_url(); ?>" rel="nofollow" alt="JWidener Design">
+							<p id="logo-text-stuck" ><?php bloginfo('name'); ?></p>
+					</a>
+
 					<nav id="site navigation" class="nav" role="navigation">
+
 
 							<div class="wrap">
 
@@ -63,7 +68,7 @@
 		    					'container_class' => 'menu cf',                 
 		    					'menu' => __( 'The Main Menu', 'bonestheme' ),  
 		    					'menu_class' => 'nav-menu cf',               
-		    					'theme_location' => 'main-nav'
+		    					'theme_location' => 'main-nav',      
 								)); ?>
 
 							</div>

@@ -161,6 +161,7 @@ HEADER STYLES
 		color: $white;
 		font-size: 2em;
 		line-height: 0.75em;
+		display: block;
 
 		a {
 			color: $white;
@@ -171,6 +172,9 @@ HEADER STYLES
 		}
 	}
 
+	#logo-text-stuck {
+		display: none;
+	}
 	.subheader {
 		display: none;
 	}
@@ -183,6 +187,7 @@ NAVIGATION STYLES
 	width: 100%;
 	z-index: 2;
 	top: 0;
+	@include transition(all 0.5s ease-in);
 }
 
 .menu-toggle {
@@ -191,19 +196,20 @@ NAVIGATION STYLES
 	height: 40px;
 	width: 40px;
 	border: 0 none;
-	@include transparent-white(0.5);
+	color: $white;
 	padding: 0.50em;
 	position: absolute;
-	z-index: 3;
+	background-color: transparent;
+	z-index: 4;
 	float: right;
 	margin-bottom: 5px;
 	&:hover, &:active{
-		@include transparent-black(0.8);
+		@include transition(all 0.5s ease-in);
+		@include transparent-white(0.5);
 		color: $link-hover;
+		box-shadow: 0 none;
 	}
 	&:focus{
-		@include transparent-black(0.8);
-		color: $link-hover;
 		box-shadow: 0 none;
 	}
 }
@@ -322,7 +328,7 @@ svg {
 	width: 100%;
 	height: auto;
 	text{
-		font-family: $header-font;
+		font-family: $link-font;
 		fill: $white;
 		padding: 0.2em;
 	}
@@ -331,6 +337,11 @@ svg {
 		fill: none;
 		stroke-weight: 0.5em;
 	}
+}
+
+.resize {
+	margin-top: 55px;
+    @include transition(margin-top 0.2s ease-in);
 }
 
 #content {
