@@ -1486,6 +1486,7 @@ NAVIGATION STYLES
   display: none;
   width: 100%;
   background-color: #008060;
+  text-align: center;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
@@ -1493,7 +1494,7 @@ NAVIGATION STYLES
 .nav-menu li {
   margin: 0 auto;
   font-size: 1.5em;
-  border-bottom: 0.1em solid #4EC5E9;
+  border-bottom: 0.1em solid #00CC99;
 }
 .nav-menu li a {
   text-align: center;
@@ -1511,9 +1512,6 @@ NAVIGATION STYLES
 .nav-menu li a:before {
   font-family: FontAwesome;
   font-size: 1em;
-}
-.nav-menu li:last-child {
-  border-bottom: 0 none;
 }
 .nav-menu li ul.sub-menu li a,
 .nav-menu li ul.children li a {

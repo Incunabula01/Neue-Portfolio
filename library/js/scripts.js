@@ -106,10 +106,10 @@ jQuery(document).ready(function($) {
 
       var $logoText = $('#logo-text-stuck');
       var $mainDiv = $('#main');
-      var outerHeight = $navMenu.outerHeight();
+      
       // Desktop nav
 
-      $headerText.waypoint({
+      $navContainer.waypoint({
 
         handler: function(direction){
 
@@ -123,21 +123,23 @@ jQuery(document).ready(function($) {
                 easeInCubic: 900
               });
 
-              $navContainer.addClass('stuck');
+              
               $navMenu.hide();
               $('.menu-toggle , #logo-text-stuck').show();
               $mainDiv.addClass('resize');
+              $navContainer.addClass('stuck');
 
             } else if (direction === 'up'){
 
               $mainDiv.removeClass('resize');
-              $navContainer.removeClass('stuck');
               $('.menu-toggle , #logo-text-stuck').hide();
               $navMenu.show();
 
               $headerText.show({
                 easeOutCubic: 900
               });
+
+              $navContainer.removeClass('stuck');
 
             }
 
@@ -157,9 +159,9 @@ jQuery(document).ready(function($) {
 
         offset: function(){
           if($windowWidth >= 640){
-            return -outerHeight + 55;
+            return -( $navContainer.outerHeight() / 2 );
           } else if ($windowWidth <= 640){
-            return outerHeight + 55;
+            return -55;
           }
         }
 

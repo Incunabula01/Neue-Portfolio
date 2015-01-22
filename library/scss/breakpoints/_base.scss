@@ -225,10 +225,11 @@ NAVIGATION STYLES
 	display: none;
 	width: 100%;
 	background-color: darken($teal, 15%);
+	text-align: center;
 	li {
 		margin: 0 auto;
 		font-size: 1.5em;
-		border-bottom: 0.1em solid $cyan;
+		border-bottom: 0.1em solid $teal;
 		a {
 			text-align: center;
 			display: block;
@@ -249,7 +250,6 @@ NAVIGATION STYLES
 		}
 
 		&:last-child {
-			border-bottom: 0 none;
 		}
 
 		ul.sub-menu,
