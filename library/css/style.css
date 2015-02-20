@@ -1437,13 +1437,11 @@ NAVIGATION STYLES
 .stuck {
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 5;
   top: 0;
+  left: 0;
   height: 55px;
   background-color: #00CC99;
-  -webkit-transition: all 0.5s ease-in;
-  -moz-transition: all 0.5s ease-in;
-  -o-transition: all 0.5s ease-in;
 }
 
 .menu-toggle {
@@ -1456,7 +1454,7 @@ NAVIGATION STYLES
   padding: 0.50em;
   position: absolute;
   background-color: transparent;
-  z-index: 4;
+  z-index: 6;
   float: right;
   margin-bottom: 5px;
 }
@@ -2442,6 +2440,9 @@ you can add resource intensive styles.
     background: url("../images/foreground-banner.jpg") 50% 0 no-repeat fixed;
     background-size: cover;
     max-height: 600px;
+    -webkit-transition: height 0.5s ease-in;
+    -moz-transition: height 0.5s ease-in;
+    -o-transition: height 0.5s ease-in;
   }
 
   .logo {
@@ -2452,6 +2453,9 @@ you can add resource intensive styles.
     font-size: 7em;
     line-height: 0.75em;
     float: none;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
   }
   .logo a {
     color: #fff;
@@ -2502,8 +2506,7 @@ you can add resource intensive styles.
   .nav-menu {
     border: 0;
     margin: 0 auto;
-    display: block;
-    background-color: transparent;
+    background-color: rgba(0, 204, 153, 0.8);
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
@@ -2515,6 +2518,7 @@ you can add resource intensive styles.
     display: inline-block;
     position: relative;
     width: 25%;
+    margin: 0.5em 0;
     border-bottom: 0px;
     -webkit-border: 1px solid #fff;
     -moz-border: 1px solid #fff;

@@ -250,6 +250,9 @@ HEADER STYLES
   background: url("../images/foreground-banner.jpg") 50% 0 no-repeat fixed;
   background-size: cover;
   max-height: 600px;
+  -webkit-transition: height 0.5s ease-in;
+  -moz-transition: height 0.5s ease-in;
+  -o-transition: height 0.5s ease-in;
 }
 
 .logo {
@@ -260,6 +263,9 @@ HEADER STYLES
   font-size: 7em;
   line-height: 0.75em;
   float: none;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
 }
 .logo a {
   color: #fff;
@@ -310,8 +316,7 @@ NAVIGATION STYLES
 .nav-menu {
   border: 0;
   margin: 0 auto;
-  display: block;
-  background-color: transparent;
+  background-color: rgba(0, 204, 153, 0.8);
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */
@@ -323,6 +328,7 @@ NAVIGATION STYLES
   display: inline-block;
   position: relative;
   width: 25%;
+  margin: 0.5em 0;
   border-bottom: 0px;
   -webkit-border: 1px solid #fff;
   -moz-border: 1px solid #fff;

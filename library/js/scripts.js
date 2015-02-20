@@ -95,15 +95,52 @@ var timeToWaitForLast = 100;
 
 jQuery(document).ready(function($) {
 
-    var $headerText = $('#logo-text');
     var $navContainer = $('#nav');
     var $windowWidth = $(window).width();
     var $navMenu = $('.nav-menu');
     var $menuToggle = $('.menu-toggle');
-    var $header = $('#logo-text , .subheader');
-    var headerHeight = $headerText.outerHeight();
-    var $logoText = $('#logo-text-stuck');
     var $mainDiv = $('#main');
+
+    if($windowWidth >= 640){
+
+      var $header = $('#logo-text');
+      var headerHeight = $header.outerHeight();
+      var logoText = $('.logo');
+      var subheaderText = $('.subheader');
+
+      $header.waypoint({
+
+        handler: function(direction) {
+
+          if (direction === 'down') {
+
+          logoText.animate({
+            fontSize: 32,
+            marginTop: 15
+          }, 100);
+
+          subheaderText.fadeOut({
+            'ease-in': 100
+          });
+
+          } else if (direction === 'up'){
+
+            $('p, h3').removeAttr('style');
+
+          };
+
+        },
+
+        offset: function() {
+          return -$header.outerHeight() / 10;
+        }
+
+      });
+
+    };
+
+
+
 
     $navContainer.waypoint('sticky',{
       offset: function(){
@@ -111,68 +148,7 @@ jQuery(document).ready(function($) {
       }
     });
 
-    /*var top_spacing = 15;
-    var waypoint_offset = 55;
-
-    $navContainer.waypoint({
-
-      handler: function(direction) {
-
-        $('nav-menu').addClass('hide');
-
-        if (direction == 'down') {
-
-          $header.hide();
-
-          $navContainer.css({ 'height' : $navMenu.outerHeight() });
-          $navMenu.addClass("stuck").css({ "background-color": "#00CC99"});
-          $menuToggle.toggleClass('show').animate({
-            display: "block"
-          }, 1200).stop();
-          $headerText.removeClass('logo').addClass('logo-text-stuck');
-          console.log('event 1 fired!')
-        } else if (direction === 'up'){
-
-          $navContainer.css({ 'height' : 'auto' });
-          $navMenu.removeClass("stuck hide")
-             .stop()
-             .css({ "background-color": "transparent"});
-          $('nav-menu').show();
-          $menuToggle.removeClass('show');
-          $headerText.addClass('logo');
-
-
-        }
-
-      },
-
-      offset: function() {
-        return -$navMenu.outerHeight();
-      }
-
-    });
-    */
-    /*$navContainer.waypoint({
-      handler: function(direction){
-
-        var $navBar = $('.logo-text-stuck , .menu-toggle');
-
-        if(direction === 'down'){
-          $header.hide();
-          $navMenu.hide();
-          $navBar.addClass('show');
-          $navContainer.addClass('stuck');
-        } else if (direction === 'up') {
-          $navMenu.show({
-            easeOut: 1200
-          })
-          $navBar.removeClass('show');
-          $navContainer.removeClass('stuck');
-          $header.show();
-        }
-      },
-      offset: -55
-    }); */
+    
 
     /* Mobile Nav Menu */
 

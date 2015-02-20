@@ -180,11 +180,11 @@ NAVIGATION STYLES
 .stuck{
 	position: fixed;
 	width: 100%;
-	z-index: 2;
+	z-index: 5;
 	top: 0;
+	left: 0;
 	height: 55px;
 	background-color: $teal;
-	@include transition(all 0.5s ease-in);
 }
 
 .menu-toggle {
@@ -197,7 +197,7 @@ NAVIGATION STYLES
 	padding: 0.50em;
 	position: absolute;
 	background-color: transparent;
-	z-index: 4;
+	z-index: 6;
 	float: right;
 	margin-bottom: 5px;
 	&:hover, &:active{
