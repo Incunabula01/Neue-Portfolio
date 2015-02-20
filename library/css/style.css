@@ -1408,7 +1408,7 @@ HEADER STYLES
   min-height: 55px;
 }
 
-#logo-text {
+.logo {
   margin: 0.5em;
   float: left;
   text-align: center;
@@ -1416,20 +1416,15 @@ HEADER STYLES
   color: #fff;
   font-size: 2em;
   line-height: 0.75em;
-  display: block;
 }
-#logo-text a {
+.logo a {
   color: #fff;
 }
-#logo-text:hover, #logo-text:active {
+.logo:hover, .logo:active {
   color: #052636;
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
-}
-
-#logo-text-stuck {
-  display: none;
 }
 
 .subheader {
@@ -1444,6 +1439,8 @@ NAVIGATION STYLES
   width: 100%;
   z-index: 2;
   top: 0;
+  height: 55px;
+  background-color: #00CC99;
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
@@ -1582,6 +1579,20 @@ svg g {
   -webkit-transition: margin-top 0.2s ease-in;
   -moz-transition: margin-top 0.2s ease-in;
   -o-transition: margin-top 0.2s ease-in;
+}
+
+.hide {
+  display: none;
+  -webkit-transition: display 0.5s ease-out;
+  -moz-transition: display 0.5s ease-out;
+  -o-transition: display 0.5s ease-out;
+}
+
+.show {
+  display: block;
+  -webkit-transition: display 0.5s ease-in;
+  -moz-transition: display 0.5s ease-in;
+  -o-transition: display 0.5s ease-in;
 }
 
 #content p {
@@ -2433,7 +2444,7 @@ you can add resource intensive styles.
     max-height: 600px;
   }
 
-  #logo-text {
+  .logo {
     margin-top: 1em;
     text-align: center;
     font-family: "Lato Hairline", Verdana, sans-serif;
@@ -2441,13 +2452,12 @@ you can add resource intensive styles.
     font-size: 7em;
     line-height: 0.75em;
     float: none;
-    display: block;
   }
-  #logo-text a {
+  .logo a {
     color: #fff;
   }
 
-  #logo-text-stuck {
+  .logo-desktop-stuck {
     margin: 0.5em;
     float: left;
     text-align: left;
@@ -2456,10 +2466,10 @@ you can add resource intensive styles.
     font-size: 2em;
     line-height: 0.75em;
   }
-  #logo-text-stuck a {
+  .logo-desktop-stuck a {
     color: #fff;
   }
-  #logo-text-stuck:hover, #logo-text-stuck:active {
+  .logo-desktop-stuck:hover, .logo-desktop-stuck:active {
     color: #052636;
     -webkit-transition: all 0.5s ease-in;
     -moz-transition: all 0.5s ease-in;
@@ -2486,15 +2496,13 @@ you can add resource intensive styles.
     margin: 1em auto;
   }
 
-  .menu-toggle {
-    display: none;
-  }
-
+  /*.menu-toggle {
+  	display: none;
+  } */
   .nav-menu {
     border: 0;
     margin: 0 auto;
     display: block;
-    position: relative;
     background-color: transparent;
     /* end .menu ul li */
     /* highlight current page */
@@ -2571,13 +2579,11 @@ you can add resource intensive styles.
     text-align: left;
   }
 
-  .resize {
-    margin-top: 20%;
-    -webkit-transition: margin-top 0.2s ease-in;
-    -moz-transition: margin-top 0.2s ease-in;
-    -o-transition: margin-top 0.2s ease-in;
+  /*.resize {
+  	margin-top: 20%;
+      @include transition(margin-top 0.2s ease-in);
   }
-
+  */
   .entry-content footer .cyan-btn {
     width: 120px;
     float: right;

@@ -95,119 +95,98 @@ var timeToWaitForLast = 100;
 
 jQuery(document).ready(function($) {
 
-    var $headerText = $('#header-text');
+    var $headerText = $('#logo-text');
     var $navContainer = $('#nav');
     var $windowWidth = $(window).width();
     var $navMenu = $('.nav-menu');
     var $menuToggle = $('.menu-toggle');
-    
+    var $header = $('#logo-text , .subheader');
+    var headerHeight = $headerText.outerHeight();
+    var $logoText = $('#logo-text-stuck');
+    var $mainDiv = $('#main');
 
-    $(window).on( 'load resize', function(){
-
-      var $logoText = $('#logo-text-stuck');
-      var $mainDiv = $('#main');
-      
-      // Desktop nav
-
-      $navContainer.waypoint({
-
-        handler: function(direction){
-
-          if ($windowWidth  >= 768) {
-
-            $(window).off('resize');
-
-            if (direction === 'down'){
-
-              $headerText.hide({
-                easeInCubic: 900
-              });
-
-              
-              $navMenu.hide();
-              $('.menu-toggle , #logo-text-stuck').show();
-              $mainDiv.addClass('resize');
-              $navContainer.addClass('stuck');
-
-            } else if (direction === 'up'){
-
-              $mainDiv.removeClass('resize');
-              $('.menu-toggle , #logo-text-stuck').hide();
-              $navMenu.show();
-
-              $headerText.show({
-                easeOutCubic: 900
-              });
-
-              $navContainer.removeClass('stuck');
-
-            }
-
-          } else {
-          // Mobile Nav
-
-              $logoText.hide();
-
-              if(direction == 'down'){
-
-                $navContainer.addClass('stuck');
-                $mainDiv.addClass('resize');
-
-              } 
-          };    
-        },
-
-        offset: function(){
-          if($windowWidth >= 640){
-            return -( $navContainer.outerHeight() / 2 );
-          } else if ($windowWidth <= 640){
-            return -55;
-          }
-        }
-
-      });
-
+    $navContainer.waypoint('sticky',{
+      offset: function(){
+        return -$navMenu.outerHeight();
+      }
     });
 
-      
-  
+    /*var top_spacing = 15;
+    var waypoint_offset = 55;
+
+    $navContainer.waypoint({
+
+      handler: function(direction) {
+
+        $('nav-menu').addClass('hide');
+
+        if (direction == 'down') {
+
+          $header.hide();
+
+          $navContainer.css({ 'height' : $navMenu.outerHeight() });
+          $navMenu.addClass("stuck").css({ "background-color": "#00CC99"});
+          $menuToggle.toggleClass('show').animate({
+            display: "block"
+          }, 1200).stop();
+          $headerText.removeClass('logo').addClass('logo-text-stuck');
+          console.log('event 1 fired!')
+        } else if (direction === 'up'){
+
+          $navContainer.css({ 'height' : 'auto' });
+          $navMenu.removeClass("stuck hide")
+             .stop()
+             .css({ "background-color": "transparent"});
+          $('nav-menu').show();
+          $menuToggle.removeClass('show');
+          $headerText.addClass('logo');
+
+
+        }
+
+      },
+
+      offset: function() {
+        return -$navMenu.outerHeight();
+      }
+
+    });
+    */
+    /*$navContainer.waypoint({
+      handler: function(direction){
+
+        var $navBar = $('.logo-text-stuck , .menu-toggle');
+
+        if(direction === 'down'){
+          $header.hide();
+          $navMenu.hide();
+          $navBar.addClass('show');
+          $navContainer.addClass('stuck');
+        } else if (direction === 'up') {
+          $navMenu.show({
+            easeOut: 1200
+          })
+          $navBar.removeClass('show');
+          $navContainer.removeClass('stuck');
+          $header.show();
+        }
+      },
+      offset: -55
+    }); */
+
     /* Mobile Nav Menu */
 
-    $('.menu-toggle').click(function(){
-
-        $navMenu.slideToggle(500);
-        $(this).toggleClass('toggled');
-
-    }).stop();
-
-  /*$(window).on( 'load resize', function(){
     
-    if( $windowWidth  <= 640) {
-      $(window).off('resize');
-      
-      // Untoggle nav bar
-      $('#menu-main-nav').hide();
 
-      //Sticky Nav Bar
-      $navContainer.waypoint('sticky', { 
-        offset: 55,
-        triggerOnce: true 
+      $menuToggle.click(function(){
+
+          $navMenu.slideToggle(500);
+          $(this).toggleClass('toggled');
+
       });
 
-    } else if( $windowWidth >= 640){
 
-      // Toggle nav bar
-      $('#menu-main-nav').show();
-
-      // Unsticky nav bar
-       $navContainer.waypoint('unsticky' ,{
-        triggerOnce: true
-       });
-    };
-
-    event.stopPropagation;
-
-  }); */
+  
  
   
 

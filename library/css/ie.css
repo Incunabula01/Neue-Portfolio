@@ -252,7 +252,7 @@ HEADER STYLES
   max-height: 600px;
 }
 
-#logo-text {
+.logo {
   margin-top: 1em;
   text-align: center;
   font-family: "Lato Hairline", Verdana, sans-serif;
@@ -260,13 +260,12 @@ HEADER STYLES
   font-size: 7em;
   line-height: 0.75em;
   float: none;
-  display: block;
 }
-#logo-text a {
+.logo a {
   color: #fff;
 }
 
-#logo-text-stuck {
+.logo-desktop-stuck {
   margin: 0.5em;
   float: left;
   text-align: left;
@@ -275,10 +274,10 @@ HEADER STYLES
   font-size: 2em;
   line-height: 0.75em;
 }
-#logo-text-stuck a {
+.logo-desktop-stuck a {
   color: #fff;
 }
-#logo-text-stuck:hover, #logo-text-stuck:active {
+.logo-desktop-stuck:hover, .logo-desktop-stuck:active {
   color: #052636;
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
@@ -305,15 +304,13 @@ NAVIGATION STYLES
   margin: 1em auto;
 }
 
-.menu-toggle {
-  display: none;
-}
-
+/*.menu-toggle {
+	display: none;
+} */
 .nav-menu {
   border: 0;
   margin: 0 auto;
   display: block;
-  position: relative;
   background-color: transparent;
   /* end .menu ul li */
   /* highlight current page */
@@ -390,13 +387,11 @@ NAVIGATION STYLES
   text-align: left;
 }
 
-.resize {
-  margin-top: 20%;
-  -webkit-transition: margin-top 0.2s ease-in;
-  -moz-transition: margin-top 0.2s ease-in;
-  -o-transition: margin-top 0.2s ease-in;
+/*.resize {
+	margin-top: 20%;
+    @include transition(margin-top 0.2s ease-in);
 }
-
+*/
 .entry-content footer .cyan-btn {
   width: 120px;
   float: right;
