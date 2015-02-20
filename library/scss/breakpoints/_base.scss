@@ -177,13 +177,13 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
+
 .stuck{
 	position: fixed;
 	width: 100%;
-	z-index: 5;
+	z-index: 5000;
 	top: 0;
 	left: 0;
-	height: 55px;
 	background-color: $teal;
 }
 
@@ -197,7 +197,7 @@ NAVIGATION STYLES
 	padding: 0.50em;
 	position: absolute;
 	background-color: transparent;
-	z-index: 6;
+	z-index: 9000;
 	float: right;
 	margin-bottom: 5px;
 	&:hover, &:active{

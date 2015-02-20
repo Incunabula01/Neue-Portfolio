@@ -114,45 +114,35 @@ jQuery(document).ready(function($) {
 
           if (direction === 'down') {
 
-          logoText.animate({
-            fontSize: 32,
-            marginTop: 15
-          }, 100);
+            logoText.animate({
+              fontSize: 32,
+              marginTop: 15
+            }, 100);
 
-          subheaderText.fadeOut({
-            'ease-in': 100
-          });
+            subheaderText.fadeOut({
+              'ease-in': 100
+            });
 
           } else if (direction === 'up'){
 
-            $('p, h3').removeAttr('style');
+            $('p, h3, #main').removeAttr('style');
 
           };
 
-        },
-
-        offset: function() {
-          return -$header.outerHeight() / 10;
         }
 
       });
 
     };
 
-
-
-
-    $navContainer.waypoint('sticky',{
-      offset: function(){
-        return -$navMenu.outerHeight();
-      }
+    $mainDiv.css({
+      "margin-top" : "55px"
     });
 
+    $navContainer.waypoint('sticky');
     
 
     /* Mobile Nav Menu */
-
-    
 
       $menuToggle.click(function(){
 

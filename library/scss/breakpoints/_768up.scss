@@ -87,7 +87,7 @@ NAVIGATION STYLES
 .nav-menu {
 	border: 0;
 	margin: 0 auto;
-	background-color: $transparent-teal;
+	background-color: darken($transparent-teal, 40%);
 	ul {
 		margin-top: 0;
 	}
