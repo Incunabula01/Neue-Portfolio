@@ -115,8 +115,7 @@ jQuery(document).ready(function($) {
           if (direction === 'down') {
 
             logoText.animate({
-              fontSize: 32,
-              marginTop: 15
+              fontSize: 32
             }, 100);
 
             subheaderText.fadeOut({
