@@ -79,6 +79,7 @@ if ( ! isset( $content_width ) ) {
 add_image_size( 'bones-thumb-400', 450, 250, true);
 add_image_size( 'bones-thumb-300', 300, 150, true );
 add_image_size( 'portfolio-post', 800, 400, true);
+// add_image_size( 'portfolio-post', 1280, 400, true); to do
 add_image_size( 'gallery-thumb' , 400, 350, true);
 
 

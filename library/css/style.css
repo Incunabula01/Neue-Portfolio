@@ -1437,7 +1437,6 @@ NAVIGATION STYLES
 .stuck {
   position: fixed;
   width: 100%;
-  z-index: 5000;
   top: 0;
   left: 0;
   background-color: #00CC99;
@@ -2495,10 +2494,6 @@ you can add resource intensive styles.
   /*********************
   NAVIGATION STYLES
   *********************/
-  .nav {
-    margin: 1em auto;
-  }
-
   /*.menu-toggle {
   	display: none;
   } */

@@ -135,9 +135,21 @@ jQuery(document).ready(function($) {
 
     };
 
-    $mainDiv.css({
-      "margin-top" : "55px"
-    });
+    /*$(window).scroll(function(){
+
+      if(!($header.hasClass('stuck'))){
+
+        if($windowWidth >= 640){
+
+          $mainDiv.css({
+            "margin-top" : "55px"
+          });
+
+        }
+
+      }
+
+    }) */
 
     $navContainer.waypoint('sticky');
     

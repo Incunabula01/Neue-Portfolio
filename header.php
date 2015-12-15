@@ -41,37 +41,36 @@
 
 			<header id="nav" class="header" role="banner">
 
+				<button class="menu-toggle"><i class="fa fa-bars fa-lg"></i></button>
+
 				<div id="inner-header" class="cf">
 
-					<div id="header-text">
+					<div id="logo-text">
 
 						<a href="<?php echo home_url(); ?>" rel="nofollow" alt="JWidener Design">
-							<p id="logo-text" class="h1"><?php bloginfo('name'); ?></p>
+							<p class="logo h1"><?php bloginfo('name'); ?></p>
 						</a>
 
 						<h3 class="subheader"><?php bloginfo('description'); ?></h3>
+
 					</div>
-
-					<a href="<?php echo home_url(); ?>" rel="nofollow" alt="JWidener Design">
-							<p id="logo-text-stuck" ><?php bloginfo('name'); ?></p>
-					</a>
-
 					<nav id="site navigation" class="nav" role="navigation">
 
+						<!--<a href="<?php echo home_url(); ?>" rel="nofollow" alt="JWidener Design">
+							<p id="logo-text" class="h1 logo-text-stuck"><?php bloginfo('name'); ?></p>
+						</a>-->
 
-							<div class="wrap">
-
-								<button class="menu-toggle"><i class="fa fa-bars fa-lg"></i></button>
+							<!--<div class="wrap">-->
 
 								<?php wp_nav_menu(array(
-		    					'container' => false,                           
-		    					'container_class' => 'menu cf',                 
-		    					'menu' => __( 'The Main Menu', 'bonestheme' ),  
-		    					'menu_class' => 'nav-menu cf',               
-		    					'theme_location' => 'main-nav',      
+		    						'container' => false,                           
+		    						'container_class' => 'menu cf',                 
+		    						'menu' => __( 'The Main Menu', 'bonestheme' ),  
+		    						'menu_class' => 'nav-menu cf',               
+		    						'theme_location' => 'main-nav'      
 								)); ?>
 
-							</div>
+							<!--</div>-->
 
 						</nav>	
 
