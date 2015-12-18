@@ -180,10 +180,15 @@ NAVIGATION STYLES
 
 .stuck{
 	position: fixed;
+	z-index: 9000;
 	width: 100%;
 	top: 0;
 	left: 0;
 	background-color: $teal;
+}
+
+.logo-text-stuck{
+	display: none;
 }
 
 .menu-toggle {
@@ -211,8 +216,37 @@ NAVIGATION STYLES
 }
 
 .menu-toggle,
-.nav.toggled .nav-menu {
+.nav.toggled .mobile-nav-menu {
 	display: block;
+}
+
+.mobile-nav-menu {
+	clear: both;
+	border-bottom: 0;
+	display: none;
+	width: 100%;
+	text-align: center;
+	li {
+		margin: 0 auto;
+		font-size: 1.5em;
+		border-bottom: 0.1em solid $teal;
+		background-color: darken($teal, 15%);
+		a {
+			text-align: center;
+			display: block;
+			text-decoration: none;
+			padding: 0.2em 0.5em;
+			color: $white;
+			&:hover, &:focus {
+				color: $link-hover;
+				@include transition(all 0.2s ease-in);
+			}
+			&:before {
+				font-family: FontAwesome;
+				font-size: 1em;
+			}
+		}
+	}
 }
 
 .nav-menu {
@@ -220,12 +254,9 @@ NAVIGATION STYLES
 	border-bottom: 0;
 	display: none;
 	width: 100%;
-	background-color: darken($teal, 15%);
-	text-align: center;
 	li {
 		margin: 0 auto;
 		font-size: 1.5em;
-		border-bottom: 0.1em solid $teal;
 		a {
 			text-align: center;
 			display: block;

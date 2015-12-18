@@ -91,6 +91,27 @@ MISC HELPERS
     color: transparent;
 }
 
+@mixin hide-element{
+	-webkit-visible: hidden;
+	-webkit-opacity: 0;
+	-moz-visible: hidden;
+	-moz-opacity: 0;
+	-o-visible: hidden;
+	-o-opacity: 0;
+	visible: hidden;
+	opacity: 0;
+}
+
+@mixin show-element{
+	-webkit-visible: visible;
+	-webkit-opacity: 1;
+	-moz-visible: visible;
+	-moz-opacity: 1;
+	-o-visible: visible;
+	-o-opacity: 1;
+	visible: visible;
+	opacity: 1;
+}
 /********************
 BUTTONS
 ********************/

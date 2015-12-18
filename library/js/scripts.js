@@ -95,70 +95,74 @@ var timeToWaitForLast = 100;
 
 jQuery(document).ready(function($) {
 
-    var $navContainer = $('#nav');
+    var $navContainer = $('.nav');
     var $windowWidth = $(window).width();
     var $navMenu = $('.nav-menu');
     var $menuToggle = $('.menu-toggle');
     var $mainDiv = $('#main');
+    var $logoTextStuck = $('.logo-text-stuck');
 
-    if($windowWidth >= 640){
+    
+    $navMenu.removeClass('stuck-nav');
+    $navContainer.removeClass('stuck');
+    
+    if($windowWidth >= 768){
 
       var $header = $('#logo-text');
       var headerHeight = $header.outerHeight();
-      var logoText = $('.logo');
-      var subheaderText = $('.subheader');
+      var logoText = $('.logo, .subheader');
 
-      $header.waypoint({
+      $navContainer.waypoint({
 
         handler: function(direction) {
 
           if (direction === 'down') {
 
-            logoText.animate({
-              fontSize: 32
-            }, 100);
-
-            subheaderText.fadeOut({
-              'ease-in': 100
+            $navContainer.addClass('stuck');
+            $navMenu.addClass('stuck-nav').css({
+              'textAlign':'right'
             });
+            // logoText.fadeOut();
+            $logoTextStuck.show();
 
           } else if (direction === 'up'){
 
-            $('p, h3, #main').removeAttr('style');
-
+            $('p, h3, #main, .nav-menu').removeAttr('style');
+            $logoTextStuck.hide();
+            $navMenu.removeClass('stuck-nav');
+            $navContainer.removeClass('stuck');
           };
 
+        },
+        offset: function(){
+          return $navContainer.outerHeight(); 
         }
-
       });
 
+    }else if($windowWidth <= 768){
+      $logoTextStuck.hide();
+      $('#nav').waypoint('sticky');
     };
-
-    /*$(window).scroll(function(){
-
-      if(!($header.hasClass('stuck'))){
-
-        if($windowWidth >= 640){
-
-          $mainDiv.css({
-            "margin-top" : "55px"
-          });
-
-        }
-
-      }
-
-    }) */
-
-    $navContainer.waypoint('sticky');
+    // $navContainer.waypoint({
+    //   handler: function(direction){
+    //     if(direction === 'down'){
+          
+    //     }
+    //     // }else if(direction === 'up'){
+    //     //   $navContainer.removeClass('stuck');
+    //     // }
+    //   },
+    //   offset: 'bottom-in-view'
+    // });
     
 
     /* Mobile Nav Menu */
+      $menuToggle.removeClass('toggled');
 
       $menuToggle.click(function(){
 
-          $navMenu.slideToggle(500);
-          $(this).toggleClass('toggled');
+          $('.mobile-nav-menu').slideToggle(500);
+          $(this).addClass('toggled');
 
       });
 

@@ -27,7 +27,7 @@ HEADER STYLES
 .header {
 	background: url('../images/foreground-banner.jpg') 50% 0 no-repeat fixed;
 	background-size: cover;
-	max-height: 600px;
+	// max-height: 600px;
 	@include transition(height 0.5s ease-in);
 }
 
@@ -45,20 +45,27 @@ HEADER STYLES
 		}
 	}
 
-	.logo-desktop-stuck {
-		margin: 0.5em;
+	.logo-text-stuck {
 		float: left;
 		text-align: left;
 		font-family: $header-font;
-		color: $white;
-		font-size: 2em;
-		line-height: 0.75em;
-		a {
+		.h1{
+			margin: 0.125em 0.5em; 
+		}
+		a{
 			color: $white;
 		}
 		&:hover, &:active{
 			color: $blue;
 			@include transition(all 0.5s ease-in);
+		}
+	}
+
+	.stuck-nav{
+		text-align: right;
+		clear: none;
+		ul li{
+			width: 0;
 		}
 	}
 
@@ -77,22 +84,23 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
-/*.menu-toggle {
+.menu-toggle {
 	display: none;
-} */
+} 
 
 .nav-menu {
 	border: 0;
 	margin: 0 auto;
-	background-color: darken($transparent-teal, 40%);
+	background-color: transparent;
+	text-align: center;
+	display: block;
 	ul {
 		margin-top: 0;
 	}
 	li {
 		display: inline-block;
 		position: relative;
-		width: 25%;
-		margin: 0.5em 0;
+		margin: 0.5em;
 		border-bottom: 0px;
 		@include border-box(1px, $white);
 		a {

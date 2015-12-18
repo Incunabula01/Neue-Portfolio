@@ -249,7 +249,6 @@ HEADER STYLES
 .header {
   background: url("../images/foreground-banner.jpg") 50% 0 no-repeat fixed;
   background-size: cover;
-  max-height: 600px;
   -webkit-transition: height 0.5s ease-in;
   -moz-transition: height 0.5s ease-in;
   -o-transition: height 0.5s ease-in;
@@ -271,23 +270,30 @@ HEADER STYLES
   color: #fff;
 }
 
-.logo-desktop-stuck {
-  margin: 0.5em;
+.logo-text-stuck {
   float: left;
   text-align: left;
   font-family: "Lato Thin", Verdana, sans-serif;
-  color: #fff;
-  font-size: 2em;
-  line-height: 0.75em;
 }
-.logo-desktop-stuck a {
+.logo-text-stuck .h1 {
+  margin: 0.125em 0.5em;
+}
+.logo-text-stuck a {
   color: #fff;
 }
-.logo-desktop-stuck:hover, .logo-desktop-stuck:active {
+.logo-text-stuck:hover, .logo-text-stuck:active {
   color: #052636;
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
+}
+
+.stuck-nav {
+  text-align: right;
+  clear: none;
+}
+.stuck-nav ul li {
+  width: 0;
 }
 
 .subheader {
@@ -306,13 +312,16 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
-/*.menu-toggle {
-	display: none;
-} */
+.menu-toggle {
+  display: none;
+}
+
 .nav-menu {
   border: 0;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: transparent;
+  text-align: center;
+  display: block;
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */
@@ -323,8 +332,7 @@ NAVIGATION STYLES
 .nav-menu li {
   display: inline-block;
   position: relative;
-  width: 25%;
-  margin: 0.5em 0;
+  margin: 0.5em;
   border-bottom: 0px;
   -webkit-border: 1px solid #fff;
   -moz-border: 1px solid #fff;

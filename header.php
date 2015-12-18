@@ -56,11 +56,9 @@
 					</div>
 					<nav id="site navigation" class="nav" role="navigation">
 
-						<!--<a href="<?php echo home_url(); ?>" rel="nofollow" alt="JWidener Design">
-							<p id="logo-text" class="h1 logo-text-stuck"><?php bloginfo('name'); ?></p>
-						</a>-->
-
-							<!--<div class="wrap">-->
+							<a class="logo-text-stuck" href="<?php echo home_url(); ?>" rel="nofollow" alt="JWidener Design">
+								<p class="h1"><?php bloginfo('name'); ?></p>
+							</a>
 
 								<?php wp_nav_menu(array(
 		    						'container' => false,                           
@@ -69,8 +67,13 @@
 		    						'menu_class' => 'nav-menu cf',               
 		    						'theme_location' => 'main-nav'      
 								)); ?>
-
-							<!--</div>-->
+								<?php wp_nav_menu(array(
+		    						'container' => false,                           
+		    						'container_class' => 'menu cf',                 
+		    						'menu' => __( 'The Main Menu', 'bonestheme' ),  
+		    						'menu_class' => 'mobile-nav-menu cf',               
+		    						'theme_location' => 'main-nav'      
+								)); ?>
 
 						</nav>	
 

@@ -1436,10 +1436,15 @@ NAVIGATION STYLES
 *********************/
 .stuck {
   position: fixed;
+  z-index: 9000;
   width: 100%;
   top: 0;
   left: 0;
   background-color: #00CC99;
+}
+
+.logo-text-stuck {
+  display: none;
 }
 
 .menu-toggle {
@@ -1469,8 +1474,39 @@ NAVIGATION STYLES
 }
 
 .menu-toggle,
-.nav.toggled .nav-menu {
+.nav.toggled .mobile-nav-menu {
   display: block;
+}
+
+.mobile-nav-menu {
+  clear: both;
+  border-bottom: 0;
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+.mobile-nav-menu li {
+  margin: 0 auto;
+  font-size: 1.5em;
+  border-bottom: 0.1em solid #00CC99;
+  background-color: #008060;
+}
+.mobile-nav-menu li a {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  padding: 0.2em 0.5em;
+  color: #fff;
+}
+.mobile-nav-menu li a:hover, .mobile-nav-menu li a:focus {
+  color: #052636;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+}
+.mobile-nav-menu li a:before {
+  font-family: FontAwesome;
+  font-size: 1em;
 }
 
 .nav-menu {
@@ -1478,8 +1514,6 @@ NAVIGATION STYLES
   border-bottom: 0;
   display: none;
   width: 100%;
-  background-color: #008060;
-  text-align: center;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
@@ -1487,7 +1521,6 @@ NAVIGATION STYLES
 .nav-menu li {
   margin: 0 auto;
   font-size: 1.5em;
-  border-bottom: 0.1em solid #00CC99;
 }
 .nav-menu li a {
   text-align: center;
@@ -2437,7 +2470,6 @@ you can add resource intensive styles.
   .header {
     background: url("../images/foreground-banner.jpg") 50% 0 no-repeat fixed;
     background-size: cover;
-    max-height: 600px;
     -webkit-transition: height 0.5s ease-in;
     -moz-transition: height 0.5s ease-in;
     -o-transition: height 0.5s ease-in;
@@ -2459,23 +2491,30 @@ you can add resource intensive styles.
     color: #fff;
   }
 
-  .logo-desktop-stuck {
-    margin: 0.5em;
+  .logo-text-stuck {
     float: left;
     text-align: left;
     font-family: "Lato Thin", Verdana, sans-serif;
-    color: #fff;
-    font-size: 2em;
-    line-height: 0.75em;
   }
-  .logo-desktop-stuck a {
+  .logo-text-stuck .h1 {
+    margin: 0.125em 0.5em;
+  }
+  .logo-text-stuck a {
     color: #fff;
   }
-  .logo-desktop-stuck:hover, .logo-desktop-stuck:active {
+  .logo-text-stuck:hover, .logo-text-stuck:active {
     color: #052636;
     -webkit-transition: all 0.5s ease-in;
     -moz-transition: all 0.5s ease-in;
     -o-transition: all 0.5s ease-in;
+  }
+
+  .stuck-nav {
+    text-align: right;
+    clear: none;
+  }
+  .stuck-nav ul li {
+    width: 0;
   }
 
   .subheader {
@@ -2494,13 +2533,16 @@ you can add resource intensive styles.
   /*********************
   NAVIGATION STYLES
   *********************/
-  /*.menu-toggle {
-  	display: none;
-  } */
+  .menu-toggle {
+    display: none;
+  }
+
   .nav-menu {
     border: 0;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: transparent;
+    text-align: center;
+    display: block;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
@@ -2511,8 +2553,7 @@ you can add resource intensive styles.
   .nav-menu li {
     display: inline-block;
     position: relative;
-    width: 25%;
-    margin: 0.5em 0;
+    margin: 0.5em;
     border-bottom: 0px;
     -webkit-border: 1px solid #fff;
     -moz-border: 1px solid #fff;
