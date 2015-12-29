@@ -45,7 +45,7 @@
 
 				<div id="inner-header" class="cf">
 
-					<div id="logo-text">
+					<!-- <div id="logo-text">
 
 						<a href="<?php echo home_url(); ?>" rel="nofollow" alt="JWidener Design">
 							<p class="logo h1"><?php bloginfo('name'); ?></p>
@@ -53,11 +53,11 @@
 
 						<h3 class="subheader"><?php bloginfo('description'); ?></h3>
 
-					</div>
+					</div> -->
 					<div id="content-anchor"></div>
-					<nav id="site navigation" class="nav" role="navigation">
+					<nav id="site navigation" class="nav stuck" role="navigation">
 
-							<a class="logo-text-stuck" href="<?php echo home_url(); ?>" rel="nofollow" alt="JWidener Design">
+							<a class="logo-text-stuck" style="display:block" href="<?php echo home_url(); ?>" rel="nofollow" alt="JWidener Design">
 								<p class="h1"><?php bloginfo('name'); ?></p>
 							</a>
 							
@@ -65,14 +65,7 @@
 		    						'container' => 'div',                           
 		    						'container_class' => 'menu cf',                 
 		    						'menu' => __( 'The Main Menu', 'bonestheme' ),  
-		    						'menu_class' => 'nav-menu cf',               
-		    						'theme_location' => 'main-nav'      
-								)); ?>
-								<?php wp_nav_menu(array(
-		    						'container' => false,                           
-		    						'container_class' => 'menu cf',                 
-		    						'menu' => __( 'The Main Menu', 'bonestheme' ),  
-		    						'menu_class' => 'mobile-nav-menu cf',               
+		    						'menu_class' => 'stuck-nav nav-menu cf',               
 		    						'theme_location' => 'main-nav'      
 								)); ?>
 

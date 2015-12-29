@@ -27,7 +27,6 @@ HEADER STYLES
 .header {
 	background: url('../images/foreground-banner.jpg') 50% 0 no-repeat fixed;
 	background-size: cover;
-	// max-height: 600px;
 	@include transition(height 0.5s ease-in);
 }
 
@@ -93,7 +92,8 @@ NAVIGATION STYLES
 	margin: 0 auto;
 	background-color: transparent;
 	text-align: center;
-	display: block;
+	// display: block;
+	@include show-element;
 	ul {
 		margin-top: 0;
 	}

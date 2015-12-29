@@ -1441,6 +1441,9 @@ NAVIGATION STYLES
   top: 0;
   left: 0;
   background-color: #00CC99;
+  -webkit-box-shadow: 4px 0px 0px 0px #00664d;
+  -moz-box-shadow: 4px 0px 0px 0px #00664d;
+  box-shadow: 4px 0px 0px 0px #00664d;
 }
 
 .logo-text-stuck {
@@ -1512,7 +1515,17 @@ NAVIGATION STYLES
 .nav-menu {
   clear: both;
   border-bottom: 0;
-  display: none;
+  -webkit-visibility: hidden;
+  -webkit-opacity: 0;
+  -moz-visibility: hidden;
+  -moz-opacity: 0;
+  -o-visibility: hidden;
+  -o-opacity: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
   width: 100%;
   /* end .menu li */
   /* highlight current page */
@@ -2542,7 +2555,14 @@ you can add resource intensive styles.
     margin: 0 auto;
     background-color: transparent;
     text-align: center;
-    display: block;
+    -webkit-visibility: visible;
+    -webkit-opacity: 1;
+    -moz-visibility: visible;
+    -moz-opacity: 1;
+    -o-visibility: visible;
+    -o-opacity: 1;
+    visibility: visible;
+    opacity: 1;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */

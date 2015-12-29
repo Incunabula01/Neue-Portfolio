@@ -62,8 +62,14 @@ BOX SIZING
 	-moz-border: $size solid $color;
 	-o-border: $size solid $color;
 	border: $size solid $color; 
-
 }
+
+@mixin box-shadow($horiz , $vert  , $blur , $spread , $color){
+  -webkit-box-shadow: $horiz $vert $blur $spread $color;
+  -moz-box-shadow: $horiz $vert $blur $spread $color;
+  box-shadow: $horiz $vert $blur $spread $color;
+}
+
 
 /*********************
 COLOR TRANSPARENCY
@@ -92,24 +98,24 @@ MISC HELPERS
 }
 
 @mixin hide-element{
-	-webkit-visible: hidden;
+	-webkit-visibility: hidden;
 	-webkit-opacity: 0;
-	-moz-visible: hidden;
+	-moz-visibility: hidden;
 	-moz-opacity: 0;
-	-o-visible: hidden;
+	-o-visibility: hidden;
 	-o-opacity: 0;
-	visible: hidden;
+	visibility: hidden;
 	opacity: 0;
 }
 
 @mixin show-element{
-	-webkit-visible: visible;
+	-webkit-visibility: visible;
 	-webkit-opacity: 1;
-	-moz-visible: visible;
+	-moz-visibility: visible;
 	-moz-opacity: 1;
-	-o-visible: visible;
+	-o-visibility: visible;
 	-o-opacity: 1;
-	visible: visible;
+	visibility: visible;
 	opacity: 1;
 }
 /********************

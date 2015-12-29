@@ -185,6 +185,7 @@ NAVIGATION STYLES
 	top: 0;
 	left: 0;
 	background-color: $teal;
+	@include box-shadow(4px, 0px, 0px, 0px, $dark-teal);
 }
 
 .logo-text-stuck{
@@ -252,7 +253,9 @@ NAVIGATION STYLES
 .nav-menu {
 	clear: both;
 	border-bottom: 0;
-	display: none;
+	// display: none;
+	@include hide-element;
+	@include transition(all 0.5s ease-in);
 	width: 100%;
 	li {
 		margin: 0 auto;
