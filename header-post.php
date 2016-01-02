@@ -44,16 +44,6 @@
 				<button class="menu-toggle"><i class="fa fa-bars fa-lg"></i></button>
 
 				<div id="inner-header" class="cf">
-
-					<!-- <div id="logo-text">
-
-						<a href="<?php echo home_url(); ?>" rel="nofollow" alt="JWidener Design">
-							<p class="logo h1"><?php bloginfo('name'); ?></p>
-						</a>
-
-						<h3 class="subheader"><?php bloginfo('description'); ?></h3>
-
-					</div> -->
 					<div id="content-anchor"></div>
 					<nav id="site navigation" class="nav stuck" role="navigation">
 
@@ -65,7 +55,7 @@
 		    						'container' => 'div',                           
 		    						'container_class' => 'menu cf',                 
 		    						'menu' => __( 'The Main Menu', 'bonestheme' ),  
-		    						'menu_class' => 'stuck-nav nav-menu cf',               
+		    						'menu_class' => 'stuck-nav-menu cf',               
 		    						'theme_location' => 'main-nav'      
 								)); ?>
 

@@ -68,8 +68,9 @@
 		    						'menu_class' => 'nav-menu cf',               
 		    						'theme_location' => 'main-nav'      
 								)); ?>
+
 								<?php wp_nav_menu(array(
-		    						'container' => false,                           
+		    						'container' => 'div',                           
 		    						'container_class' => 'menu cf',                 
 		    						'menu' => __( 'The Main Menu', 'bonestheme' ),  
 		    						'menu_class' => 'mobile-nav-menu cf',               

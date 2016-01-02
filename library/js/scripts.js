@@ -99,7 +99,7 @@ jQuery(document).ready(function($) {
     var $windowWidth = $(window).width();
     var $navMenu = $('.nav-menu');
     var $menuToggle = $('.menu-toggle');
-    var $mainDiv = $('#main');
+    var $mainDiv = $('#content');
     var $logoTextStuck = $('.logo-text-stuck');
 
     
@@ -118,19 +118,16 @@ jQuery(document).ready(function($) {
 
           if (direction === 'down') {
 
-            logoText.css({
-              'height': '0',
-              'visibility': 'hidden'
-            });
             $navContainer.addClass('stuck');
             $navMenu.addClass('stuck-nav').css({
               'textAlign':'right'
             });
             $logoTextStuck.fadeIn();
+            $mainDiv.css({'marginTop':'55px'});
 
           } else if (direction === 'up'){
 
-            $('p, h3, #main, .nav-menu').removeAttr('style');
+            $('p, h3, #main, #content, .nav-menu').removeAttr('style');
             $logoTextStuck.hide();
             $navMenu.removeClass('stuck-nav');
             $navContainer.removeClass('stuck');
@@ -138,11 +135,10 @@ jQuery(document).ready(function($) {
 
         },
         offset: function(){
-          var outerHeight = $navContainer.outerHeight();
+          var outerHeight = $('.header').outerHeight();
           return $('#content-anchor').offset().top - outerHeight;
         }
       });
-
     }else if($windowWidth <= 768){
       $logoTextStuck.hide();
       $('#nav').waypoint('sticky');
@@ -220,19 +216,19 @@ jQuery(document).ready(function($) {
 
         var dataset = [{
             label: "Html5",
-            rank: 100,
-            tick: "Advanced"
-        },{
-            label: "CSS3/Sass",
-            rank: 95,
-            tick: "Advanced"
-        },{
-            label: "UI-UX",
             rank: 90,
             tick: "Advanced"
         },{
+            label: "CSS3/Sass",
+            rank: 85,
+            tick: "Advanced"
+        },{
+            label: "UI-UX",
+            rank: 80,
+            tick: "Advanced"
+        },{
             label: "Wordpress",
-            rank: 50,
+            rank: 45,
             tick: "Intermediate"
         },{
             label: "javaScript",
@@ -304,10 +300,11 @@ jQuery(document).ready(function($) {
           .attr("fill", "white");
 
     },{
-
-        offset: 300,
+        offset: function(){
+          var chartHeight = skillChart.outerHeight();
+          return $('.chart-section').offset().top - outerHeight;
+        },
         triggerOnce: true
-
     });
  
 

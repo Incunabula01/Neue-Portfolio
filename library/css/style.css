@@ -913,7 +913,7 @@ Author: Joe Widener
 Stylesheet: Button Styles
 
 ******************************************************************/
-.blue-btn, .comment-reply-link, #submit, .cyan-btn, .tags a, .widget ul li, .footer-text-menu a {
+.blue-btn, .comment-reply-link, #submit, .cyan-btn, .tags a, #searchsubmit, .widget ul li, .footer-text-menu a {
   display: inline-block;
   position: relative;
   font-family: "Merriweather Regular", Georgia, Times, serif;
@@ -934,11 +934,11 @@ Stylesheet: Button Styles
   -moz-transition: background-color 0.14s ease-in-out;
   -o-transition: background-color 0.14s ease-in-out;
 }
-.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .cyan-btn:hover, .tags a:hover, .widget ul li:hover, .footer-text-menu a:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, .cyan-btn:focus, .tags a:focus, .widget ul li:focus, .footer-text-menu a:focus {
+.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .cyan-btn:hover, .tags a:hover, #searchsubmit:hover, .widget ul li:hover, .footer-text-menu a:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, .cyan-btn:focus, .tags a:focus, #searchsubmit:focus, .widget ul li:focus, .footer-text-menu a:focus {
   color: #fff;
   text-decoration: none;
 }
-.blue-btn:active, .comment-reply-link:active, #submit:active, .cyan-btn:active, .tags a:active, .widget ul li:active, .footer-text-menu a:active {
+.blue-btn:active, .comment-reply-link:active, #submit:active, .cyan-btn:active, .tags a:active, #searchsubmit:active, .widget ul li:active, .footer-text-menu a:active {
   top: 1px;
 }
 
@@ -1406,6 +1406,7 @@ HEADER STYLES
 .header {
   background: #00CC99;
   min-height: 55px;
+  position: relative;
 }
 
 .logo {
@@ -1441,12 +1442,16 @@ NAVIGATION STYLES
   top: 0;
   left: 0;
   background-color: #00CC99;
-  -webkit-box-shadow: 4px 0px 0px 0px #00664d;
-  -moz-box-shadow: 4px 0px 0px 0px #00664d;
-  box-shadow: 4px 0px 0px 0px #00664d;
+  -webkit-box-shadow: 0px 5px 0px 0px #00664d;
+  -moz-box-shadow: 0px 5px 0px 0px #00664d;
+  box-shadow: 0px 5px 0px 0px #00664d;
 }
 
 .logo-text-stuck {
+  display: none;
+}
+
+.second-menu {
   display: none;
 }
 
@@ -1512,58 +1517,64 @@ NAVIGATION STYLES
   font-size: 1em;
 }
 
-.nav-menu {
+.nav-menu, .stuck-nav-menu {
   clear: both;
   border-bottom: 0;
-  -webkit-visibility: hidden;
-  -webkit-opacity: 0;
-  -moz-visibility: hidden;
-  -moz-opacity: 0;
-  -o-visibility: hidden;
-  -o-opacity: 0;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in;
-  -moz-transition: all 0.5s ease-in;
-  -o-transition: all 0.5s ease-in;
+  display: none;
   width: 100%;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
 }
-.nav-menu li {
+.nav-menu li, .stuck-nav-menu li {
   margin: 0 auto;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
-.nav-menu li a {
+.nav-menu li a, .stuck-nav-menu li a {
   text-align: center;
   display: block;
   text-decoration: none;
   padding: 0.2em 0.5em;
   color: #fff;
 }
-.nav-menu li a:hover, .nav-menu li a:focus {
+.nav-menu li a:hover, .stuck-nav-menu li a:hover, .nav-menu li a:focus, .stuck-nav-menu li a:focus {
   color: #052636;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
 }
-.nav-menu li a:before {
+.nav-menu li a:before, .stuck-nav-menu li a:before {
   font-family: FontAwesome;
   font-size: 1em;
 }
-.nav-menu li ul.sub-menu li a,
-.nav-menu li ul.children li a {
+.nav-menu li ul.sub-menu li a, .stuck-nav-menu li ul.sub-menu li a,
+.nav-menu li ul.children li a,
+.stuck-nav-menu li ul.children li a {
   padding-left: 30px;
 }
-.nav-menu li.current-menu-item a,
+.nav-menu li.current-menu-item a, .stuck-nav-menu li.current-menu-item a,
 .nav-menu li.current_page_item a,
-.nav-menu li.current_page_ancestor a {
+.stuck-nav-menu li.current_page_item a,
+.nav-menu li.current_page_ancestor a,
+.stuck-nav-menu li.current_page_ancestor a {
   font-family: "Lato Regular", Verdana, sans-serif;
   color: #a9e3f4;
 }
 
 /* end .nav */
+.stuck-nav-menu {
+  top: 0;
+  left: 0;
+  background-color: #00CC99;
+  -webkit-box-shadow: 4px 0px 0px 0px #00664d;
+  -moz-box-shadow: 4px 0px 0px 0px #00664d;
+  box-shadow: 4px 0px 0px 0px #00664d;
+  display: none;
+}
+.stuck-nav-menu li {
+  text-align: right;
+}
+
 /*****Nav Icons*****/
 .work a:before, .work h1:before {
   padding: 0.2em 0.2em 0.2em 0;
@@ -1643,7 +1654,7 @@ svg g {
 
 .header-image {
   background-size: cover;
-  height: 35em;
+  height: 25em;
   width: 100%;
   overflow: hidden;
 }
@@ -1880,13 +1891,12 @@ img {
 }
 
 .tags {
-  margin: 0;
-  height: 15px;
-  width: 100%;
+  margin: 0.5em;
   display: inline-block;
 }
 .tags a {
   margin-left: 0.5em;
+  padding: 0.5em;
   color: #fff;
   background-color: #4EC5E9;
   font-size: 1em;
@@ -2001,6 +2011,19 @@ MISC STYLES
   margin: 1em 0;
   border-radius: 100px;
   min-width: 200px;
+}
+
+#searchsubmit {
+  color: #fff;
+  width: 100%;
+  background-color: #4EC5E9;
+  font-size: 1em;
+}
+#searchsubmit:hover, #searchsubmit:focus {
+  background-color: #1aaad5;
+}
+#searchsubmit:active {
+  background-color: #189bc3;
 }
 
 /******************************************************************
@@ -2550,27 +2573,20 @@ you can add resource intensive styles.
     display: none;
   }
 
-  .nav-menu {
+  .nav-menu, .stuck-nav-menu {
     border: 0;
     margin: 0 auto;
     background-color: transparent;
     text-align: center;
-    -webkit-visibility: visible;
-    -webkit-opacity: 1;
-    -moz-visibility: visible;
-    -moz-opacity: 1;
-    -o-visibility: visible;
-    -o-opacity: 1;
-    visibility: visible;
-    opacity: 1;
+    display: block;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
   }
-  .nav-menu ul {
+  .nav-menu ul, .stuck-nav-menu ul {
     margin-top: 0;
   }
-  .nav-menu li {
+  .nav-menu li, .stuck-nav-menu li {
     display: inline-block;
     position: relative;
     margin: 0.5em;
@@ -2584,18 +2600,19 @@ you can add resource intensive styles.
     */
     /* showing sub-menus */
   }
-  .nav-menu li a {
+  .nav-menu li a, .stuck-nav-menu li a {
     border-bottom: 0;
     text-align: center;
   }
-  .nav-menu li a:hover, .nav-menu li a:focus {
+  .nav-menu li a:hover, .stuck-nav-menu li a:hover, .nav-menu li a:focus, .stuck-nav-menu li a:focus {
     background-color: rgba(0, 204, 153, 0.8);
     -webkit-transition: background-color 0.5s ease-in-out;
     -moz-transition: background-color 0.5s ease-in-out;
     -o-transition: background-color 0.5s ease-in-out;
   }
-  .nav-menu li ul.sub-menu,
-  .nav-menu li ul.children {
+  .nav-menu li ul.sub-menu, .stuck-nav-menu li ul.sub-menu,
+  .nav-menu li ul.children,
+  .stuck-nav-menu li ul.children {
     margin-top: 0;
     border: 1px solid #ccc;
     border-top: 0;
@@ -2604,29 +2621,36 @@ you can add resource intensive styles.
     z-index: 8999;
     /* highlight sub-menu current page */
   }
-  .nav-menu li ul.sub-menu li a,
-  .nav-menu li ul.children li a {
+  .nav-menu li ul.sub-menu li a, .stuck-nav-menu li ul.sub-menu li a,
+  .nav-menu li ul.children li a,
+  .stuck-nav-menu li ul.children li a {
     padding-left: 10px;
     border-right: 0;
     display: block;
     width: 180px;
     border-bottom: 1px solid #ccc;
   }
-  .nav-menu li ul.sub-menu li:last-child a,
-  .nav-menu li ul.children li:last-child a {
+  .nav-menu li ul.sub-menu li:last-child a, .stuck-nav-menu li ul.sub-menu li:last-child a,
+  .nav-menu li ul.children li:last-child a,
+  .stuck-nav-menu li ul.children li:last-child a {
     border-bottom: 0;
   }
-  .nav-menu li ul.sub-menu li ul,
-  .nav-menu li ul.children li ul {
+  .nav-menu li ul.sub-menu li ul, .stuck-nav-menu li ul.sub-menu li ul,
+  .nav-menu li ul.children li ul,
+  .stuck-nav-menu li ul.children li ul {
     top: 0;
     left: 100%;
   }
-  .nav-menu li:hover > ul {
+  .nav-menu li:hover > ul, .stuck-nav-menu li:hover > ul {
     top: auto;
     visibility: visible;
   }
 
   /* end .nav */
+  .stuck-nav-menu {
+    display: block;
+  }
+
   #skillChart {
     width: 100%;
   }

@@ -1,4 +1,4 @@
-<?php get_header('post'); ?>
+<?php get_header(); ?>
 
 			<div id="content">
 
@@ -10,20 +10,21 @@
 
 
 						 <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-						 	<header class="article-header">
+						 	
+							<header class="article-header">
 			                	<div class="wrap">
 
 			                  		<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 
 			                  	</div>
 			                </header> 
-
+			                
 						 	<?php $thumb_id = get_post_thumbnail_id();
 								  $post_header = wp_get_attachment_image_src($thumb_id, 'portfolio-post', true);
 							?>
 
-						 	<div class="header-image" style="background: url(<?php echo $post_header[0]; ?>) center 0 no-repeat; background-size: 100%"></div>
-
+						 	<div class="header-image" style="background: url(<?php echo $post_header[0]; ?>) center 0 no-repeat fixed; background-size: 100%"></div>
+							
 			                
 
 			                <section class="entry-content cf" itemprop="articleBody">

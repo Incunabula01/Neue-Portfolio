@@ -321,14 +321,7 @@ NAVIGATION STYLES
   margin: 0 auto;
   background-color: transparent;
   text-align: center;
-  -webkit-visibility: visible;
-  -webkit-opacity: 1;
-  -moz-visibility: visible;
-  -moz-opacity: 1;
-  -o-visibility: visible;
-  -o-opacity: 1;
-  visibility: visible;
-  opacity: 1;
+  display: block;
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */
@@ -393,6 +386,10 @@ NAVIGATION STYLES
 }
 
 /* end .nav */
+.stuck-nav-menu {
+  display: block;
+}
+
 #skillChart {
   width: 100%;
 }
