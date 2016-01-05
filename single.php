@@ -23,7 +23,7 @@
 								  $post_header = wp_get_attachment_image_src($thumb_id, 'portfolio-post', true);
 							?>
 
-						 	<div class="header-image" style="background: url(<?php echo $post_header[0]; ?>) center 0 no-repeat fixed; background-size: 100%"></div>
+						 	<div class="header-image" style="background: url(<?php echo $post_header[0]; ?>) center 0 no-repeat; background-size: 100%"></div>
 							
 			                
 

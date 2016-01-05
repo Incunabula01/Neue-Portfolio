@@ -95,140 +95,144 @@ var timeToWaitForLast = 100;
 
 jQuery(document).ready(function($) {
 
-	/* Mobile Nav Menu */
-
-  $('.menu-toggle').on( 'load click' , function(){
-
-      var $navMenu = $('.nav-menu');
-
-      $navMenu.slideToggle(500);
-      $(this).toggleClass('toggled');
-
-  });
-
-  $(window).on( 'load resize', function(){
-
+    var $navContainer = $('.nav');
     var $windowWidth = $(window).width();
-  
-    var $navContainer = $('#nav');
+    var $navMenu = $('.nav-menu');
+    var $menuToggle = $('.menu-toggle');
+    var $mainDiv = $('#content');
+    var $logoTextStuck = $('.logo-text-stuck');
+
     
-    if( $windowWidth  <= 640) {
+    $navMenu.removeClass('stuck-nav');
+    $navContainer.removeClass('stuck');
+    
+    if($windowWidth >= 768){
 
-      // Untoggle nav bar
-      $('#menu-main-nav').hide();
+      var $header = $('#logo-text');
+      var headerHeight = $header.outerHeight();
+      var logoText = $('.logo, .subheader');
 
-      //Sticky Nav Bar
-      $navContainer.waypoint('sticky', { 
-        offset: 55,
-        triggerOnce: true 
+      $navContainer.waypoint({
+
+        handler: function(direction) {
+
+          if (direction === 'down') {
+
+            $navContainer.addClass('stuck');
+            $navMenu.addClass('stuck-nav').css({
+              'textAlign':'right'
+            });
+            $logoTextStuck.fadeIn();
+            $mainDiv.css({'marginTop':'55px'});
+
+          } else if (direction === 'up'){
+
+            $('p, h3, #main, #content, .nav-menu').removeAttr('style');
+            $logoTextStuck.hide();
+            $navMenu.removeClass('stuck-nav');
+            $navContainer.removeClass('stuck');
+          };
+
+        },
+        offset: function(){
+          var outerHeight = $('.header').outerHeight();
+          return $('#content-anchor').offset().top - outerHeight;
+        }
+      });
+    }else if($windowWidth <= 768){
+      $logoTextStuck.hide();
+      $('#nav').waypoint('sticky');
+    };
+    
+    
+
+    /* Mobile Nav Menu */
+      $menuToggle.removeClass('toggled');
+
+      $menuToggle.click(function(){
+
+          $('.mobile-nav-menu').slideToggle(500);
+          $(this).addClass('toggled');
+
       });
 
-    } else if( $windowWidth >= 640){
-
-      // Toggle nav bar
-      $('#menu-main-nav').show();
-
-      // Unsticky nav bar
-       $navContainer.waypoint('unsticky' ,{
-        triggerOnce: true
-       });
-    };
-
-    event.stopPropagation;
-
-  });
-
-  
-
-  
-  
-
 	/* Init Portfolio Isotope Gallery */
-	var $container = $('#gallery-container');
 
+  $('#gallery-container').isotope();
+
+  var $container = $('#gallery-container');
 
 	$container.imagesLoaded( function(){
 		$container.isotope({
 			columnWidth: '.gallery-item',
 			containerStyle: null,
+      filter: '.item',
 			masonry: {
 				itemSelector: '.item',
 				isFitWidth: true
 			}
 		});
 
-		$('#filters').on('click', 'button', function(){
-			var filterValue = $(this).attr('data-filter');
-			$container.isotope({
-				filter: filterValue
-			});
-		});
-	}); 
-
-
-	/* Masonry Gallery for Posts */
-
-	var postGallery = $('.gallery');
-
-	postGallery.imagesLoaded( function(){
-		postGallery.masonry({
-			columnWidth: '.gallery-item',
-			isFitWidth: true
-		});
-	});
-	
-	/* Contact Form Validation */
-
-	$("#contactForm").validate({
-		rules: {
-    		"form_name": {
-     			required: true,
-      			minlength: 5
-    		},
-    		"email": {
-    			required: true,
-    			email: true
-    		}
-  		},
-  		messages: {
-  			"form_name": {
-  				minlength: "Name must be 5 characters long."
-  			},
-  			"email": {
-  				email: "You must use a real email address."
-  			}
-  		}
+		
 	});
 
-	// D3 Bar Chart
+  var postGallery = $('.gallery');
 
-	var skillChart = $("#skillChart");
+  postGallery.imagesLoaded( function(){
+    postGallery.masonry({
+      columnWidth: '.gallery-item',
+      isFitWidth: true
+    });
+  });
+  
+  /* Contact Form Validation */
+
+  $("#contactForm").validate({
+    rules: {
+        "form_name": {
+          required: true,
+            minlength: 5
+        },
+        "email": {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        "form_name": {
+          minlength: "Name must be 5 characters long."
+        },
+        "email": {
+          email: "You must use a real email address."
+        }
+      }
+  });
+
+  // D3 Bar Chart
+
+  var skillChart = $("#skillChart");
 
     skillChart.waypoint(function(){
 
         var dataset = [{
             label: "Html5",
-            rank: 100,
-            tick: "Advanced"
-        },{
-            label: "CSS3/Sass",
-            rank: 95,
-            tick: "Advanced"
-        },{
-            label: "UI-UX",
             rank: 90,
             tick: "Advanced"
         },{
+            label: "CSS3/Sass",
+            rank: 85,
+            tick: "Advanced"
+        },{
+            label: "UI-UX",
+            rank: 80,
+            tick: "Advanced"
+        },{
             label: "Wordpress",
-            rank: 60,
+            rank: 45,
             tick: "Intermediate"
         },{
             label: "javaScript",
             rank: 35,
-            tick: "Beginner"
-        },{
-            label: "Ruby on Rails",
-            rank: 20,
             tick: "Beginner"
         }];
 
@@ -246,16 +250,16 @@ jQuery(document).ready(function($) {
         var dy = h / dataset.length;
 
         var svg = d3.select("#skillChart")
-        				.append("svg")
-        				.attr("height", h);
+                .append("svg")
+                .attr("height", h);
 
         svg.selectAll("rect")
-        	.data(dataset)
-        	.enter()
-        	.append("rect")
-        	.attr("x", 10)
+          .data(dataset)
+          .enter()
+          .append("rect")
+          .attr("x", 10)
             .attr("y", function(d,i){
-            	return dy * i + barPadding;
+              return dy * i + barPadding;
             })
             .attr("width", 0)
             .attr("height", function(d){
@@ -272,36 +276,61 @@ jQuery(document).ready(function($) {
                 return xScale(d.rank);
             })
             .attr("fill", function(d){
-            	return "hsl(23, 94%, "+ (d.rank / 2) +"%)"
-           	});
+              return "hsl(23, 94%, "+ (d.rank / 2) +"%)"
+            });
 
          svg.selectAll("text")
-         	.data(dataset)
-         	.enter()
-         	.append("text")
+          .data(dataset)
+          .enter()
+          .append("text")
             .text(function(d){
                 return d.label + " " + "(" + d.tick + ")";
             })
             .attr("opacity", 0)
-         	.transition("ease-in")
+          .transition("ease-in")
             .delay(function(d,i){
                 return i * 1000;
             })
-         	.attr("x", 30)
-         	.attr("y", function(d, i){
-         		return i * (h / dataset.length) + (h / dataset.length - barPadding) / 1.6;
-         	})
+          .attr("x", 30)
+          .attr("y", function(d, i){
+            return i * (h / dataset.length) + (h / dataset.length - barPadding) / 1.6;
+          })
             .duration(2000)
             .attr("opacity", 1)
-         	.attr("fill", "white");
+          .attr("fill", "white");
 
     },{
-
-        offset: 300,
+        offset: function(){
+          var chartHeight = skillChart.outerHeight();
+          return $('.chart-section').offset().top - outerHeight;
+        },
         triggerOnce: true
-
     });
-}); 
+ 
+
+    $(window).load(function(){
+      var $container = $('#gallery-container');
+
+      $container.imagesLoaded( function(){
+        $container.isotope({
+          layoutMode: 'fitRows',
+          itemSelector: '.items',
+          filter: '*'
+         });
+      });
+
+      $('#filters').on('click', 'button', function(){
+          var filterValue = $(this).attr('data-filter');
+          $container.isotope({
+            filter: filterValue
+          });
+      });
+    });
+     
+ }); 
+
+	
+
 
 
 /* end of as page load scripts */

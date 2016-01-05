@@ -27,6 +27,7 @@
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,400italic,700' rel='stylesheet' type='text/css'>
 
 		<?php wp_head(); ?>
 

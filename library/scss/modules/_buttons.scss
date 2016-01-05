@@ -52,7 +52,7 @@ Stylesheet: Button Styles
 
 .cyan-btn {
   @extend %btn; // here we load the btn defaults
-  background-color: transparent;
+  background-color: $cyan;
   height: 50px;
   &:hover,
   &:focus {

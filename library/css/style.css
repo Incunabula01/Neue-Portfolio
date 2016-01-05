@@ -516,34 +516,6 @@ Site Name: Neue-Portfolio
 Author: Joe Widener
 */
 @font-face {
-  font-family: 'Lato Bold';
-  src: url("../fonts/lato-bold-webfont.eot");
-  src: url("../fonts/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-bold-webfont.woff") format("woff"), url("../fonts/lato-bold-webfont.ttf") format("truetype"), url("../fonts/lato-bold-webfont.svg#lato-bold-webfont") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Lato Regular';
-  src: url("../fonts/lato-regular-webfont.eot");
-  src: url("../fonts/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-regular-webfont.woff") format("woff"), url("../fonts/lato-regular-webfont.ttf") format("truetype"), url("../fonts/lato-regular-webfont.svg#lato-regular-webfont") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Lato Thin';
-  src: url("../fonts/lato-thin-webfont.eot");
-  src: url("../fonts/lato-thin-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-thin-webfont.woff") format("woff"), url("../fonts/lato-thin-webfont.ttf") format("truetype"), url("../fonts/lato-thin-webfont.svg#lato-thin-webfont") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Lato Hairline';
-  src: url("../fonts/lato-hairline-webfont.eot");
-  src: url("../fonts/lato-hairline-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-hairline-webfont.woff") format("woff"), url("../fonts/lato-hairline-webfont.ttf") format("truetype"), url("../fonts/lato-hairline-webfont.svg#lato-hairline-webfont") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: 'Merriweather Regular';
   src: url("../fonts/merriweather-regular-webfont.eot");
   src: url("../fonts/merriweather-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-regular-webfont.woff") format("woff"), url("../fonts/merriweather-regular-webfont.ttf") format("truetype"), url("../fonts/merriweather-regular-webfont.svg#merriweather-regular-webfont") format("svg");
@@ -913,7 +885,7 @@ Author: Joe Widener
 Stylesheet: Button Styles
 
 ******************************************************************/
-.blue-btn, .comment-reply-link, #submit, .cyan-btn, .tags a, #searchsubmit, .widget ul li, .footer-text-menu a {
+.blue-btn, .comment-reply-link, #submit, .cyan-btn, .tags a, #searchsubmit, .widget ul li, .footer-text-menu ul li {
   display: inline-block;
   position: relative;
   font-family: "Merriweather Regular", Georgia, Times, serif;
@@ -934,11 +906,11 @@ Stylesheet: Button Styles
   -moz-transition: background-color 0.14s ease-in-out;
   -o-transition: background-color 0.14s ease-in-out;
 }
-.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .cyan-btn:hover, .tags a:hover, #searchsubmit:hover, .widget ul li:hover, .footer-text-menu a:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, .cyan-btn:focus, .tags a:focus, #searchsubmit:focus, .widget ul li:focus, .footer-text-menu a:focus {
+.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .cyan-btn:hover, .tags a:hover, #searchsubmit:hover, .widget ul li:hover, .footer-text-menu ul li:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, .cyan-btn:focus, .tags a:focus, #searchsubmit:focus, .widget ul li:focus, .footer-text-menu ul li:focus {
   color: #fff;
   text-decoration: none;
 }
-.blue-btn:active, .comment-reply-link:active, #submit:active, .cyan-btn:active, .tags a:active, #searchsubmit:active, .widget ul li:active, .footer-text-menu a:active {
+.blue-btn:active, .comment-reply-link:active, #submit:active, .cyan-btn:active, .tags a:active, #searchsubmit:active, .widget ul li:active, .footer-text-menu ul li:active {
   top: 1px;
 }
 
@@ -953,7 +925,7 @@ Stylesheet: Button Styles
 }
 
 .cyan-btn {
-  background-color: transparent;
+  background-color: #3e9dba;
   height: 50px;
 }
 .cyan-btn:hover, .cyan-btn:focus {
@@ -1336,7 +1308,7 @@ LINK STYLES
 *********************/
 a, a:visited {
   color: #094765;
-  font-family: "Lato Regular", Verdana, sans-serif;
+  font-family: "Lato", Verdana, sans-serif;
   text-decoration: none;
   /* on hover */
   /* on click */
@@ -1346,7 +1318,7 @@ a:hover, a:focus, a:visited:hover, a:visited:focus {
   color: #052636;
 }
 a:active, a:visited:active {
-  font-family: "Lato Regular", Verdana, sans-serif;
+  font-family: "Lato", Verdana, sans-serif;
   color: #00664d;
 }
 a:link, a:visited:link {
@@ -1365,23 +1337,24 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   -webkit-text-rendering: optimizelegibility;
   -moz-text-rendering: optimizelegibility;
-  font-weight: 500;
 }
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
 }
 
 h1, .h1 {
-  font-family: "Lato Thin", Verdana, sans-serif;
+  font-family: "Lato", Verdana, sans-serif;
   font-size: 2.5em;
   line-height: 1.333em;
+  font-weight: 300;
 }
 
 h2, .h2 {
-  font-family: "Lato Bold", Verdana, sans-serif;
+  font-family: "Lato", Verdana, sans-serif;
   font-size: 1.75em;
   line-height: 1.4em;
   margin-bottom: 0.375em;
+  font-weight: 400;
 }
 
 h3, .h3 {
@@ -1413,7 +1386,7 @@ HEADER STYLES
   margin: 0.5em;
   float: left;
   text-align: center;
-  font-family: "Lato Thin", Verdana, sans-serif;
+  font-family: "Lato", Verdana, sans-serif;
   color: #fff;
   font-size: 2em;
   line-height: 0.75em;
@@ -1557,8 +1530,8 @@ NAVIGATION STYLES
 .stuck-nav-menu li.current_page_item a,
 .nav-menu li.current_page_ancestor a,
 .stuck-nav-menu li.current_page_ancestor a {
-  font-family: "Lato Regular", Verdana, sans-serif;
-  color: #a9e3f4;
+  font-family: "Lato", Verdana, sans-serif;
+  color: #87c4d7;
 }
 
 /* end .nav */
@@ -1617,12 +1590,12 @@ svg {
   height: auto;
 }
 svg text {
-  font-family: "Lato Regular", Verdana, sans-serif;
+  font-family: "Lato", Verdana, sans-serif;
   fill: #fff;
   padding: 0.2em;
 }
 svg g {
-  stroke: #4EC5E9;
+  stroke: #3e9dba;
   fill: none;
   stroke-weight: 0.5em;
 }
@@ -1695,6 +1668,10 @@ svg g {
   font-size: 1em;
 }
 
+.page-title {
+  font-weight: 400;
+}
+
 #archive-header {
   background-color: #fff;
 }
@@ -1704,7 +1681,7 @@ svg g {
   padding: 0.5em;
 }
 .archive-title h2 {
-  font-family: "Lato Thin", Verdana, sans-serif;
+  font-family: "Lato", Verdana, sans-serif;
   color: #00CC99;
   font-size: 2em;
 }
@@ -1723,7 +1700,7 @@ svg g {
 }
 
 .chart-section {
-  background-color: #4EC5E9;
+  background-color: #3e9dba;
 }
 
 /* want to style individual post classes? Booya! */
@@ -1878,7 +1855,7 @@ img {
 }
 .gallery dt {
   height: 400px;
-  background: url("../images/gallery-thumb2x.png") #4EC5E9 50% 50% no-repeat;
+  background: url("../images/gallery-thumb2x.png") #3e9dba 50% 50% no-repeat;
 }
 
 /* end .gallery */
@@ -1898,14 +1875,14 @@ img {
   margin-left: 0.5em;
   padding: 0.5em;
   color: #fff;
-  background-color: #4EC5E9;
+  background-color: #3e9dba;
   font-size: 1em;
 }
 .tags a:hover, .tags a:focus {
-  background-color: #1aaad5;
+  background-color: #2c7084;
 }
 .tags a:active {
-  background-color: #189bc3;
+  background-color: #276375;
 }
 
 /*********************
@@ -2016,14 +1993,14 @@ MISC STYLES
 #searchsubmit {
   color: #fff;
   width: 100%;
-  background-color: #4EC5E9;
+  background-color: #3e9dba;
   font-size: 1em;
 }
 #searchsubmit:hover, #searchsubmit:focus {
-  background-color: #1aaad5;
+  background-color: #2c7084;
 }
 #searchsubmit:active {
-  background-color: #189bc3;
+  background-color: #276375;
 }
 
 /******************************************************************
@@ -2265,7 +2242,7 @@ SIDEBARS & ASIDES
   padding: 0 1em;
 }
 .widget ul li {
-  background-color: #4EC5E9;
+  background-color: #3e9dba;
   font-size: 1em;
   width: 100%;
   padding: 0.2em;
@@ -2274,10 +2251,10 @@ SIDEBARS & ASIDES
   /* deep nesting */
 }
 .widget ul li:hover, .widget ul li:focus {
-  background-color: #1aaad5;
+  background-color: #2c7084;
 }
 .widget ul li:active {
-  background-color: #189bc3;
+  background-color: #276375;
 }
 .widget ul li a {
   color: #fff;
@@ -2304,57 +2281,58 @@ FOOTER STYLES
   clear: both;
 }
 
-.footer-text-menu {
-  text-align: center;
-}
 .footer-text-menu h3 {
   background: transparent;
   text-align: center;
-  font-family: "Lato Thin", Verdana, sans-serif;
-  font-size: 2em;
+  font-family: "Lato", Verdana, sans-serif;
+  font-size: 1.5em;
 }
-.footer-text-menu a {
-  background-color: #4EC5E9;
+.footer-text-menu ul li {
+  margin-bottom: 0.2em;
+  background-color: #00CC99;
   font-size: 0.8em;
-  height: 45px;
-  width: 90%;
-  padding: 1em;
+  padding: 0.75em 1.5em 0.5em 1.5em;
+  text-align: center;
+  font-size: 1em;
 }
-.footer-text-menu a:hover, .footer-text-menu a:focus {
-  background-color: #1aaad5;
+.footer-text-menu ul li:hover, .footer-text-menu ul li:focus {
+  background-color: #008563;
 }
-.footer-text-menu a:active {
-  background-color: #189bc3;
+.footer-text-menu ul li:active {
+  background-color: #007054;
 }
-.footer-text-menu a:hover, .footer-text-menu a:active {
+.footer-text-menu ul li:hover, .footer-text-menu ul li:active {
   -webkit-transition: all 0.6s ease-in;
   -moz-transition: all 0.6s ease-in;
   -o-transition: all 0.6s ease-in;
-  background-color: #189bc3;
+  background-color: #008060;
 }
-.footer-text-menu a i {
-  font-family: "Merriweather Regular", Georgia, Times, serif;
-  font-size: 1.5em;
+.footer-text-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Lato", Verdana, sans-serif;
+  font-weight: 800;
 }
-.footer-text-menu a i:before {
+.footer-text-menu ul li a:hover, .footer-text-menu ul li a:active {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  color: shade(#fff, 10%);
+}
+.footer-text-menu ul li i {
+  font-family: "Lato", Verdana, sans-serif;
+  color: #fff;
+}
+.footer-text-menu ul li i:before {
   font-family: FontAwesome;
-  padding: 0.5em;
-}
-.footer-text-menu ul {
-  text-align: center;
-}
-.footer-text-menu ul li {
-  padding: 0em;
-  height: 35px;
-  margin-bottom: 0.2em a;
-  margin-bottom-color: #fff;
-  margin-bottom-text-decoration: none;
+  display: inline-block;
+  padding-right: 1em;
 }
 
 .social-media-links h3 {
   background: transparent;
   text-align: center;
-  font-family: "Lato Thin", Verdana, sans-serif;
+  font-family: "Lato", Verdana, sans-serif;
   font-size: 2em;
 }
 .social-media-links ul {
@@ -2365,7 +2343,7 @@ FOOTER STYLES
   height: 50px;
   margin-left: 0.5em;
   display: inline-block;
-  background-color: #4EC5E9;
+  background-color: #3e9dba;
   padding: 0.8em;
   border-radius: 25px;
 }
@@ -2376,7 +2354,7 @@ FOOTER STYLES
   -webkit-transition: all 0.6s ease-in;
   -moz-transition: all 0.6s ease-in;
   -o-transition: all 0.6s ease-in;
-  background-color: #189bc3;
+  background-color: #276375;
 }
 .social-media-links ul li a {
   color: #fff;
@@ -2514,10 +2492,11 @@ you can add resource intensive styles.
   .logo {
     margin-top: 1em;
     text-align: center;
-    font-family: "Lato Hairline", Verdana, sans-serif;
+    font-family: "Lato", Verdana, sans-serif;
     color: #fff;
-    font-size: 7em;
+    font-size: 6em;
     line-height: 0.75em;
+    font-weight: 100;
     float: none;
     -webkit-transition: all 0.5s ease-in;
     -moz-transition: all 0.5s ease-in;
@@ -2530,10 +2509,11 @@ you can add resource intensive styles.
   .logo-text-stuck {
     float: left;
     text-align: left;
-    font-family: "Lato Thin", Verdana, sans-serif;
+    font-family: "Lato", Verdana, sans-serif;
   }
   .logo-text-stuck .h1 {
     margin: 0.125em 0.5em;
+    color: #fff;
   }
   .logo-text-stuck a {
     color: #fff;
@@ -2681,9 +2661,7 @@ you can add resource intensive styles.
   }
   #filters li h4 {
     display: block;
-  }
-  #filters li h4:before, #filters li h4:after {
-    content: "|";
+    color: #fff;
   }
   #filters .cyan-btn {
     padding: 0 0.5em;
@@ -2716,7 +2694,7 @@ you can add resource intensive styles.
     max-width: 400px;
   }
   .gallery dt {
-    background: url("../images/gallery-thumb.png") #4EC5E9 50% 50% no-repeat;
+    background: url("../images/gallery-thumb.png") #3e9dba 50% 50% no-repeat;
   }
 
   /* end .gallery */
@@ -2736,6 +2714,7 @@ you can add resource intensive styles.
   }
   .widget ul li {
     margin-bottom: 0.75em;
+    text-align: left;
     /* deep nesting */
   }
   .widget ul li ul {
@@ -2777,16 +2756,22 @@ you can add resource intensive styles.
   .footer-text-menu .textwidget {
     text-align: left;
   }
-  .footer-text-menu a {
+  .footer-text-menu ul li {
+    text-align: left;
     background-color: transparent;
-    padding: 0px;
+    -webkit-border: 1px solid #fff;
+    -moz-border: 1px solid #fff;
+    -o-border: 1px solid #fff;
+    border: 1px solid #fff;
   }
-  .footer-text-menu a:hover {
+  .footer-text-menu ul a {
+    background-color: transparent;
+  }
+  .footer-text-menu ul a:hover {
     background-color: transparent;
     color: #00CC99;
   }
-  .footer-text-menu a i:before {
-    font-size: 1em;
+  .footer-text-menu ul a i:before {
     padding-right: 1em;
   }
 

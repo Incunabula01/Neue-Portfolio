@@ -44,34 +44,6 @@ Site Name: Neue-Portfolio
 Author: Joe Widener
 */
 @font-face {
-  font-family: 'Lato Bold';
-  src: url("../fonts/lato-bold-webfont.eot");
-  src: url("../fonts/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-bold-webfont.woff") format("woff"), url("../fonts/lato-bold-webfont.ttf") format("truetype"), url("../fonts/lato-bold-webfont.svg#lato-bold-webfont") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Lato Regular';
-  src: url("../fonts/lato-regular-webfont.eot");
-  src: url("../fonts/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-regular-webfont.woff") format("woff"), url("../fonts/lato-regular-webfont.ttf") format("truetype"), url("../fonts/lato-regular-webfont.svg#lato-regular-webfont") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Lato Thin';
-  src: url("../fonts/lato-thin-webfont.eot");
-  src: url("../fonts/lato-thin-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-thin-webfont.woff") format("woff"), url("../fonts/lato-thin-webfont.ttf") format("truetype"), url("../fonts/lato-thin-webfont.svg#lato-thin-webfont") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Lato Hairline';
-  src: url("../fonts/lato-hairline-webfont.eot");
-  src: url("../fonts/lato-hairline-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-hairline-webfont.woff") format("woff"), url("../fonts/lato-hairline-webfont.ttf") format("truetype"), url("../fonts/lato-hairline-webfont.svg#lato-hairline-webfont") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: 'Merriweather Regular';
   src: url("../fonts/merriweather-regular-webfont.eot");
   src: url("../fonts/merriweather-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-regular-webfont.woff") format("woff"), url("../fonts/merriweather-regular-webfont.ttf") format("truetype"), url("../fonts/merriweather-regular-webfont.svg#merriweather-regular-webfont") format("svg");
@@ -257,10 +229,11 @@ HEADER STYLES
 .logo {
   margin-top: 1em;
   text-align: center;
-  font-family: "Lato Hairline", Verdana, sans-serif;
+  font-family: "Lato", Verdana, sans-serif;
   color: #fff;
-  font-size: 7em;
+  font-size: 6em;
   line-height: 0.75em;
+  font-weight: 100;
   float: none;
   -webkit-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
@@ -273,10 +246,11 @@ HEADER STYLES
 .logo-text-stuck {
   float: left;
   text-align: left;
-  font-family: "Lato Thin", Verdana, sans-serif;
+  font-family: "Lato", Verdana, sans-serif;
 }
 .logo-text-stuck .h1 {
   margin: 0.125em 0.5em;
+  color: #fff;
 }
 .logo-text-stuck a {
   color: #fff;
@@ -420,9 +394,7 @@ NAVIGATION STYLES
 }
 #filters li h4 {
   display: block;
-}
-#filters li h4:before, #filters li h4:after {
-  content: "|";
+  color: #fff;
 }
 #filters .cyan-btn {
   padding: 0 0.5em;
@@ -455,7 +427,7 @@ NAVIGATION STYLES
   max-width: 400px;
 }
 .gallery dt {
-  background: url("../images/gallery-thumb.png") #4EC5E9 50% 50% no-repeat;
+  background: url("../images/gallery-thumb.png") #3e9dba 50% 50% no-repeat;
 }
 
 /* end .gallery */
@@ -475,6 +447,7 @@ SIDEBARS & ASIDES
 }
 .widget ul li {
   margin-bottom: 0.75em;
+  text-align: left;
   /* deep nesting */
 }
 .widget ul li ul {
@@ -516,16 +489,22 @@ FOOTER STYLES
 .footer-text-menu .textwidget {
   text-align: left;
 }
-.footer-text-menu a {
+.footer-text-menu ul li {
+  text-align: left;
   background-color: transparent;
-  padding: 0px;
+  -webkit-border: 1px solid #fff;
+  -moz-border: 1px solid #fff;
+  -o-border: 1px solid #fff;
+  border: 1px solid #fff;
 }
-.footer-text-menu a:hover {
+.footer-text-menu ul a {
+  background-color: transparent;
+}
+.footer-text-menu ul a:hover {
   background-color: transparent;
   color: #00CC99;
 }
-.footer-text-menu a i:before {
-  font-size: 1em;
+.footer-text-menu ul a i:before {
   padding-right: 1em;
 }
 

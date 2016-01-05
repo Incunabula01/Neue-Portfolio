@@ -35,8 +35,9 @@ HEADER STYLES
 		text-align: center;
 		font-family: $logo-font;
 		color: $white;
-		font-size: 7em;
+		font-size: 6em;
 		line-height: 0.75em;
+		font-weight: 100;
 		float: none;
 		@include transition(all 0.5s ease-in);
 		a {
@@ -49,7 +50,8 @@ HEADER STYLES
 		text-align: left;
 		font-family: $header-font;
 		.h1{
-			margin: 0.125em 0.5em; 
+			margin: 0.125em 0.5em;
+			color: $white; 
 		}
 		a{
 			color: $white;
@@ -217,9 +219,7 @@ NAVIGATION STYLES
 		list-style: none;
 		h4{
 			display: block;
-			&:before, &:after{
-				content: "|";
-			} 
+			color: $white;
 		}
 	}
 	.cyan-btn{
@@ -281,6 +281,7 @@ SIDEBARS & ASIDES
 		ul {
 			li {
 				margin-bottom: 0.75em;
+				text-align: left;
 
 				&:first-child {}
 				&:last-child {}
@@ -413,18 +414,24 @@ FOOTER STYLES
 	.textwidget{
 		text-align: left;
 	}
-	a{
-		background-color: transparent;
-		padding: 0px;
-		&:hover{
+	ul{
+		li{
+			text-align: left;
 			background-color: transparent;
-			color: $teal;
+			@include border-box(1px, $white);
 		}
-		i:before{
-			font-size: 1em;
-			padding-right: 1em;
-		}
-	} 
+		a{
+			background-color: transparent;
+			&:hover{
+				background-color: transparent;
+				color: $teal;
+			}
+			i:before{
+				padding-right: 1em;
+			}
+		} 
+	}
+	
 }
 .social-media-links{
 	h3{

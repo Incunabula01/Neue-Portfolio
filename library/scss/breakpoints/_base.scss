@@ -109,7 +109,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	-webkit-text-rendering: optimizelegibility;
 	-moz-text-rendering: optimizelegibility;
-	font-weight: 500;
 	a {
 		text-decoration: none;
 	}
@@ -119,6 +118,7 @@ h1, .h1 {
 	font-family: $header-font;
 	font-size: 2.5em;
 	line-height: 1.333em;
+	font-weight: 300;
 }
 
 h2, .h2 {
@@ -126,6 +126,7 @@ h2, .h2 {
 	font-size: 1.75em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
+	font-weight: 400;
 }
 
 h3, .h3 {
@@ -453,7 +454,9 @@ svg {
 
 		.single-title {}
 
-		.page-title {}
+		.page-title {
+			font-weight: 400;
+		}
 
 		.entry-title {}
 
@@ -1236,40 +1239,42 @@ FOOTER STYLES
 
 		.footer-links {}
 			.footer-text-menu{
-				text-align: center;
 				h3{
 					background: transparent;
 					text-align: center;
 					font-family: $header-font;
-					font-size: 2em;
-				}
-				a{
-					@include button-style($cyan, 0.8em);
-					height: 45px;
-					width: 90%;
-					padding: 1em;
-					&:hover, &:active{
-							@include transition(all 0.6s ease-in);
-							background-color: darken($cyan, 18%);
-						}
-					i{
-						font-family: $serif;
-						font-size: 1.5em;
-					}
-					i:before{
-						font-family: FontAwesome;
-						padding: 0.5em;
-					}
+					font-size: 1.5em;
 				}
 				ul{
-					text-align: center;
+					
 					li{
-						padding: 0em;
-						height: 35px;
-						margin-bottom: 0.2em
+						margin-bottom: 0.2em;
+						@include button-style($teal, 0.8em);
+						padding: 0.75em 1.5em 0.5em 1.5em;
+						text-align: center;
+						font-size: 1em;
+						&:hover, &:active{
+									@include transition(all 0.6s ease-in);
+									background-color: darken($teal, 15%);
+								}
 						a{
 							color: $white;
 							text-decoration: none;
+							font-family: $link-font;
+							font-weight: 800;
+							&:hover, &:active{
+									@include transition(all 0.2s ease-in);
+									color: shade($white, 10%);
+								}
+						}
+						i{
+							font-family: $link-font;
+							color: $white;
+						}
+						i:before{
+							font-family: FontAwesome;
+							display: inline-block;
+							padding-right: 1em;
 						}
 					}
 				}
