@@ -78,8 +78,8 @@ if ( ! isset( $content_width ) ) {
 // Thumbnail sizes
 add_image_size( 'bones-thumb-400', 450, 250, true);
 add_image_size( 'bones-thumb-300', 300, 150, true );
-add_image_size( 'portfolio-post', 1280, 300, true);
-add_image_size( 'gallery-thumb' , 200, 280, true);
+add_image_size( 'portfolio-post', 1362, 300, true);
+add_image_size( 'gallery-thumb' , 320, 480, true);
 
 
 add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
@@ -89,10 +89,26 @@ function bones_custom_image_sizes( $sizes ) {
         'bones-thumb-400' => __('450px by 250px'),
         'bones-thumb-300' => __('300px by 150px'),
         'portfolio-post' => __('1280px by 300px'),
-        'gallery-thumb' => __('350px by 200px')
+        'gallery-thumb' => __('320px by 480px')
     ) );
 }
 
+function neueportfolio_image_sizes_attr( $sizes, $size){
+
+  $width = $size[0];
+
+  840 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px';
+
+  if ( 'page' === get_post_type() ){
+    840 > $width && $sizes = '(max-width: ' . $width . 'px) 85vw, ' . $width . 'px';
+  } else {
+    840 > $width && 600 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 61vw, (max-width: 1362px) 62vw, 840px';
+    600 > $width && $sizes = '(max-width: ' . $width . 'px';
+  }
+   return $sizes;
+}
+
+add_filter( 'wp_calculate_image_sizes', 'neueportfolio_image_sizes_attr', 10 , 2 );
 /*
 The function above adds the ability to use the dropdown menu to select
 the new images sizes you have just created from within the media manager

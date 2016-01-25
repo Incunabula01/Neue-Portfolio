@@ -29,7 +29,10 @@
 												<div class="wrap">
 
 													<?php the_content(); ?>
-
+													<div class="center">
+														<a href="<?php echo get_permalink( $post = 686); ?>"><button class="border-btn" title="View Work"> View Work</button></a>
+													</div>
+						
 												</div>
 
 												<div class="chart-section">
@@ -51,21 +54,51 @@
 
 												<div class="wrap img-gallery">
 
-													<h1 class="page-title">Gallery</div>
+													<h1 class="page-title">Gallery</h1>
 
-													<div class="gallery">
 
+													<div id="filters">
+														<ul class="button-group">
+															<li>
+																<button class="cyan-btn current" data-filter="*" title="Show All">
+																	<i class="fa fa-image fa-2x" alt="Show All"></i>
+																</button>
+															</li>
+															<li>
+																<button class="cyan-btn" data-filter=".UI-UX" title="UI-UX">
+																	<i class="fa fa-tablet fa-2x" alt="UI UX"></i>
+																</button>
+															</li>
+															<li>
+																<button class="cyan-btn" data-filter=".Web" title="Web">
+																	<i class="fa fa-html5 fa-2x" alt="Web"></i>
+																</button>	
+															</li>
+															<li>
+																<button class="cyan-btn" data-filter=".Print" title="Print">
+																	<i class="fa fa-file fa-2x" alt="Print"></i>
+																</button>
+															</li>
+															<li>
+																<button class="cyan-btn" data-filter=".Identity" title="Identity">
+																	<i class="fa fa-file-image-o fa-2x" alt="Identity"></i>
+																</button>
+															</li>
+														</ul>
+													</div>
+
+													<div id="gallery-container" class="gallery">
 														<?php
-															global $post;
-															$tmp_post = $post;
-															$args = array( 'numberposts' => 6 );
-															$myposts = get_posts( $args );
-															foreach( $myposts as $post ) :	setup_postdata($post); 
-																$post_thumbnail_id = get_post_thumbnail_id();
-																$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'gallery-thumb' );
+														global $post;
+														$tmp_post = $post;
+														$args = array( 'numberposts' => 9);
+														$myposts = get_posts( $args );
+														foreach( $myposts as $post ) :	setup_postdata($post); 
+															$post_thumbnail_id = get_post_thumbnail_id();
+															$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'gallery-thumb' );
 														?>
 
-															<div class="item gallery-item <?php $category = get_the_category(); echo $category[0]->cat_name; ?>">
+															<div class="item <?php $category = get_the_category(); echo $category[0]->cat_name; ?>">
 																<a href="<?php echo get_permalink(); ?>" >
 																	<div><span><h2><?php echo get_the_title(); ?></h2></span></div>
 																	<img src="<?php echo $featured_src[0]; ?>"/>
@@ -74,7 +107,6 @@
 
 														<?php endforeach; ?>
 														<?php $post = $tmp_post; ?>
-
 													</div>
 
 												</div>

@@ -19,22 +19,7 @@
 							<ul class="social-media-links">
 								<?php dynamic_sidebar('Footer3') ?>
 							</ul>
-						<!--	<h3>Follow Me</h3>
-							<ul>
-								<li>
-									<a href="#"><i class="fa fa-linkedin fa-1x"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class=" fa fa-twitter fa-1x"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class=" fa fa-instagram fa-1x"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class=" fa fa-github fa-1x"></i></a>
-								</li>
-							</ul>
-						-->
+						
 						</div>
 
 					</div>

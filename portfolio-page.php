@@ -37,32 +37,27 @@
 												<div id="filters">
 													<ul class="button-group">
 														<li>
-															<h4>Show All</h4>
-															<button class="cyan-btn current" data-filter="*">
+															<button class="cyan-btn current" data-filter="*" title="Show All">
 																<i class="fa fa-image fa-2x" alt="Show All"></i>
 															</button>
 														</li>
 														<li>
-															<h4>UI UX</h4>
-															<button class="cyan-btn" data-filter=".UI-UX">
+															<button class="cyan-btn" data-filter=".UI-UX" title="UI-UX">
 																<i class="fa fa-tablet fa-2x" alt="UI UX"></i>
 															</button>
 														</li>
 														<li>
-															<h4>Web</h4>
-															<button class="cyan-btn" data-filter=".Web">
+															<button class="cyan-btn" data-filter=".Web" title="Web">
 																<i class="fa fa-html5 fa-2x" alt="Web"></i>
 															</button>	
 														</li>
 														<li>
-															<h4>Print</h4>
-															<button class="cyan-btn" data-filter=".Print">
+															<button class="cyan-btn" data-filter=".Print" title="Print">
 																<i class="fa fa-file fa-2x" alt="Print"></i>
 															</button>
 														</li>
 														<li>
-															<h4>Identity</h4>
-															<button class="cyan-btn" data-filter=".Identity">
+															<button class="cyan-btn" data-filter=".Identity" title="Identity">
 																<i class="fa fa-file-image-o fa-2x" alt="Identity"></i>
 															</button>
 														</li>

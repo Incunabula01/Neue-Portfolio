@@ -274,10 +274,6 @@ NAVIGATION STYLES
 				color: $link-hover;
 				@include transition(all 0.2s ease-in);
 			}
-			&:before {
-				font-family: FontAwesome;
-				font-size: 1em;
-			}
 		}
 
 		&:first-child {
@@ -339,24 +335,24 @@ NAVIGATION STYLES
 
 /*****Nav Icons*****/
 
-.work{
-	@include nav-icons("\f0b1");
-}
+// .work{
+// 	@include nav-icons("\f0b1");
+// }
 
-.contact-me{
-	@include nav-icons("\f0e0");
-}
+// .contact-me{
+// 	@include nav-icons("\f0e0");
+// }
 
-.about-me{
-	@include nav-icons("\f007");
-}
+// .about-me{
+// 	@include nav-icons("\f007");
+// }
 
-.skills{
-	@include nav-icons("\f0a3");
-}
+// .skills{
+// 	@include nav-icons("\f0a3");
+// }
 
 .img-gallery{
-	@include nav-icons("\f03e");
+	// @include nav-icons("\f03e");
 	color: $white;
 }
 
@@ -399,6 +395,11 @@ svg {
 .show{
 	display: block;
 	@include transition(display 0.5s ease-in);
+}
+
+.center{
+	text-align: center;
+	margin: 0 auto;
 }
 
 #content {
@@ -671,7 +672,6 @@ svg {
 
 		.gallery {
 			margin: 20px auto;
-			overflow-y: hidden;
 			height: 100%;
 			dl {
 				margin: 1em;
@@ -1262,10 +1262,6 @@ FOOTER STYLES
 							text-decoration: none;
 							font-family: $link-font;
 							font-weight: 800;
-							&:hover, &:active{
-									@include transition(all 0.2s ease-in);
-									color: shade($white, 10%);
-								}
 						}
 						i{
 							font-family: $link-font;

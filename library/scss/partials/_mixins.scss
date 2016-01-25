@@ -144,7 +144,8 @@ BUTTONS
 
 @mixin nav-icons($content) {
 	a:before, h1:before{
-		padding: 0.2em 0.2em 0.2em 0;
+		// padding: 0.2em 0.2em 0.2em 0;
+		display: inline-block;
 		content: $content; 
 	}
 }

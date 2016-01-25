@@ -300,10 +300,7 @@ jQuery(document).ready(function($) {
           .attr("fill", "white");
 
     },{
-        offset: function(){
-          var chartHeight = skillChart.outerHeight();
-          return $('.chart-section').offset().top - outerHeight;
-        },
+        offset: 500,
         triggerOnce: true
     });
  
@@ -313,6 +310,7 @@ jQuery(document).ready(function($) {
 
       $container.imagesLoaded( function(){
         $container.isotope({
+          columnWidth: '.gallery-item',
           layoutMode: 'fitRows',
           itemSelector: '.items',
           filter: '*'
