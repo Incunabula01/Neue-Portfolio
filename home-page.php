@@ -30,7 +30,7 @@
 
 													<?php the_content(); ?>
 													<div class="center">
-														<a href="<?php echo get_permalink( $post = 686); ?>"><button class="border-btn" title="View Work"> View Work</button></a>
+														<a href="#gallery-container"><button class="border-btn" title="View Work"> View Work</button></a>
 													</div>
 						
 												</div>
