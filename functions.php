@@ -77,9 +77,9 @@ if ( ! isset( $content_width ) ) {
 
 // Thumbnail sizes
 add_image_size( 'bones-thumb-400', 450, 250, true);
-add_image_size( 'bones-thumb-300', 300, 150, true );
+add_image_size( 'bones-thumb-300', 300, 250, true );
 add_image_size( 'portfolio-post', 1362, 300, true);
-add_image_size( 'gallery-thumb' , 320, 480, true);
+add_image_size( 'gallery-thumb' , 280, 380, true);
 
 
 add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
@@ -89,7 +89,7 @@ function bones_custom_image_sizes( $sizes ) {
         'bones-thumb-400' => __('450px by 250px'),
         'bones-thumb-300' => __('300px by 150px'),
         'portfolio-post' => __('1280px by 300px'),
-        'gallery-thumb' => __('320px by 480px')
+        'gallery-thumb' => __('280px by 380px')
     ) );
 }
 
