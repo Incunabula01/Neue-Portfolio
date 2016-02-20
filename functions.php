@@ -79,7 +79,7 @@ if ( ! isset( $content_width ) ) {
 add_image_size( 'bones-thumb-400', 450, 250, true);
 add_image_size( 'bones-thumb-300', 300, 250, true );
 add_image_size( 'portfolio-post', 1362, 300, true);
-add_image_size( 'gallery-thumb' , 280, 380, true);
+add_image_size( 'gallery-thumb' , 250, 350, true);
 
 
 add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );

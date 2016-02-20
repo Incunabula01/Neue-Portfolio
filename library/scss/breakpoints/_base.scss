@@ -155,15 +155,18 @@ HEADER STYLES
 	position: relative;
 }
 
-	.logo{
+	.logo-text{
 		margin: 0.5em;
 		float: left;
-		text-align: center;
-		font-family: $header-font;
-		color: $white;
-		font-size: 2em;
-		line-height: 0.75em;
-
+		h1{
+			color: $white;
+			font-size: 1.5em;
+			line-height: 0.75em;
+			font-weight: 400;
+			margin: 0;
+			font-family: $header-font;
+			padding: 0.5em 0;
+		}
 		a {
 			color: $white;
 		}
@@ -172,6 +175,7 @@ HEADER STYLES
 			@include transition(all 0.5s ease-in);
 		}
 	}
+
 	.subheader {
 		display: none;
 	}
@@ -186,7 +190,8 @@ NAVIGATION STYLES
 	width: 100%;
 	top: 0;
 	left: 0;
-	background-color: $teal;
+	background-color: $transparent-teal;
+	border-bottom: 0;
 	@include box-shadow(0px, 5px, 0px, 0px, $dark-teal);
 }
 
@@ -244,13 +249,12 @@ NAVIGATION STYLES
 			text-decoration: none;
 			padding: 0.2em 0.5em;
 			color: $white;
+			&:active{
+				color: tint($teal, 25%);
+			}
 			&:hover, &:focus {
 				color: $link-hover;
 				@include transition(all 0.2s ease-in);
-			}
-			&:before {
-				font-family: FontAwesome;
-				font-size: 1em;
 			}
 		}
 	}
@@ -402,11 +406,11 @@ svg {
 	margin: 0 auto;
 }
 
-#content {
-	p {
-		margin: 40px 0;
-	}
-}
+// #content {
+// 	p {
+// 		margin: 40px 0;
+// 	}
+// }
 
 	.header-image{
 		background-size: cover;
@@ -488,6 +492,25 @@ svg {
 			}
 		}
 
+		#about-me{
+			background: url('../images/foreground-banner.jpg') center 0 no-repeat fixed;
+			background-size: cover;
+			-moz-background-size: cover;
+			-webkit-background-size: cover;
+			p{
+				color: $white;
+				margin-top: 0;
+				padding-top: 1.5em;
+			}
+			h2{
+				color: $white;
+			}
+			.border-btn{
+				color: $white;
+				border: 1px solid $white;
+			}
+		}
+
 		.chart-section {
 			background-color: $cyan;
 		}
@@ -516,7 +539,7 @@ svg {
 		img {
 				margin-bottom: 1.5em;
 				max-width: 100%;
-				min-width: 280px;
+				// min-width: 280px;
 				height: auto;
 				overflow: hidden;
 			}
@@ -691,9 +714,10 @@ svg {
 			}
 
 			dt {
-				height: 400px;
-				background: url('../images/gallery-thumb2x.png') $cyan 50% 50% no-repeat;
-				//background-size: 50%;
+				min-height: 350px;
+				img:hover{
+					background: url('../images/gallery-thumb2x.png') $cyan 50% 50% no-repeat;
+				}
 			}
 
 			dd {}

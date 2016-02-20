@@ -31,7 +31,9 @@
 			                	<div class="wrap">
 			                  		<?php
 			                    		the_content();
+
 			                  		?>
+			      
 			                 	 </div>
 			                </section> 
 

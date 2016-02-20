@@ -17,7 +17,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 760px;
+	width: 800px;
 }
 
 /*********************
@@ -25,27 +25,27 @@ HEADER STYLES
 *********************/
 
 .header {
-	background: url('../images/foreground-banner.jpg') center -50% no-repeat fixed;
-	background-size: cover;
+	background: $teal;
 	@include transition(height 0.5s ease-in);
+	border-bottom: 1px solid $white;
 }
 
-	.logo{
-		margin-top: 1em;
-		text-align: center;
-		font-family: $logo-font;
-		color: $white;
-		font-size: 6em;
-		line-height: 0.75em;
-		font-weight: 100;
-		float: none;
-		@include transition(all 0.5s ease-in);
-		a {
-			color: $white;
-		}
-	}
+.header-post{
+	background: $teal;
+}
 
-	.logo-text-stuck {
+
+	// .logo{
+	// 	margin-top: 1em;
+	// 	font-family: $logo-font;
+	// 	color: $white;
+	// 	@include transition(all 0.5s ease-in);
+	// 	a {
+	// 		color: $white;
+	// 	}
+	// }
+
+	.logo-text {
 		float: left;
 		text-align: left;
 		font-family: $header-font;
@@ -89,11 +89,14 @@ NAVIGATION STYLES
 	display: none;
 } 
 
+.nav{
+	float: right;
+	text-align: right;
+}
+
 .nav-menu {
 	border: 0;
 	margin: 0 auto;
-	background-color: transparent;
-	text-align: center;
 	display: block;
 	ul {
 		margin-top: 0;
@@ -195,7 +198,7 @@ NAVIGATION STYLES
 .page-title,
 .entry-title {
 	margin: 0;
-	text-align: left;
+	// text-align: left;
 }
 
 /*.resize {
@@ -204,6 +207,10 @@ NAVIGATION STYLES
 }
 */
 .entry-content{
+	p{
+		margin-top: 0;
+		padding-top: 1em;
+	}
 	footer{
 		.cyan-btn{
 			width: 120px;
@@ -254,7 +261,9 @@ NAVIGATION STYLES
 			}
 
 			dt {
-				background: url('../images/gallery-thumb.png') $cyan 50% 50% no-repeat;
+				img:hover{
+					background: url('../images/gallery-thumb.png') $cyan 50% 50% no-repeat;
+				}
 			}
 
 			dd {}

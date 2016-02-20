@@ -14,26 +14,31 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-									<header class="article-header about-me">
+									<!-- <header class="article-header about-me">
 
 										<div class="wrap">
 											<h1 class="page-title"><?php the_title(); ?></h1>
+
 										</div>
 
-									</header>
+									</header> -->
 
 									<section class="entry-content cf" itemprop="articleBody">
 
 											<div class="m-all t-all d-all cf">
 
-												<div class="wrap">
+												<div id="about-me">
 
-													<?php the_content(); ?>
-													<div class="center">
-														<a href="#gallery-container"><button class="border-btn" title="View Work"> View Work</button></a>
+													<div class="wrap">
+														<?php the_content(); ?>
 													</div>
-						
+												
+													<div class="center">
+														<a id="galleryButton" href="#gallery-container"><button class="border-btn" title="View Work"> View Work</button></a>
+													</div>
+
 												</div>
+												
 
 												<div class="chart-section">
 
@@ -50,7 +55,7 @@
 
 											</div>
 
-											<div class="gallery-section m-all t-all d-all cf">
+											<div id="gallery" class="gallery-section m-all t-all d-all cf">
 
 												<div class="wrap img-gallery">
 

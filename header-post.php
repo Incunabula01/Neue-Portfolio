@@ -39,7 +39,7 @@
 
 		<div id="container">
 
-			<header id="nav" class="header" role="banner">
+			<header id="nav" class="header-post" role="banner">
 
 				<button class="menu-toggle"><i class="fa fa-bars fa-lg"></i></button>
 

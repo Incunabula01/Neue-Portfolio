@@ -95,12 +95,11 @@ var timeToWaitForLast = 100;
 
 jQuery(document).ready(function($) {
 
-    var $navContainer = $('.nav');
+    var $navContainer = $('#nav');
     var $windowWidth = $(window).width();
     var $navMenu = $('.nav-menu');
     var $menuToggle = $('.menu-toggle');
     var $mainDiv = $('#content');
-    var $logoTextStuck = $('.logo-text-stuck');
 
     
     $navMenu.removeClass('stuck-nav');
@@ -118,17 +117,15 @@ jQuery(document).ready(function($) {
 
           if (direction === 'down') {
 
-            $navContainer.addClass('stuck');
-            $navMenu.addClass('stuck-nav').css({
-              'textAlign':'right'
+            $navContainer.addClass('stuck').css({
+              'backgroundColor': 'rgba(0, 204, 153, 0.7)',
+              'borderBottom': '0'
             });
-            $logoTextStuck.fadeIn();
             $mainDiv.css({'marginTop':'55px'});
 
           } else if (direction === 'up'){
 
-            $('p, h3, #main, #content, .nav-menu').removeAttr('style');
-            $logoTextStuck.hide();
+            $('p, h3, #main, #content, .nav-menu, .header').removeAttr('style');
             $navMenu.removeClass('stuck-nav');
             $navContainer.removeClass('stuck');
           };
@@ -140,10 +137,26 @@ jQuery(document).ready(function($) {
         }
       });
     }else if($windowWidth <= 768){
-      $logoTextStuck.hide();
       $('#nav').waypoint('sticky');
     };
     
+
+    /* Smooth Scroll */
+
+    $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+        || location.hostname == this.hostname) {
+
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+           if (target.length) {
+             $('html,body').animate({
+                 scrollTop: target.offset().top 
+            }, 1000);
+            return false;
+        }
+      }
+    });
     
 
     /* Mobile Nav Menu */
