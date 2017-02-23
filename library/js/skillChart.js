@@ -24,13 +24,9 @@
             label: "javaScript",
             rank: 35,
             tick: "Beginner"
-        },{
-            label: "Ruby on Rails",
-            rank: 20,
-            tick: "Beginner"
         }];
 
-        var h = 400;
+        var h = 300;
         var w = skillChart.width();
 
         var barPadding = 2;

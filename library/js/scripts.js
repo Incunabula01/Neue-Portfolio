@@ -104,7 +104,7 @@ jQuery(document).ready(function($) {
     
     $navMenu.removeClass('stuck-nav');
     $navContainer.removeClass('stuck');
-    
+    // Header
     if($windowWidth >= 768){
 
       var $header = $('#logo-text');
@@ -170,10 +170,8 @@ jQuery(document).ready(function($) {
       });
 
 	/* Init Portfolio Isotope Gallery */
-
-  $('#gallery-container').isotope();
-
   var $container = $('#gallery-container');
+  // $container.isotope();
 
 	$container.imagesLoaded( function(){
 		$container.isotope({
@@ -185,18 +183,17 @@ jQuery(document).ready(function($) {
 				isFitWidth: true
 			}
 		});
-
-		
+    console.log('loading done!');
 	});
 
-  var postGallery = $('.gallery');
 
-  postGallery.imagesLoaded( function(){
-    postGallery.masonry({
-      columnWidth: '.gallery-item',
-      isFitWidth: true
+  $('#filters').on('click', 'button', function(){
+    var filterValue = $(this).attr('data-filter');
+    $container.isotope({
+        filter: filterValue
     });
   });
+
   
   /* Contact Form Validation */
 
@@ -249,7 +246,7 @@ jQuery(document).ready(function($) {
             tick: "Beginner"
         }];
 
-        var h = 400;
+        var h = 300;
         var w = skillChart.width();
 
         var barPadding = 2;
@@ -289,7 +286,7 @@ jQuery(document).ready(function($) {
                 return xScale(d.rank);
             })
             .attr("fill", function(d){
-              return "hsl(23, 94%, "+ (d.rank / 2) +"%)"
+              return "hsl(33, 96%, "+ (d.rank / 2) +"%)"
             });
 
          svg.selectAll("text")
@@ -316,29 +313,11 @@ jQuery(document).ready(function($) {
         offset: 500,
         triggerOnce: true
     });
- 
-
-    $(window).load(function(){
-      var $container = $('#gallery-container');
-
-      $container.imagesLoaded( function(){
-        $container.isotope({
-          columnWidth: '.gallery-item',
-          layoutMode: 'fitRows',
-          itemSelector: '.items',
-          filter: '*'
-         });
-      });
-
-      $('#filters').on('click', 'button', function(){
-          var filterValue = $(this).attr('data-filter');
-          $container.isotope({
-            filter: filterValue
-          });
-      });
-    });
      
- }); 
+
+ });
+
+
 
 	
 

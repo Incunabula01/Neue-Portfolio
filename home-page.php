@@ -14,15 +14,6 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-									<!-- <header class="article-header about-me">
-
-										<div class="wrap">
-											<h1 class="page-title"><?php the_title(); ?></h1>
-
-										</div>
-
-									</header> -->
-
 									<section class="entry-content cf" itemprop="articleBody">
 
 											<div class="m-all t-all d-all cf">
@@ -61,42 +52,11 @@
 
 													<h1 class="page-title">Gallery</h1>
 
-
-													<div id="filters">
-														<ul class="button-group">
-															<li>
-																<button class="cyan-btn current" data-filter="*" title="Show All">
-																	<i class="fa fa-image fa-2x" alt="Show All"></i>
-																</button>
-															</li>
-															<li>
-																<button class="cyan-btn" data-filter=".UI-UX" title="UI-UX">
-																	<i class="fa fa-tablet fa-2x" alt="UI UX"></i>
-																</button>
-															</li>
-															<li>
-																<button class="cyan-btn" data-filter=".Web" title="Web">
-																	<i class="fa fa-html5 fa-2x" alt="Web"></i>
-																</button>	
-															</li>
-															<li>
-																<button class="cyan-btn" data-filter=".Print" title="Print">
-																	<i class="fa fa-file fa-2x" alt="Print"></i>
-																</button>
-															</li>
-															<li>
-																<button class="cyan-btn" data-filter=".Identity" title="Identity">
-																	<i class="fa fa-file-image-o fa-2x" alt="Identity"></i>
-																</button>
-															</li>
-														</ul>
-													</div>
-
 													<div id="gallery-container" class="gallery">
 														<?php
 														global $post;
 														$tmp_post = $post;
-														$args = array( 'numberposts' => 9);
+														$args = array( 'category' => 'featured', 'numberposts' => 6);
 														$myposts = get_posts( $args );
 														foreach( $myposts as $post ) :	setup_postdata($post); 
 															$post_thumbnail_id = get_post_thumbnail_id();

@@ -34,17 +34,6 @@ HEADER STYLES
 	background: $teal;
 }
 
-
-	// .logo{
-	// 	margin-top: 1em;
-	// 	font-family: $logo-font;
-	// 	color: $white;
-	// 	@include transition(all 0.5s ease-in);
-	// 	a {
-	// 		color: $white;
-	// 	}
-	// }
-
 	.logo-text {
 		float: left;
 		text-align: left;
@@ -190,6 +179,10 @@ NAVIGATION STYLES
 	display: block;
 }
 
+#about-me p{
+	font-size: 3em;
+}
+
 #skillChart{
 	width: 100%;
 }
@@ -207,6 +200,9 @@ NAVIGATION STYLES
 }
 */
 .entry-content{
+	h2{
+		text-align: left;
+	}
 	p{
 		margin-top: 0;
 		padding-top: 1em;
@@ -272,6 +268,9 @@ NAVIGATION STYLES
 
 		.header-image{
 			height: 25em;
+			background-size: 100%;
+			-moz-background-size: 100%;
+			-webkit-background-size: 100%;
 		}
 /*********************
 SIDEBARS & ASIDES
@@ -430,15 +429,15 @@ FOOTER STYLES
 	ul{
 		li{
 			text-align: left;
+		}
+		a{
+			background-color: transparent;
 			background-color: transparent;
 			@include border-box(1px, $white);
 			&:hover{
 				background-color: transparent;
 				color: $teal;
 			}
-		}
-		a{
-			background-color: transparent;
 			i:before{
 				padding-right: 1em;
 			}

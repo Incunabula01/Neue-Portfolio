@@ -24,6 +24,7 @@ local.properties
 .cproject
 .buildpath
 nbproject/
+node_modules/
 
 ############
 ## OSes
