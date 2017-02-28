@@ -10,20 +10,23 @@
 
 
 						 <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-						 	
-							<header class="article-header">
-			                	<div class="wrap">
-
-			                  		<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-
-			                  	</div>
-			                </header> 
-			                
-						 	<?php $thumb_id = get_post_thumbnail_id();
-								  $post_header = wp_get_attachment_image_src($thumb_id, 'portfolio-post', true);
+							
+							<?php $thumb_id = get_post_thumbnail_id();
+									  $post_header = wp_get_attachment_image_src($thumb_id, 'portfolio-post', true);
 							?>
 
-						 	<div class="header-image" style="background: url(<?php echo $post_header[0]; ?>) 0 center no-repeat;"></div>
+						 	<div class="header-image" style="background: url(<?php echo $post_header[0]; ?>) center 58px no-repeat fixed; background-size:cover;">
+								<header class="article-header">
+				                	<div class="wrap">
+
+				                  		<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
+
+				                  	</div>
+				                </header> 
+				                
+							 	
+
+						 	</div>
 							
 			                
 

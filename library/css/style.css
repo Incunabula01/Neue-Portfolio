@@ -1623,15 +1623,15 @@ svg g {
   height: 200px;
   width: 100%;
   overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .hentry, .sidebar, .widgettitle {
   background-color: #f8f9fa;
-  border-bottom: 1px solid #ccc;
 }
 .hentry header, .sidebar header, .widgettitle header {
-  background-color: #fff;
-  border-bottom: 1px solid #eaedf2;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 1.5em;
 }
 .hentry footer, .sidebar footer, .widgettitle footer {
@@ -1735,7 +1735,6 @@ svg g {
 
 /* post images */
 img {
-  margin-bottom: 1.5em;
   max-width: 100%;
   height: auto;
   overflow: hidden;
@@ -1948,20 +1947,51 @@ MISC STYLES
 .item {
   margin: 1em;
 }
+.item a .item-title {
+  opacity: 0;
+  background-color: rgba(78, 197, 233, 0.9);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 3em 1em;
+  display: inline-block;
+  text-align: center;
+}
+.item a .item-title:hover {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+}
+.item a .item-title:active {
+  opacity: 1;
+}
+.item a .item-title i {
+  position: relative;
+  font-size: 4em;
+  color: #fff;
+}
+.item a .item-title h2 {
+  color: #fff;
+  font-size: 2em;
+  position: relative;
+  text-align: center;
+  line-height: 1em;
+}
 
-.UI-UX h2:before {
+.UI-UX i:before {
   content: "\f10a";
 }
 
-.Web h2:before {
+.Web i:before {
   content: "\f13b";
 }
 
-.Print h2:before {
+.Print i:before {
   content: "\f15b";
 }
 
-.Identity h2:before {
+.Identity i:before {
   content: "\f1c5";
 }
 
@@ -2684,9 +2714,9 @@ you can add resource intensive styles.
   /* end .gallery */
   .header-image {
     height: 25em;
-    background-size: 100%;
-    -moz-background-size: 100%;
-    -webkit-background-size: 100%;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
   }
 
   /*********************
@@ -2733,6 +2763,7 @@ you can add resource intensive styles.
 
   .footer-links ul li a {
     background-color: inherit;
+    border: 1px solid #fff;
   }
   .footer-links ul li a:active {
     color: #00CC99;

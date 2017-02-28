@@ -413,16 +413,16 @@ svg {
 		height: 200px;
   		width: 100%;
 		overflow: hidden;
+		background-attachment: fixed;
+	    background-position: center;
 	}
 
 	
 		.hentry {
 			background-color: $light-gray;
-			border-bottom: 1px solid $border-color;
 
 			header {
-				background-color: $white;
-				border-bottom: 1px solid $gray;
+				background-color: white(0.9);
 				padding: 1.5em;
 			}
 
@@ -535,7 +535,7 @@ svg {
 		/* post images */
 
 		img {
-				margin-bottom: 1.5em;
+				// margin-bottom: 1.5em;
 				max-width: 100%;
 				// min-width: 280px;
 				height: auto;
@@ -796,25 +796,56 @@ MISC STYLES
 
 .item{
 	margin: 1em;
+	a{
+			.item-title {
+				opacity: 0;
+				@include transparent-cyan(0.9);
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				padding: 3em 1em;
+				display: inline-block;
+				text-align: center;
+				&:hover{
+					opacity: 1;
+					@include transition(opacity 0.5s ease-in);
+				}
+				&:active{
+					opacity: 1;
+				}
+				i{
+					position: relative;
+					font-size: 4em;
+					color: $white;
+				}
+				h2{
+					color: $white;
+					font-size: 2em;
+					position: relative;
+					text-align: center;
+					line-height: 1em;
+				}
+			}
+		}
 	
 }
 .UI-UX{
-	h2:before{
+	i:before{
 		content: "\f10a";
 	}
 }
 .Web{
-	h2:before{
+	i:before{
 		content: "\f13b";
 		}
 }
 .Print {
-	h2:before{
+	i:before{
 		content: "\f15b";
 	}
 }
 .Identity {
-	h2:before{
+	i:before{
 		content: "\f1c5";
 	}
 }

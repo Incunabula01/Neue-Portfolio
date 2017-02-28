@@ -49,7 +49,10 @@
 
 										<div class="item <?php $category = get_the_category(); echo $category[0]->cat_name; ?>">
 											<a href="<?php echo get_permalink(); ?>" >
-												<div><span><h2><?php echo get_the_title(); ?></h2></span></div>
+												<div class="item-title">
+														<i class="fa <?php echo $category[0]->cat_name; ?>"></i>
+														<h2><?php echo get_the_title(); ?></h2>
+												</div>
 												<img src="<?php echo $featured_src[0]; ?>"/>
 											</a>
 										</div>

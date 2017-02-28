@@ -213,6 +213,9 @@ NAVIGATION STYLES
 			float: right;
 		}
 	}
+	.item{
+		
+	}
 }
 
 #filters{
@@ -268,9 +271,9 @@ NAVIGATION STYLES
 
 		.header-image{
 			height: 25em;
-			background-size: 100%;
-			-moz-background-size: 100%;
-			-webkit-background-size: 100%;
+			background-size: cover;
+			-moz-background-size: cover;
+			-webkit-background-size: cover;
 		}
 /*********************
 SIDEBARS & ASIDES
@@ -410,6 +413,7 @@ FOOTER STYLES
 		li {
 			a {
 				background-color: inherit;
+				border: 1px solid $white;
 				&:active {
 					color: $teal;
 					@include transition(all 0.5s ease-in);

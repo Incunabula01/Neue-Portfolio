@@ -433,9 +433,9 @@ NAVIGATION STYLES
 /* end .gallery */
 .header-image {
   height: 25em;
-  background-size: 100%;
-  -moz-background-size: 100%;
-  -webkit-background-size: 100%;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
 }
 
 /*********************
@@ -482,6 +482,7 @@ FOOTER STYLES
 
 .footer-links ul li a {
   background-color: inherit;
+  border: 1px solid #fff;
 }
 .footer-links ul li a:active {
   color: #00CC99;

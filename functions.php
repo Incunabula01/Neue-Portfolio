@@ -78,7 +78,7 @@ if ( ! isset( $content_width ) ) {
 // Thumbnail sizes
 add_image_size( 'bones-thumb-400', 450, 250, true);
 add_image_size( 'bones-thumb-300', 300, 250, true );
-add_image_size( 'portfolio-post', 1362, 300, true);
+add_image_size( 'portfolio-post', 1440, 600, true);
 add_image_size( 'gallery-thumb' , 250, 350, true);
 
 
@@ -88,7 +88,7 @@ function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'bones-thumb-400' => __('450px by 250px'),
         'bones-thumb-300' => __('300px by 150px'),
-        'portfolio-post' => __('1280px by 300px'),
+        'portfolio-post' => __('1440px by 600px'),
         'gallery-thumb' => __('280px by 380px')
     ) );
 }
@@ -109,6 +109,8 @@ function neueportfolio_image_sizes_attr( $sizes, $size){
 }
 
 add_filter( 'wp_calculate_image_sizes', 'neueportfolio_image_sizes_attr', 10 , 2 );
+
+add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) );
 /*
 The function above adds the ability to use the dropdown menu to select
 the new images sizes you have just created from within the media manager
