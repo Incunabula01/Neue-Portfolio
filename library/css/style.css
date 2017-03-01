@@ -1287,6 +1287,10 @@ style a page via class
 /* no results search page */
 /* individual paged search (i.e. body.search-paged-3) */
 /* 404 page */
+.single .entry-content {
+  border-top: 1px solid #00CC99;
+}
+
 /* single post page */
 /* individual post page by id (i.e. body.postid-73) */
 /* individual paged single (i.e. body.single-paged-3) */
