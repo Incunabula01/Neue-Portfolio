@@ -56,7 +56,7 @@
 														<?php
 														global $post;
 														$tmp_post = $post;
-														$args = array( 'category' => 'featured', 'numberposts' => 6);
+														$args = array( 'category_name' => 'featured', 'numberposts' => 6);
 														$myposts = get_posts( $args );
 														foreach( $myposts as $post ) :	setup_postdata($post); 
 															$post_thumbnail_id = get_post_thumbnail_id();

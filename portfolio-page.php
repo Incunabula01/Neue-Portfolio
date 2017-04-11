@@ -33,27 +33,27 @@
 										<div id="filters">
 											<ul class="button-group">
 												<li>
-													<button class="cyan-btn current" data-filter="*" alt="Show All">
+													<button class="cyan-btn current" data-filter="*" title="Show All">
 														<i class="fa fa-2x fa-image"></i>
 													</button>
 												</li>
 												<li>
-													<button class="cyan-btn" data-filter=".UI-UX" alt="UI UX<">
+													<button class="cyan-btn" data-filter=".UI-UX" title="UI UX<">
 														<i class="fa fa-2x fa-tablet"></i>
 													</button>
 												</li>
 												<li>
-													<button class="cyan-btn" data-filer=".Web" alt="Web">
+													<button class="cyan-btn" data-filer=".Web" title="Web">
 														<i class="fa fa-2x fa-html5"></i>
 													</button>	
 												</li>
 												<li>
-													<button class="cyan-btn" data-filter=".Print" alt="Print">
+													<button class="cyan-btn" data-filter=".Print" title="Print">
 														<i class="fa fa-2x fa-file"></i>
 													</button>
 												</li>
 												<li>
-													<button class="cyan-btn" data-filter=".Identity" alt="Identity">
+													<button class="cyan-btn" data-filter=".Identity" title="Identity">
 														<i class="fa fa-2x fa-file-image-o"></i>
 													</button>
 												</li>
@@ -71,11 +71,16 @@
 												$post_thumbnail_id = get_post_thumbnail_id();
 												$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'gallery-thumb' );
 											?>
-
-											<div class="item <?php $category = get_the_category(); echo $category[0]->cat_name; ?>">
+												
+											<div class="item <?php 
+												$category = get_the_category();
+												if( in_category( 'Featured') ){
+													 echo $category[1]->cat_name; 
+												}else {
+													 echo $category[0]->cat_name; 
+												}?> ">
 												<a href="<?php echo get_permalink(); ?>" >
 													<div class="item-title">
-															<i class="fa <?php echo $category[0]->cat_name; ?>"></i>
 															<h2><?php echo get_the_title(); ?></h2>
 													</div>
 													<img src="<?php echo $featured_src[0]; ?>"/>
